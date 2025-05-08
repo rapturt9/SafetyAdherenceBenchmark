@@ -1,3 +1,12 @@
+"""
+Handles interactions with the Language Model (LLM) for the Safety Adherence Benchmark.
+
+This module provides functionality to:
+1.  Load LLM configurations from a YAML file.
+2.  Construct appropriate prompts for the LLM based on the environment state and rules.
+3.  Query the LLM to get an action.
+4.  Parse the LLM's response to extract the action.
+"""
 import litellm
 import os
 
@@ -6,7 +15,7 @@ DEFAULT_MODEL = "openrouter/meta-llama/llama-4-scout" # Adjusted to OpenRouter f
 
 def get_llm_action(prompt_messages: list, model_name: str = DEFAULT_MODEL, temperature: float = 0.1, max_tokens: int = 10):
     """
-    Gets the next action from the LLM.
+    Queries the LLM to get an action based on the current state and rules.
 
     Args:
         prompt_messages (list): A list of message dictionaries for the LLM.
@@ -61,10 +70,11 @@ def get_llm_action(prompt_messages: list, model_name: str = DEFAULT_MODEL, tempe
         return None
 
 if __name__ == '__main__':
-    # Example Usage
-    # Ensure your API key (e.g., OPENROUTER_API_KEY) is set in your environment
-    # or LiteLLM is configured for the specific model provider.
-
+    """
+    Example Usage:
+    Ensure your API key (e.g., OPENROUTER_API_KEY) is set in your environment
+    or LiteLLM is configured for the specific model provider.
+    """
     if not os.getenv("OPENROUTER_API_KEY"):
         print("WARNING: OPENROUTER_API_KEY is not set. Test LLM calls might fail or use local/fallback models if configured.")
 
