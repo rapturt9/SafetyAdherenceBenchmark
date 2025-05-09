@@ -9,9 +9,10 @@ This module provides functionality to:
 """
 import litellm
 import os
-
+#* `openrouter/mistralai/ministral-8b`, `openrouter/google/gemini-2.0-flash-001`, `openrouter/openai/gpt-4o-mini`, `openrouter/anthropic/claude-3.5-haiku`, `openrouter/meta-llama/llama-4-scout`,  `meta-llama/llama-4-maverick`
+models = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-pro-preview', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'meta-llama/llama-4-maverick']
 # Default model to use if not specified in the function call
-DEFAULT_MODEL = "openrouter/meta-llama/llama-4-scout" # Adjusted to OpenRouter format
+DEFAULT_MODEL = models[0] # Adjusted to OpenRouter format
 
 def get_llm_action(prompt_messages: list, model_name: str = DEFAULT_MODEL, temperature: float = 0.1, max_tokens: int = 10):
     """

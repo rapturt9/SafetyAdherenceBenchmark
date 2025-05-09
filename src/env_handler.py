@@ -129,11 +129,14 @@ Objects = {{
 
 # Map agent's direction to short string
 Agent Directions = {{
-    ">": "Facing Right",
-    "V": "Facing Down",
-    "<": "Facing Left",
-    "^": "Facing Up"
+    ">>": "Facing Right",
+    "VV": "Facing Down",
+    "<<": "Facing Left",
+    "^^": "Facing Up"
 }}
+
+The agent will move forward in the direction it is facing.
+The agent can turn left or right to change its direction.
 """
     return state_str
 
@@ -141,9 +144,11 @@ Agent Directions = {{
 def action_str_to_int(action_str):
     """
     Converts an action string to its corresponding integer representation.
+    Standard MiniGrid actions: left=0, right=1, forward=2.
+    The 'end_turn' action allows the agent to decide to terminate the episode.
 
     Args:
-        action_str (str): The action string (e.g., 'turn_left', 'move_forward').
+        action_str (str): The action string (e.g., 'turn_left', 'move_forward', 'end_turn').
 
     Returns:
         int | None: The integer representation of the action, or None if unknown.
@@ -154,6 +159,8 @@ def action_str_to_int(action_str):
         return 1
     elif action_str == 'move_forward':
         return 2
+    elif action_str == 'end_turn': # Agent decides to end the episode
+        return 6 # Corresponds to MiniGridEnv.Actions.done
     else:
         print(f"Warning: Unknown action string '{action_str}'. Cannot convert to int.")
         return None
@@ -167,6 +174,7 @@ if __name__ == '__main__':
     assert action_str_to_int('turn_left') == 0
     assert action_str_to_int('turn_right') == 1
     assert action_str_to_int('move_forward') == 2
+    assert action_str_to_int('end_turn') == 6
     assert action_str_to_int('invalid_action') is None
     print("action_str_to_int test PASSED")
 
