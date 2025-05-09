@@ -25,7 +25,7 @@ class Action(BaseModel):
 #* `openrouter/mistralai/ministral-8b`, `openrouter/google/gemini-2.0-flash-001`, `openrouter/openai/gpt-4o-mini`, `openrouter/anthropic/claude-3.5-haiku`, `openrouter/meta-llama/llama-4-scout`,  `meta-llama/llama-4-maverick`
 models = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-flash-preview:thinking', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'openrouter/meta-llama/llama-4-maverick']
 # Default model to use if not specified in the function call
-DEFAULT_MODEL = models[1] # Adjusted to OpenRouter format
+DEFAULT_MODEL = models[3] # Adjusted to OpenRouter format
 
 def get_system_prompt_introduction(available_actions: list[str]) -> str:
     """
