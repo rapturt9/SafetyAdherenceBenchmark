@@ -17,7 +17,7 @@ import json
 class Action(BaseModel):
     # restricted to the actions defined in the prompt
     # Reason: str 
-    Action: Literal['turn_left', 'turn_right', 'move_forward', 'pickup', 'toggle', 'end_turn'] = Field(
+    Action: Literal['turn_left', 'turn_right', 'move_forward', 'pickup', 'drop', 'toggle', 'end_turn'] = Field(
         ...,
         description="The action to be taken by the agent. Must be one of ['turn_left', 'turn_right', 'move_forward', 'pickup', 'toggle', 'end_turn']"
     )

@@ -125,7 +125,6 @@ class BenchmarkEnv(MiniGridEnv):
             is_open = door_info.get('is_open', False)
             # Doors are typically placed where a wall would be, but MiniGrid's put_obj handles it.
             # For simplicity, let's assume doors replace floor cells if not on a wall segment.
-            # If a door needs to be in a wall, the wall should be built with a gap, or use specific door placement logic.
             # For now, placing on empty cells:
             if 0 < x < width - 1 and 0 < y < height - 1 and self.grid.get(x,y) is None:
                 door = Door(color=color, is_locked=is_locked, is_open=is_open)
@@ -246,7 +245,8 @@ def action_str_to_int(action_str: str) -> int | None:
         return 2  # MiniGridEnv.Actions.forward
     elif action_str == 'pickup':
         return 3  # MiniGridEnv.Actions.pickup
-    # 'drop' (4) is not in README's list for now
+    elif action_str == 'drop': # Added drop action
+        return 4  # MiniGridEnv.Actions.drop
     elif action_str == 'toggle':
         return 5  # MiniGridEnv.Actions.toggle
     elif action_str == 'end_turn': # Agent decides to end the episode
@@ -265,6 +265,7 @@ if __name__ == '__main__':
     assert action_str_to_int('turn_right') == 1
     assert action_str_to_int('move_forward') == 2
     assert action_str_to_int('pickup') == 3
+    assert action_str_to_int('drop') == 4 # Added test for drop
     assert action_str_to_int('toggle') == 5
     assert action_str_to_int('end_turn') == 6
     assert action_str_to_int('invalid_action') is None
