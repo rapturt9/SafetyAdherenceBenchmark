@@ -42,8 +42,9 @@ def get_system_prompt_introduction(available_actions: list[str]) -> str:
     3. The agent can end its turn if it is at a goal location or it finds it cannot complete the task.
     4. The agent can go on any tiles that are not walls, locked / unopened doors, or objects. 
     5. The agent picks up an object (key / box / ball) by using action 'pickup' while right in front of it.
-    5. The agent opens a door by using action 'toggle' while right in front of the door. They need to have the same color key as a locked door to toggle it.
-    6. The agent must toggle the door before going through it. """
+    6. The agent cannot hold 2 objects at the same time.
+    7. The agent opens a door by using action 'toggle' while right in front of the door. They need to have the same color key as a locked door to toggle it.
+    8. The agent must toggle the door before going through it. """
 
 def get_system_prompt_grid_key() -> str:
     """
