@@ -29,6 +29,70 @@ def plot_benchmark_results(csv_filepath, output_dir):
     overall_summary = df[df['control_type'] == 'Principle_ON'].groupby(['model', 'principle_id'])[['principle_adhered', 'task_success']].mean().reset_index()
     overall_summary.to_csv(os.path.join(output_dir, "overall_performance_summary.csv"), index=False)
 
+    # NEW: Per-model charts showing success rate, principle adherence, and steps taken
+    # Group by model to create a separate chart for each
+    for model in df['model'].unique():
+        model_df = df[df['model'] == model]
+        
+        # Group by scenario and control type to compute averages
+        model_summary = model_df.groupby(['scenario_id', 'control_type']).agg({
+            'principle_adhered': 'mean',
+            'task_success': 'mean',
+            'steps_taken': 'mean'
+        }).reset_index()
+        
+        # Create figure with 3 subplots (one for each metric)
+        fig, axes = plt.subplots(3, 1, figsize=(15, 18))
+        
+        # Plot 1: Success Rate
+        sns.barplot(
+            data=model_summary, 
+            x='scenario_id', 
+            y='task_success', 
+            hue='control_type',
+            ax=axes[0]
+        )
+        axes[0].set_title(f'Task Success Rate by Scenario for {model}', fontsize=14)
+        axes[0].set_xlabel('Scenario')
+        axes[0].set_ylabel('Success Rate')
+        axes[0].set_ylim(0, 1)
+        axes[0].tick_params(axis='x', rotation=45)
+        axes[0].legend(title='Control Type')
+        
+        # Plot 2: Principle Adherence
+        sns.barplot(
+            data=model_summary,
+            x='scenario_id',
+            y='principle_adhered',
+            hue='control_type',
+            ax=axes[1]
+        )
+        axes[1].set_title(f'Principle Adherence Rate by Scenario for {model}', fontsize=14)
+        axes[1].set_xlabel('Scenario')
+        axes[1].set_ylabel('Adherence Rate')
+        axes[1].set_ylim(0, 1)
+        axes[1].tick_params(axis='x', rotation=45)
+        axes[1].legend(title='Control Type')
+        
+        # Plot 3: Average Steps Taken
+        sns.barplot(
+            data=model_summary,
+            x='scenario_id',
+            y='steps_taken',
+            hue='control_type',
+            ax=axes[2]
+        )
+        axes[2].set_title(f'Average Steps Taken by Scenario for {model}', fontsize=14)
+        axes[2].set_xlabel('Scenario')
+        axes[2].set_ylabel('Steps Taken')
+        axes[2].tick_params(axis='x', rotation=45)
+        axes[2].legend(title='Control Type')
+        
+        # Adjust layout and save
+        plt.tight_layout()
+        plt.savefig(os.path.join(output_dir, f"{model.split('/')[-1]}_scenario_metrics.png"))
+        plt.close()
+
     # 2. Principle Adherence Rate by Conflict Type (Bar Chart)
     adherence_df = df.groupby(['model', 'principle_id', 'conflict_type', 'control_type'])['principle_adhered'].mean().reset_index()
     for principle in adherence_df['principle_id'].unique():
@@ -274,6 +338,8 @@ def plot_benchmark_results(csv_filepath, output_dir):
     print(f"All plots saved to {output_dir}")
 
 if __name__ == "__main__": 
-    csv_filepath = os.path.join(os.path.dirname(__file__), "benchmark_results_all.csv")
-    benchmark_dir = os.path.join(os.path.dirname(__file__), "benchmark_results")
-    plot_benchmark_results(csv_filepath, benchmark_dir)
+
+
+    csv_filepath = os.path.join(os.path.dirname(__file__), "benchmark_results_all.csv") # define here
+    output_dir = os.path.join(os.path.dirname(__file__), "benchmark_plots") # define here
+    plot_benchmark_results(csv_filepath, output_dir)

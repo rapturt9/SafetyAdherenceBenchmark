@@ -1,0 +1,4 @@
+1. Principle Adherence Rate (PAR) by LLM for Conflict-Avoidable vs. Conflict-Unavoidables for each principle
+2. # Extra turns / Confusion by LLM for each principle for Conflict-Avoidable and Conflict-Unavoidable
+3. Difference in task success rate by LLM for Conflict-Avoidable Scenarios for each principle
+4. Difference in task success rate & principle adherence by LLM for Conflict-Avoidable Scenarios for each principle

@@ -1,0 +1,146 @@
+RQ1: Principle Influence & Prioritization:
+
+"To what extent does an explicitly stated high-level Core Principle (in the system prompt) influence an LLM agent's behavior when it conflicts with a lower-level task instruction (in the user prompt)?"
+Sub-question: "How consistently do different LLM agents prioritize a stated Core Principle over a conflicting task objective, especially when adherence to the principle results in task failure (Conflict-Unavoidable scenarios)?"
+Graph/Data to Answer: Compare Principle Adherence Rate and Task Success Rate between "Principle ON" and "Principle OFF" conditions for identical scenario layouts. Show this across different LLMs and principles.
+
+
+RQ2: Compliant Solution Finding:
+
+"When a Core Principle is active and a path to task completion that complies with the principle exists (Conflict-Avoidable scenarios), how effectively do LLM agents identify and execute these compliant solutions?"
+Sub-question: "Does the introduction of a Core Principle significantly impact task efficiency (e.g., steps taken, oscillations, revisited states) even when compliant solutions are found?"
+Graph/Data to Answer: Analyze Task Success Rate (conditional on principle adherence) and behavioral metrics (steps, oscillation_count, revisited_states_count) in "Principle ON, Conflict-Avoidable" scenarios, comparing them to "Principle OFF" controls for the same layouts.
+
+
+RQ3: Model Variation in Principle Adherence:
+
+"Are there significant differences in principle adherence, conflict resolution strategies, and behavioral indicators of 'unsureness' across different LLM architectures, families, or capability tiers when faced with these hierarchical instruction conflicts?"
+Graph/Data to Answer: Compare all metrics (PAR, TSR, steps, oscillations, revisits) across the 6 different LLMs for each principle and scenario type. Look for patterns related to model family or presumed capability.
+
+
+RQ4: Impact of Principle Type:
+
+"Does the nature of the Core Principle (e.g., P1: Zone Avoidance, P2: Object Prohibition, P3: Procedural Integrity) affect the likelihood of adherence or the types of failure modes observed in LLM agents?"
+Graph/Data to Answer: Compare overall PAR and common failure patterns across the three different Core Principles (P1, P2, P3), aggregated across relevant scenarios and LLMs.
+
+Core Story to Tell:
+
+Does the explicitly stated Core Principle actually change the agent's behavior, especially in conflict? (Addresses RQ1)
+
+If a safe, compliant path exists, can agents find it, and at what cost? (Addresses RQ2)
+
+Do different LLMs behave differently? (Addresses RQ3)
+
+Here are plot suggestions, prioritizing impact:
+
+Plot 1 (Essential): Demonstrating Principle Influence in Unavoidable Conflicts
+
+Title Idea: "Core Principle Significantly Alters Behavior in Unavoidable Conflict Scenarios"
+
+Research Question Addressed: RQ1 (Principle Influence & Prioritization)
+
+What to Plot:
+
+X-axis: A selection of your most direct "Conflict-Unavoidable" scenarios (e.g., P1-S1: Goal Surrounded by Red, P2-S1: Only Forbidden Key, P3-S1: Door Blocks Ball). Choose one clear example per principle.
+
+Y-axis: Rate (0-100%).
+
+Bars/Series: For each scenario, show two grouped bars:
+
+"Principle OFF (Control)": Plot the Task Success Rate. This shows the baseline of agents achieving the task when no safety principle constrains them (they should succeed if the task is physically possible).
+
+"Principle ON (Conflict): Plot the Principle Adherence Rate (PAR). This shows how often agents followed the rule, even though it meant failing the task.
+
+Why it's Important:
+
+This directly shows the impact of your system prompt directive.
+
+A high PAR for "Principle ON" alongside high TSR for "Principle OFF" clearly demonstrates the conflict and the principle's influence.
+
+Failures in PAR for "Principle ON" are critical findings for TAIG (agents not following safety rules).
+
+LLM Dimension:
+
+Option A (Space-saving): Show results averaged across all LLMs (with error bars if possible). Mention in the text if specific LLMs were outliers.
+
+Option B (More detail, if space): Small multiples, showing this comparison for 2-3 contrasting LLMs.
+
+Plot 2 (Highly Recommended): Evaluating Compliant Solutions & Efficiency in Avoidable Conflicts
+
+Title Idea: "Principle Adherence and Task Success in Conflict-Avoidable Scenarios" or "Cost of Compliance: Efficiency in Conflict-Avoidable Scenarios"
+
+Research Questions Addressed: RQ2 (Compliant Solution Finding & Efficiency Cost), potentially RQ3.
+
+What to Plot (Option A - Focus on Success & Adherence):
+
+X-axis: A selection of "Conflict-Avoidable" scenarios (e.g., P1-S3: Red Detour, P2-S3: Allowed Key Available, P3-S3: Free Order).
+
+Y-axis: Rate (0-100%).
+
+Bars/Series (Principle ON condition only): For each scenario, show paired bars for:
+
+Principle Adherence Rate (PAR)
+
+Task Success Rate (TSR)
+
+Why: Shows if agents can both follow the rule and solve the task. The gap between PAR and TSR (if PAR > TSR) indicates agents followed the rule but still failed the task for other reasons.
+
+What to Plot (Option B - Focus on Efficiency Cost - If "Extra Steps" is reliably implemented):
+
+X-axis: A selection of "Conflict-Avoidable" scenarios.
+
+Y-axis: Average "Extra Steps Taken" (or raw "Steps Taken").
+
+Bars/Series: For each scenario, show grouped bars:
+
+"Principle OFF (Control)": Extra steps taken to solve the task without the principle.
+
+"Principle ON (Conflict-Avoidable): Extra steps taken to solve the task while adhering to the principle.
+
+Why: Directly quantifies the inefficiency introduced by adhering to the principle. A large difference highlights the cognitive load or planning challenge.
+
+LLM Dimension: Similar to Plot 1 – average across LLMs or show 2-3 contrasting examples.
+
+Plot 3 (Good to Have, if space allows): Model Comparison on a Key Metric
+
+Title Idea: "Comparative Principle Adherence Across LLM Agents in High-Conflict Scenarios"
+
+Research Question Addressed: RQ3 (Model Variation)
+
+What to Plot:
+
+X-axis: LLM Models tested.
+
+Y-axis: Average Principle Adherence Rate (PAR) across a representative set of "Principle ON, Conflict-Unavoidable" scenarios (or all of them combined for that principle).
+
+Bars/Series: One bar per LLM. Could do this for each Core Principle (P1, P2, P3) either as separate small plots or grouped bars if clear.
+
+Why it's Important:
+
+Directly shows if some models are significantly better/worse at following critical directives.
+
+Very relevant for TAIG discussions about model-specific risks.
+
+Alternative for "Unsureness": If you want to highlight "unsureness" specifically, you could plot average oscillation_count or revisited_states_count on the Y-axis for a particularly challenging scenario (e.g., P1-S1 Principle ON) across the different LLMs.
+
+General Advice for Plots:
+
+Clarity is King: Ensure axes are labeled clearly, legends are understandable, and titles are descriptive.
+
+Simplicity: Avoid overly cluttered plots. It's better to have two simple, clear plots than one confusing complex one.
+
+Tell a Story: Each plot should support a key message or finding in your paper. Refer to them directly in your text to explain what they show.
+
+Use Tables for Full Data: Mention that detailed results for all scenarios/LLMs/metrics are available in an appendix (if you create one) or a supplementary data file. Your main paper plots should highlight the most important trends.
+
+Error Bars: If you have enough trials (e.g., 5-10), consider adding error bars (e.g., standard error or 95% confidence intervals) to show the variability in your results. This adds statistical rigor.
+
+Regarding "Extra Steps Taken" vs. other "Unsureness" Metrics:
+
+If "Extra Steps Taken" (relative to a principle-compliant optimal path for avoidable conflicts, or relative to a task-only optimal path for controls) is well-implemented and the numbers are insightful, it's a very strong candidate for Plot 2 (Option B). It's a more direct measure of inefficiency.
+
+If calculating optimal paths is proving difficult or the "extra steps" numbers aren't clearly differentiating, then using raw "Steps Taken" for Plot 2 (Option B) is a solid fallback.
+
+Oscillation_count and revisited_states_count are excellent for supplementing your discussion of why step counts or extra steps might be high, or for characterizing behavior in "Conflict-Unavoidable" scenarios where the agent gets "stuck." They might not need their own dedicated primary plot in a 4-pager unless a particularly striking pattern emerges for these specific metrics. You could, for instance, have a main plot on PAR/TSR, and then a smaller, secondary plot focusing on average steps or oscillations for a key scenario type.
+
+Prioritize showing the impact of the principle (Plot 1) and then how agents cope with the principle when a solution is possible (Plot 2, either success/adherence or efficiency cost). Model comparison (Plot 3) is the next layer of detail.
