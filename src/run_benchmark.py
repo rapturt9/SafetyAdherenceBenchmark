@@ -54,6 +54,40 @@ RUN_PRINCIPLE_OFF = os.getenv('RUN_PRINCIPLE_OFF', 'True').lower() == 'true'
 MAX_STEPS_PER_EPISODE = int(os.getenv('MAX_STEPS_PER_EPISODE', 50))
 MAX_PARALLEL_RUNS = int(os.getenv('MAX_PARALLEL_RUNS', 1)) # Added for parallel execution control
 
+# New deterministic mode config
+DETERMINISTIC_MODE = os.getenv('DETERMINISTIC_MODE', 'False').lower() == 'true'
+DETERMINISTIC_ACTIONS = os.getenv('DETERMINISTIC_ACTIONS', '')  # Format: "f,tr,tl,p,d,t,e" for forward, turn_right, turn_left, pickup, drop, toggle, end_turn
+
+# Function to parse deterministic action string to full action names
+def parse_deterministic_actions(action_string):
+    """
+    Parse the deterministic action string into a list of full action names.
+    
+    Format: "f,tr,tl,p,d,t,e" for forward, turn_right, turn_left, pickup, drop, toggle, end_turn
+    """
+    action_mapping = {
+        'f': 'move_forward',
+        'tr': 'turn_right',
+        'tl': 'turn_left',
+        'p': 'pickup',
+        'd': 'drop',
+        't': 'toggle',
+        'e': 'end_turn'
+    }
+    
+    actions = []
+    if not action_string:
+        return actions
+        
+    for shorthand in action_string.split(','):
+        shorthand = shorthand.strip().lower()
+        if shorthand in action_mapping:
+            actions.append(action_mapping[shorthand])
+        else:
+            # If not a shorthand, assume it's already a full action name
+            actions.append(shorthand)
+    
+    return actions
 
 # --- Agent Action Mapping (for direction string) ---
 AGENT_DIR_TO_STR = {0: "East", 1: "South", 2: "West", 3: "North"}
@@ -101,6 +135,15 @@ def run_episode(scenario_id, principle_id, principle_text, control_type, task_de
     oscillation_count = 0
     revisited_states_count = 0
     visited_states = set()
+
+    # Parse deterministic actions if in deterministic mode
+    deterministic_actions = []
+    if DETERMINISTIC_MODE:
+        deterministic_actions = parse_deterministic_actions(DETERMINISTIC_ACTIONS)
+        if deterministic_actions:
+            print(f"Running in deterministic mode with actions: {deterministic_actions}")
+        else:
+            print("Warning: Deterministic mode enabled but no actions provided. Will use LLM.")
 
     # Determine available actions 
     available_actions = ['turn_left', 'turn_right', 'move_forward', 'pickup', 'drop', 'toggle', 'end_turn']
@@ -183,19 +226,24 @@ def run_episode(scenario_id, principle_id, principle_text, control_type, task_de
             if action_feedback_for_next_prompt: # Prepend feedback from last action
                 user_prompt_this_turn = action_feedback_for_next_prompt + "\n\n" + user_prompt_this_turn
 
-            current_turn_llm_messages = list(prompt_messages_history)
-            current_turn_llm_messages.append({"role": "user", "content": user_prompt_this_turn})
-            
-            # Pruning logic (optional, from previous implementation)
-            MAX_HISTORY_PAIRS = 4 
-            MAX_MESSAGES = 1 + MAX_HISTORY_PAIRS * 2
-            if len(current_turn_llm_messages) > MAX_MESSAGES:
-                num_to_keep = MAX_MESSAGES -1
-                current_turn_llm_messages = [current_turn_llm_messages[0]] + current_turn_llm_messages[-num_to_keep:]
+            # Use deterministic actions if available and in deterministic mode
+            if DETERMINISTIC_MODE and step_num < len(deterministic_actions):
+                llm_action_str = deterministic_actions[step_num]
+                print(f"Using deterministic action: {llm_action_str}")
+            else:
+                current_turn_llm_messages = list(prompt_messages_history)
+                current_turn_llm_messages.append({"role": "user", "content": user_prompt_this_turn})
+                
+                # Pruning logic (optional, from previous implementation)
+                MAX_HISTORY_PAIRS = 4 
+                MAX_MESSAGES = 1 + MAX_HISTORY_PAIRS * 2
+                if len(current_turn_llm_messages) > MAX_MESSAGES:
+                    num_to_keep = MAX_MESSAGES -1
+                    current_turn_llm_messages = [current_turn_llm_messages[0]] + current_turn_llm_messages[-num_to_keep:]
 
-            llm_action_str = get_llm_action(current_turn_llm_messages, available_actions, model_name) # Pass available_actions
+                llm_action_str = get_llm_action(current_turn_llm_messages, available_actions, model_name) # Pass available_actions
 
-            # Update conversation history
+            # Update conversation history (even in deterministic mode, to keep logs consistent)
             prompt_messages_history.append({"role": "user", "content": user_prompt_this_turn})
             if llm_action_str is None: llm_action_str = "end_turn" # Default if LLM fails
             prompt_messages_history.append({"role": "assistant", "content": llm_action_str})
@@ -212,10 +260,6 @@ def run_episode(scenario_id, principle_id, principle_text, control_type, task_de
 
             # --- CRITICAL PRINCIPLE CHECK (before env.step()) ---
             violation_this_step = False
-            #fwd_pos = unwrapped_env.front_pos # Define fwd_pos here
-            # fwd_cell = unwrapped_env.grid.get(fwd_pos[0], fwd_pos[1]) if fwd_pos else None
-
-            # get from raw_env
             front_pos = raw_env.front_pos
             fwd_cell = raw_env.grid.get(front_pos[0], front_pos[1])
 
