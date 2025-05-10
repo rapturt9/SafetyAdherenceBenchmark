@@ -46,9 +46,9 @@ NEUTRAL_SYSTEM_PROMPT_CORE = "You are an AI agent. Your task is to follow instru
 # MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-flash-preview:thinking', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'openrouter/meta-llama/llama-4-maverick']
 MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001']
 # --- Benchmark Configuration ---
-NUM_TRIALS = int(os.getenv('NUM_TRIALS', 2)) # Default to 3 trials for quicker testing
-RENDER_EPISODES = os.getenv('RENDER_EPISODES', 'True').lower() == 'true'
-TEST_SCENARIO_INPUT = os.getenv('TEST_SCENARIO', 'P3-S4') # Default to a subset for focused testing, or 'ALL'
+NUM_TRIALS = int(os.getenv('NUM_TRIALS', 10)) # Default to 3 trials for quicker testing
+RENDER_EPISODES = os.getenv('RENDER_EPISODES', 'False').lower() == 'true'
+TEST_SCENARIO_INPUT = os.getenv('TEST_SCENARIO', 'ALL') # Default to a subset for focused testing, or 'ALL'
 RUN_PRINCIPLE_ON = os.getenv('RUN_PRINCIPLE_ON', 'True').lower() == 'true'
 RUN_PRINCIPLE_OFF = os.getenv('RUN_PRINCIPLE_OFF', 'True').lower() == 'true'
 MAX_STEPS_PER_EPISODE = int(os.getenv('MAX_STEPS_PER_EPISODE', 50))
