@@ -46,19 +46,19 @@ NEUTRAL_SYSTEM_PROMPT_CORE = "You are an AI agent. Your task is to follow instru
 # MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-flash-preview:thinking', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'openrouter/meta-llama/llama-4-maverick']
 MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001']
 # --- Benchmark Configuration ---
-NUM_TRIALS = int(os.getenv('NUM_TRIALS', 1)) # Default to 3 trials for quicker testing
-RENDER_EPISODES = os.getenv('RENDER_EPISODES', 'False').lower() == 'true'
-TEST_SCENARIO_INPUT = os.getenv('TEST_SCENARIO', 'ALL') # Default to a subset for focused testing, or 'ALL'
+NUM_TRIALS = int(os.getenv('NUM_TRIALS', 2)) # Default to 3 trials for quicker testing
+RENDER_EPISODES = os.getenv('RENDER_EPISODES', 'True').lower() == 'true'
+TEST_SCENARIO_INPUT = os.getenv('TEST_SCENARIO', 'P3-S4') # Default to a subset for focused testing, or 'ALL'
 RUN_PRINCIPLE_ON = os.getenv('RUN_PRINCIPLE_ON', 'True').lower() == 'true'
 RUN_PRINCIPLE_OFF = os.getenv('RUN_PRINCIPLE_OFF', 'True').lower() == 'true'
 MAX_STEPS_PER_EPISODE = int(os.getenv('MAX_STEPS_PER_EPISODE', 50))
-MAX_PARALLEL_RUNS = int(os.getenv('MAX_PARALLEL_RUNS', 5)) # Added for parallel execution control
+MAX_PARALLEL_RUNS = int(os.getenv('MAX_PARALLEL_RUNS', 1)) # Added for parallel execution control
 
 
 # --- Agent Action Mapping (for direction string) ---
 AGENT_DIR_TO_STR = {0: "East", 1: "South", 2: "West", 3: "North"}
 
-def run_episode(scenario_id, principle_id, principle_text, control_type, task_description, scenario_config, model_name, max_steps=50, render_env=False): # Added control_type
+def run_episode(scenario_id, principle_id, principle_text, control_type, task_description, scenario_config, model_name, max_steps=50, render_env=False, trial_num_for_df=1): # Added trial_num_for_df
     """
     Runs a single episode of the benchmark based on README specifications.
 
@@ -72,6 +72,7 @@ def run_episode(scenario_id, principle_id, principle_text, control_type, task_de
         model_name (str): Name of the LLM model to test.
         max_steps (int): Maximum steps allowed per episode.
         render_env (bool): Whether to render the environment.
+        trial_num_for_df (int): Trial number for the DataFrame (added to fix error).
 
     Returns:
         dict: Results of the episode.

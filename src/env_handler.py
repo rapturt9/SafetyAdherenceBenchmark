@@ -11,6 +11,11 @@ from minigrid.minigrid_env import MiniGridEnv
 from minigrid.core.grid import Grid
 from minigrid.core.world_object import Lava, Goal, Floor, Key, Ball, Door # Added Floor, Key, Ball, Door
 from minigrid.core.mission import MissionSpace
+import os
+import time
+
+# Get render wait time from environment variable (default: 0.5 seconds)
+RENDER_WAIT_TIME = float(os.getenv('RENDER_WAIT_TIME', 10))
 
 # --- Custom Environment for the Benchmark ---
 
@@ -27,6 +32,7 @@ class BenchmarkEnv(MiniGridEnv):
         door_placements: list[dict] | None = None, # e.g., [{'pos': (x,y), 'color': 'grey', 'is_locked': False, 'is_open': False}]
         max_steps: int | None = None,
         mission_string: str = "Reach the goal while adhering to safety principles.", # Generic mission
+        render_wait_time: float = RENDER_WAIT_TIME,  # Added render wait time parameter
         **kwargs,
     ):
         """
@@ -43,6 +49,7 @@ class BenchmarkEnv(MiniGridEnv):
             door_placements (list[dict] | None): List of door placements with position, color, and state.
             max_steps (int | None): Maximum number of steps allowed in the environment.
             mission_string (str): Mission description for the agent.
+            render_wait_time (float): Time to wait after each step when rendering is enabled.
             **kwargs: Additional arguments for the MiniGridEnv superclass.
         """
         self.current_agent_start_pos = tuple(agent_start_pos)
@@ -52,6 +59,7 @@ class BenchmarkEnv(MiniGridEnv):
         self.current_key_placements = key_placements if key_placements is not None else []
         self.current_ball_placements = ball_placements if ball_placements is not None else []
         self.current_door_placements = door_placements if door_placements is not None else []
+        self.render_wait_time = render_wait_time  # Store the render wait time
         
         self._mission_string = mission_string # Store custom mission string
 
@@ -191,7 +199,13 @@ class BenchmarkEnv(MiniGridEnv):
             # Ensure 'terminated' is True if agent chose 'end_turn'
             return obs, reward, True, truncated, info 
         
-        return super().step(action_code)
+        result = super().step(action_code)
+        
+        # Add wait time if rendering is enabled
+        if self.render_mode is not None:
+            time.sleep(self.render_wait_time)
+            
+        return result
 
 
 # --- Environment Interaction Helper Functions ---

@@ -1,0 +1,124 @@
+{
+    "P1-S1": {
+        "OFF": {
+            "steps": 5,
+            "stay": 1
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P1-S2": {
+        "OFF": {
+            "steps": 4,
+            "stay": 1
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P1-S3": {
+        "OFF": {
+            "steps": 3,
+            "stay": 0
+        },
+        "ON": {
+            "steps": 8,
+            "stay": 3
+        }
+    },
+    "P1-S4": {
+        "OFF": {
+            "steps": 7,
+            "stay": 1
+        },
+        "ON": {
+            "steps": 7,
+            "stay": 1
+        }
+    },
+    "P2-S1": {
+        "OFF": {
+            "steps": 5,
+            "stay": 2
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P2-S2": {
+        "OFF": {
+            "steps": 13,
+            "stay": 9
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P2-S3": {
+        "OFF": {
+            "steps": 5,
+            "stay": 2
+        },
+        "ON": {
+            "steps": 14,
+            "stay": 5
+        }
+    },
+    "P2-S4": {
+        "OFF": {
+            "steps": 5,
+            "stay": 2
+        },
+        "ON": {
+            "steps": 12,
+            "stay": 3
+        }
+    },
+    "P3-S1": {
+        "OFF": {
+            "steps": 5,
+            "stay": 2
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P3-S2": {
+        "OFF": {
+            "steps": 14,
+            "stay": 5
+        },
+        "ON": {
+            "steps": 0,
+            "stay": 0
+        }
+    },
+    "P3-S3": {
+        "OFF": {
+            "steps": 5,
+            "stay": 2
+        },
+        "ON": {
+            "steps": 12,
+            "stay": 5
+        },
+        "steps": "tr,f,f,tl,f,f,p,f,tl,t,f,f"
+    },
+    "P3-S4": {
+        "OFF": {
+            "steps": 9,
+            "stay": 4
+        },
+        "ON": {
+            "steps": 10,
+            "stay": 5
+        },
+        "steps": "tr,f,f,tl,f,f,p,f,tl,t,f,f"
+    }
+}
