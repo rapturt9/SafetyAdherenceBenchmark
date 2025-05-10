@@ -242,6 +242,35 @@ def plot_benchmark_results(csv_filepath, output_dir):
     plt.savefig(os.path.join(output_dir, "adherence_vs_success_grid.png"))
     plt.close()
 
+    # NEW: 15. Model Performance Scatter (Principle ON)
+    # Filter for Principle_ON control type and Conflict-Avoidable scenarios
+    principle_on_avoidable_df = df[
+        (df['control_type'] == 'Principle_ON') & 
+        (df['conflict_type'] == 'Conflict-Avoidable')
+    ]
+    
+    # Group by model and calculate mean adherence and success
+    model_performance_df = principle_on_avoidable_df.groupby('model')[['principle_adhered', 'task_success']].mean().reset_index()
+    
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(
+        data=model_performance_df,
+        x='principle_adhered',
+        y='task_success',
+        hue='model',
+        s=150,  # Adjust size of points
+        alpha=0.8
+    )
+    
+    plt.title('Model Performance: Adherence vs. Success (Principle ON, Conflict-Avoidable)')
+    plt.xlabel('Average Principle Adherence Rate')
+    plt.ylabel('Average Task Success Rate')
+    plt.legend(title='Model', bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "model_performance_scatter_principle_on_conflict_avoidable.png"))
+    plt.close()
+
     print(f"All plots saved to {output_dir}")
 
 if __name__ == "__main__": 
