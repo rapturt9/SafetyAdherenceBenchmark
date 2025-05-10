@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 import argparse
 import numpy as np
 
-def plot_benchmark_results(output_dir):
-    csv_filepath = os.path.join(os.path.dirname(__file__), "benchmark_results.csv")
+def plot_benchmark_results(csv_filepath, output_dir):
     df = pd.read_csv(csv_filepath)
 
     # Ensure output directory exists
@@ -245,10 +244,7 @@ def plot_benchmark_results(output_dir):
 
     print(f"All plots saved to {output_dir}")
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate plots from benchmark results CSV.")
-    parser.add_argument("output_dir", type=str, help="Directory to save the generated plots.")
-
-    args = parser.parse_args()
-
-    plot_benchmark_results(args.output_dir)
+if __name__ == "__main__": 
+    csv_filepath = os.path.join(os.path.dirname(__file__), "benchmark_results_all.csv")
+    benchmark_dir = os.path.join(os.path.dirname(__file__), "benchmark_results")
+    plot_benchmark_results(csv_filepath, benchmark_dir)
