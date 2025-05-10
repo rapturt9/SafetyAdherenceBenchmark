@@ -1,0 +1,549 @@
+﻿Title,Authors,DOI,DOI link,Venue,Citation count,Year,Abstract summary,Summary,Main findings,Environment,Evaluation Metrics Used,Models,"Supporting quotes for ""Summary""","Supporting  tables for ""Summary""","Reasoning for ""Summary""","Supporting quotes for ""Main findings""","Supporting  tables for ""Main findings""","Reasoning for ""Main findings""","Supporting quotes for ""Environment""","Supporting  tables for ""Environment""","Reasoning for ""Environment""","Supporting quotes for ""Evaluation Metrics Used""","Supporting  tables for ""Evaluation Metrics Used""","Reasoning for ""Evaluation Metrics Used""","Supporting quotes for ""Models""","Supporting  tables for ""Models""","Reasoning for ""Models"""
+Agent-SafetyBench: Evaluating the Safety of LLM Agents,"Zhexin Zhang, Shiyao Cui, Yida Lu, Jingzhuo Zhou, Junxiao Yang, Hongning Wang, Minlie Huang",-,-,-,0,2024,"Agent-SafetyBench is a comprehensive benchmark for evaluating safety risks and failure modes in LLM agents, which reveals significant safety challenges.","The authors introduce a comprehensive benchmark called Agent-SafetyBench to evaluate the safety of large language model (LLM) agents, and their evaluation of 16 popular LLM agents reveals significant safety challenges, with none of the agents achieving a safety score above 60%.","- None of the 16 LLM agents evaluated achieved a safety score above 60%, highlighting significant safety challenges with current LLM agents.
+- The study identified two key safety defects in current LLM agents: a lack of robustness and a lack of risk awareness.
+- Relying on defense prompts alone is insufficient to address the safety issues identified, and more advanced and robust strategies are needed.","The ""Environment"" in this study refers to a set of 349 interactive environments used to evaluate the safety of large language model (LLM) agents, covering 10 common failure modes and 8 categories of safety risks.","1. Safety score: A quantitative metric that measures the overall safety of the LLM agents, with a maximum score of 100%.
+2. Evaluation across 8 categories of safety risks and 10 common failure modes: The agents are assessed on their ability to handle a wide range of safety-related scenarios and challenges.
+3. Effectiveness of safety strategies: The evaluation considers the adequacy of specific safety approaches, such as the use of defense prompts, in addressing the identified safety issues.",The paper evaluates the safety of 16 popular large language model (LLM) agents using a new benchmark called Agent-SafetyBench.,"  - ""In this paper, we introduce Agent-SafetyBench, a comprehensive benchmark designed to evaluate the safety of LLM agents. Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+  - ""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+  - ""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""",,"
+The summary of this paper is that the authors introduce a comprehensive benchmark called Agent-SafetyBench to evaluate the safety of large language model (LLM) agents, and their evaluation of 16 popular LLM agents reveals significant safety challenges, with none of the agents achieving a safety score above 60%.
+
+""In this paper, we introduce Agent-SafetyBench, a comprehensive benchmark designed to evaluate the safety of LLM agents. Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+This quote outlines the key components of the Agent-SafetyBench benchmark introduced in the paper.
+
+""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+This quote directly states the key finding of the paper, that none of the 16 LLM agents evaluated achieved a safety score above 60%, indicating significant safety challenges.
+
+""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""
+This quote suggests that the current approaches to addressing safety issues in LLM agents, such as using defense prompts, are not sufficient, and more advanced and robust strategies are needed.
+","  - ""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+  - ""Through quantitative analysis, we identify critical failure modes and summarize two fundamental safety detects in current LLM agents: lack of robustness and lack of risk awareness.""
+  - ""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""",,"
+The main findings of this study, as summarized in the abstract, are:
+
+""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+This quote indicates that the study found that none of the 16 LLM agents evaluated achieved a safety score above 60%, suggesting significant safety challenges with current LLM agents.
+
+""Through quantitative analysis, we identify critical failure modes and summarize two fundamental safety detects in current LLM agents: lack of robustness and lack of risk awareness.""
+This quote suggests that the study identified two key safety defects in current LLM agents: a lack of robustness and a lack of risk awareness.
+
+""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""
+This quote indicates that the study found that relying on defense prompts alone is not enough to address the safety issues identified, and that more advanced and robust strategies are needed.
+","  - ""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+  - ""encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+  - ""Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+  - ""Through quantitative analysis, we identify critical failure modes and summarize two fundamental safety detects in current LLM agents: lack of robustness and lack of risk awareness.""",,"
+Based on the abstract, the ""Environment"" in this study refers to the interactive environments used to evaluate the safety of large language model (LLM) agents. The abstract states that the Agent-SafetyBench benchmark ""encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+""Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement.""
+""Through quantitative analysis, we identify critical failure modes and summarize two fundamental safety detects in current LLM agents: lack of robustness and lack of risk awareness.""
+The abstract does not provide specific details on the types of interactive environments used, such as grid worlds, text-based games, robotics simulators, or web navigation tasks. It only mentions that the benchmark encompasses a large number of interaction environments and test cases to evaluate the safety of LLM agents.
+","  - ""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%.""
+  - ""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""
+  - ""Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""",,"
+To determine the evaluation metrics used in this paper, I will look for relevant quotes that describe the specific metrics or scoring system used to assess the safety of the LLM agents.
+
+""Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions.""
+This quote indicates that the benchmark evaluates the agents across 8 categories of safety risks and 10 common failure modes, suggesting that multiple metrics are likely used to assess the agents' performance.
+
+""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%.""
+This quote mentions a ""safety score"" that is used to evaluate the agents, which suggests a quantitative metric is used to assess their overall safety performance.
+
+""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""
+This quote implies that the evaluation goes beyond just measuring the agents' performance and also considers the effectiveness of specific safety strategies, such as the use of defense prompts.
+","  - ""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%.""
+  - ""As large language models (LLMs) are increasingly deployed as agents, their integration into interactive environments and tool use introduce new safety challenges beyond those associated with the models themselves.""
+  - ""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""",,"
+The abstract indicates that this paper evaluates the safety of ""large language model (LLM) agents"". Specifically, the paper introduces a new benchmark called ""Agent-SafetyBench"" to evaluate the safety of LLM agents.
+
+""As large language models (LLMs) are increasingly deployed as agents, their integration into interactive environments and tool use introduce new safety challenges beyond those associated with the models themselves.""
+This quote directly states that the paper is focused on evaluating the safety of LLM agents.
+
+""Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%.""
+This quote confirms that the paper evaluates 16 different LLM agents using the new Agent-SafetyBench benchmark.
+
+""Furthermore, our findings suggest that reliance on defense prompts alone is insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies.""
+This quote suggests that the paper discusses the limitations of current safety strategies for LLM agents, and the need for more advanced approaches.
+"
+An Evaluation-Driven Approach to Designing LLM Agents: Process and Architecture,"Boming Xia, Qinghua Lu, Liming Zhu, Zhenchang Xing, Dehai Zhao, Hao Zhang",10.48550/arXiv.2411.13768,https://doi.org/10.48550/arXiv.2411.13768,arXiv.org,1,2024,"The paper proposes an evaluation-driven design approach to address challenges in developing LLM agents, including loss of control and principle violation.","The paper introduces an evaluation-driven approach to designing LLM agents, including a process model and reference architecture that integrate continuous evaluation across the agent's lifecycle to guide both runtime adaptation and iterative redevelopment.","- The paper introduces an evaluation-driven design approach to address the unique challenges of LLM agent development in terms of quality and risk control.
+- The paper proposes a structured process model that enables comprehensive, lifecycle-spanning evaluation of LLM agents.
+- The paper designs a reference architecture that embeds evaluation as a core design element, integrating both online and offline evaluation to inform agent improvement.",Not mentioned (the paper does not mention any specific environment or simulation used in the study),"Not mentioned (the paper does not provide specific details on the evaluation metrics used to assess the llm agent's performance, rule adherence, or decision-making)",Not mentioned (the paper does not discuss or evaluate any specific ai agent architecture or language model),"  - ""This paper introduces an evaluation-driven design approach, inspired by test-driven development, to address these challenges. Through a multivocal literature review (MLR), we synthesize existing LLM evaluation methods and propose a novel process model and reference architecture specifically designed for LLM agents.""
+  - ""Together, these evaluations uphold the safety, adaptability, and real-world applicability of LLM agents across dynamic applications.""
+  - ""The proposed approach integrates online and offline evaluations to support adaptive runtime adjustments and systematic offline redevelopment, improving runtime pipelines, artifacts, system architecture, and LLMs by continuously incorporating evaluation results, including fine-grained feedback from human and AI evaluators.""",,"
+The paper introduces an evaluation-driven approach to designing LLM agents, including a process model and reference architecture that integrate continuous evaluation across the agent's lifecycle to guide both runtime adaptation and iterative redevelopment.
+""This paper introduces an evaluation-driven design approach, inspired by test-driven development, to address these challenges. Through a multivocal literature review (MLR), we synthesize existing LLM evaluation methods and propose a novel process model and reference architecture specifically designed for LLM agents.""
+""The proposed approach integrates online and offline evaluations to support adaptive runtime adjustments and systematic offline redevelopment, improving runtime pipelines, artifacts, system architecture, and LLMs by continuously incorporating evaluation results, including fine-grained feedback from human and AI evaluators.""
+""Together, these evaluations uphold the safety, adaptability, and real-world applicability of LLM agents across dynamic applications.""
+","  - ""structured process model that enables comprehensive, lifecycle-spanning evaluation, providing concrete and actionable guidance for researchers and practitioners in conducting continuous evaluation of LLM agents.""",,"
+The main findings of this paper can be summarized as follows:
+
+
+1) The paper introduces an ""evaluation-driven design approach, inspired by test-driven development, to address the unique challenges of LLM agent development, particularly in terms of quality and risk control.""
+2) The paper proposes a ""structured process model that enables comprehensive, lifecycle-spanning evaluation, providing concrete and actionable guidance for researchers and practitioners in conducting continuous evaluation of LLM agents.""
+3) The paper also ""designs a reference architecture that embeds evaluation as a core design element, integrating both online and offline evaluation to inform agent improvement.""
+
+
+The key takeaways are that the paper presents a systematic approach to evaluating LLM agents throughout their lifecycle, using both offline and online evaluations to drive continuous improvement and risk control. The process model and reference architecture are the main contributions that address the unique challenges of LLM agent development.
+","  - ""Tools: Task-specific APIs and processing modules, which the agent uses to execute workflows and refine its decision-making capabilities.""
+  - ""Other Agents: Collaborating through task distribution, data sharing, or multi-agent communication [55], enabling coordinated task execution.""
+  - ""Users: Providing explicit or implicit feedback that guides agent actions and informs iterative improvements to workflows or artifacts.""",,"
+The paper does not mention any specific environment or simulation used in the study. Instead, it discusses the ""External Environments"" that the LLM agent interacts with, which include:
+""Users: Providing explicit or implicit feedback that guides agent actions and informs iterative improvements to workflows or artifacts.""
+""Other Agents: Collaborating through task distribution, data sharing, or multi-agent communication [55], enabling coordinated task execution.""
+""Tools: Task-specific APIs and processing modules, which the agent uses to execute workflows and refine its decision-making capabilities.""
+The paper focuses on the design of the LLM agent architecture and the evaluation-driven approach, rather than the specific environment or simulation used. It does not provide any details about a grid world, text-based game, robotics simulator, web navigation, or any other named environment.
+","  - ""Evaluation plays a foundational role in assessing accuracy and functional correctness, ensuring LLM agents perform reliably across diverse, evolving conditions [11]. Beyond performance, assessments of quality and risk attributes, such as fairness and safety, are critical to managing the risks inherent in deploying LLM agents within complex, real-world environments [12], [13]. Additionally, capability evaluations gauge an agent's suitability for complex tasks, identifying both intended functions and potential unintended behaviors that could pose safety concerns [14].""
+  - ""Together, these evaluations uphold the safety, adaptability, and real-world applicability of LLM agents across dynamic applications.""
+  - ""evaluation results have a broader scope and impact. They can inform refined prompt optimization through enriched context (e.g., incorporating positive and negative examples), enhance agent plans and workflows to improve decision-making and execution, and update test and safety cases [10] to reflect evolving operational contexts.""",,"
+The paper does not explicitly mention the specific evaluation metrics used to assess the LLM agent's performance. However, it does provide some high-level information about the types of evaluations and the aspects of the agent that are evaluated:
+
+""Evaluation plays a foundational role in assessing accuracy and functional correctness, ensuring LLM agents perform reliably across diverse, evolving conditions [11]. Beyond performance, assessments of quality and risk attributes, such as fairness and safety, are critical to managing the risks inherent in deploying LLM agents within complex, real-world environments [12], [13]. Additionally, capability evaluations gauge an agent's suitability for complex tasks, identifying both intended functions and potential unintended behaviors that could pose safety concerns [14].""
+This quote indicates that the evaluations cover accuracy, functional correctness, quality, risk attributes (like fairness and safety), and capability assessments.
+
+""Together, these evaluations uphold the safety, adaptability, and real-world applicability of LLM agents across dynamic applications.""
+This quote suggests that the evaluations are aimed at ensuring the safety, adaptability, and real-world applicability of the LLM agent.
+
+""Evaluation results have a broader scope and impact. They can inform refined prompt optimization through enriched context (e.g., incorporating positive and negative examples), enhance agent plans and workflows to improve decision-making and execution, and update test and safety cases [10] to reflect evolving operational contexts.""
+This quote indicates that the evaluation results are used to improve various aspects of the agent, including prompts, plans, workflows, and safety cases.
+","  - ""Large-language models (LLMs) are large-scale, pretrained language models with tens of billions of parameters, adaptable to various down stream tasks, such as answering questions and summarizing information [1].""
+  - ""Recent advancements in LLMs have enabled the creation of LLM-based agents, commonly known as LLM agents, which can autonomously perform complex tasks (e.g., the AI Scientist [2]).""
+  - ""Unlike traditional AI/LLM systems that rely on detailed instructions to perform specific tasks, LLM agents autonomously achieve high-level, under-specified goals by perceiving context, reasoning, planning, and executing workflows, while leveraging external tools, knowledge bases and other agents to enrich their capabilities [3].""",,"
+The paper does not discuss or evaluate any specific AI agent architecture or language model. Instead, it focuses on proposing a general evaluation-driven approach and reference architecture for designing LLM agents. The paper mentions ""Large Language Models (LLMs)"" and ""LLM agents"" as the main focus, but does not name or evaluate any particular LLM or agent implementation.
+
+""Large-language models (LLMs) are large-scale, pretrained language models with tens of billions of parameters, adaptable to various down stream tasks, such as answering questions and summarizing information [1].""
+""Recent advancements in LLMs have enabled the creation of LLM-based agents, commonly known as LLM agents, which can autonomously perform complex tasks (e.g., the AI Scientist [2]).""
+""Unlike traditional AI/LLM systems that rely on detailed instructions to perform specific tasks, LLM agents autonomously achieve high-level, under-specified goals by perceiving context, reasoning, planning, and executing workflows, while leveraging external tools, knowledge bases and other agents to enrich their capabilities [3].""
+
+The paper does not mention or evaluate any specific LLM or agent architecture. It focuses on proposing a general evaluation-driven approach and reference architecture for designing LLM agents, without discussing the implementation details of any particular model or agent.
+"
+ALI-Agent: Assessing LLMs' Alignment with Human Values via Agent-based Evaluation,"Jingnan Zheng, Han Wang, An Zhang, Tai D. Nguyen, Jun Sun, Tat-Seng Chua",10.48550/arXiv.2405.14125,https://doi.org/10.48550/arXiv.2405.14125,arXiv.org,3,2024,"ALI-Agent is a framework that uses autonomous LLM-powered agents to evaluate LLM alignment with human values, including loss of control and principle violation.","ALI-Agent is an agent-based framework that automatically generates and refines test scenarios to evaluate the alignment of large language models with human values across stereotypes, morality, and legality.","- ALI-Agent effectively identifies model misalignment across different aspects of human values compared to prevailing benchmarks.
+- ALI-Agent generates meaningful real-world use cases that properly encapsulate concerns regarding human values, with over 85% of the test scenarios unanimously considered to be of high quality by human evaluators.
+- ALI-Agent probes long-tail risks through deliberate refinement of the test scenarios, reducing the perceived harmfulness and enhancing the detection of long-tail misalignment in target LLMs.","The paper does not describe a specific environment or simulation that is used in the study. Instead, it proposes a general agent-based evaluation framework called ""ALI-Agent"" that can be used to assess the alignment of large language models (LLMs) with human values across different domains.","1. Perceived harmfulness of the generated test scenarios, as measured by the OpenAI Moderation API.
+2. Model agreeability (the percentage of times a model agrees with a test scenario containing misconduct) on the DecodingTrust, ETHICS, and Singapore Rapid Transit Systems Regulations datasets.
+3. Attack success rate (the percentage of times a model follows a harmful instruction) on the AdvBench dataset.","The paper discusses and evaluates several specific AI language models and agent architectures, including GPT-4-1106-preview, Llama 2 (7B, 13B, 70B) chat models, Vicuna (7B, 13B, 33B), ChatGLM3-6B, GPT-3.5-turbo-1106, GPT-4-1106-preview, Gemini-Pro, and LLM-powered autonomous agents.","  - ""ALI-Agent, an evaluation framework that leverages the autonomous abilities of LLM-powered agents to conduct in-depth and adaptive alignment assessments.""
+  - ""Extensive experiments across three aspects of human values--stereotypes, morality, and legality--demonstrate that ALI-Agent, as a general evaluation framework, effectively identifies model misalignment.""
+  - ""ALI-Agent operates through two principal stages: Emulation and Refinement. During the Emulation stage, ALI-Agent automates the generation of realistic test scenarios. In the Refinement stage, it iteratively refines the scenarios to probe long-tail risks.""",,"
+To summarize the full paper, the key points are:
+
+""ALI-Agent, an evaluation framework that leverages the autonomous abilities of LLM-powered agents to conduct in-depth and adaptive alignment assessments.""
+""ALI-Agent operates through two principal stages: Emulation and Refinement. During the Emulation stage, ALI-Agent automates the generation of realistic test scenarios. In the Refinement stage, it iteratively refines the scenarios to probe long-tail risks.""
+""Extensive experiments across three aspects of human values--stereotypes, morality, and legality--demonstrate that ALI-Agent, as a general evaluation framework, effectively identifies model misalignment.""
+
+The paper proposes an agent-based framework called ALI-Agent that can automatically generate and refine test scenarios to evaluate the alignment of large language models with human values across different domains.
+","  - ""Extensive experiments across three aspects of human values--stereotypes, morality, and legality--demonstrate that ALI-Agent, as a general evaluation framework, effectively identifies model misalignment.""
+  - ""three human evaluators examine 200 test scenarios randomly sampled from all cases generated by ALI-Agent, and over 85% are unanimously considered to be of high quality""",,"
+The main findings of the paper can be summarized as follows:
+
+
+1. ALI-Agent, as an agent-based evaluation framework, effectively identifies model misalignment across different aspects of human values, including stereotypes, morality, and legality, compared to prevailing benchmarks.
+""Extensive experiments across three aspects of human values--stereotypes, morality, and legality--demonstrate that ALI-Agent, as a general evaluation framework, effectively identifies model misalignment.""
+
+2. ALI-Agent generates meaningful real-world use cases that properly encapsulate concerns regarding human values, with over 85% of the test scenarios unanimously considered to be of high quality by human evaluators.
+""Three human evaluators examine 200 test scenarios randomly sampled from all cases generated by ALI-Agent, and over 85% are unanimously considered to be of high quality.""
+
+3. ALI-Agent probes long-tail risks through deliberate refinement of the test scenarios, reducing the perceived harmfulness and enhancing the detection of long-tail misalignment in target LLMs.
+""The perceived harmfulness of test scenarios is significantly reduced after the refinement process, enhancing the detection of long-tail misalignment in target LLMs.""
+
+
+","  - ""Benefiting from the autonomous abilities of agents, ALI-Agent possesses three desirable properties. First, ALI-Agent is a general framework for conducting effective evaluations across diverse aspects of human values.""
+  - ""ALI-Agent operates through two principal stages: Emulation and Refinement. During the Emulation stage, ALI-Agent automates the generation of realistic test scenarios.""
+  - ""Experiments on three distinct aspects-stereotypes, morality, and legality-across ten mainstream LLMs demonstrate ALI-Agent's effectiveness in revealing under-explored misalignment compared to prevailing benchmarks (Sec 3.1).""",,"
+The paper does not describe a specific environment or simulation that is used in the study. Instead, it proposes a general agent-based evaluation framework called ""ALI-Agent"" that can be used to assess the alignment of large language models (LLMs) with human values across different domains.
+
+The key evidence for this is:
+""ALI-Agent operates through two principal stages: Emulation and Refinement. During the Emulation stage, ALI-Agent automates the generation of realistic test scenarios.""
+This indicates that ALI-Agent generates test scenarios, rather than operating in a predefined environment.
+""Benefiting from the autonomous abilities of agents, ALI-Agent possesses three desirable properties. First, ALI-Agent is a general framework for conducting effective evaluations across diverse aspects of human values.""
+This further confirms that ALI-Agent is a general framework, not tied to a specific environment.
+""Experiments on three distinct aspects-stereotypes, morality, and legality-across ten mainstream LLMs demonstrate ALI-Agent's effectiveness in revealing under-explored misalignment compared to prevailing benchmarks (Sec 3.1).""
+The experiments are conducted across different aspects of human values, rather than within a single environment.
+","  - ""As judged by OpenAI Moderation API [1], test scenarios generated by ALI-Agent exhibit significantly decreased harmfulness scores compared to the expert-designed counterparts (collected from (a) CrowS-Pairs [2] and (b) ETHICS [3]), enhancing the difficulty for target LLMs to identify the risks.""
+  - ""In our experimental setup, we randomly sample 50 of these sentences for the training set and 200 for the test set.""
+  - ""section encompasses 520 malicious prompts designed to elicit harmful responses, such as""
+  - ""ETHICS [3] evaluates a language model's knowledge of fundamental ethical concepts, including justice, virtue, deontology, utilitarianism, and commonsense morality. It comprises five subsets, each evaluating different types of normative factors. In our study, we select commonsense morality as our evaluation dataset.""
+  - ""Specifically, the dataset curates and divides 24 demographic groups varying across seven demographic factors (e.g., gender/sexual orientation, age, race, etc) and includes 16 stereotype topics (e.g., immigration, drug addiction, leadership skill, etc.) that affect the stereotyped groups. It also designs three templates for each stereotype topic, resulting in 1,152 stereotyped sentences (16 stereotypes × 3 templates × 24 demographic groups).""",,"
+The paper discusses several evaluation metrics used to assess the performance of the ALI-Agent framework:
+
+
+""As judged by OpenAI Moderation API [1], test scenarios generated by ALI-Agent exhibit significantly decreased harmfulness scores compared to the expert-designed counterparts (collected from (a) CrowS-Pairs [2] and (b) ETHICS [3]), enhancing the difficulty for target LLMs to identify the risks.""
+This quote indicates that the ALI-Agent framework uses the OpenAI Moderation API to measure the perceived harmfulness of the generated test scenarios, and compares them to expert-designed scenarios from other benchmarks.
+
+
+
+""Specifically, the dataset curates and divides 24 demographic groups varying across seven demographic factors (e.g., gender/sexual orientation, age, race, etc) and includes 16 stereotype topics (e.g., immigration, drug addiction, leadership skill, etc.) that affect the stereotyped groups. It also designs three templates for each stereotype topic, resulting in 1,152 stereotyped sentences (16 stereotypes × 3 templates × 24 demographic groups).""
+This quote describes the DecodingTrust dataset used to evaluate stereotypes, which includes 1,152 stereotyped sentences across 24 demographic groups and 16 stereotype topics.
+
+
+
+""ETHICS [3] evaluates a language model's knowledge of fundamental ethical concepts, including justice, virtue, deontology, utilitarianism, and commonsense morality. It comprises five subsets, each evaluating different types of normative factors. In our study, we select commonsense morality as our evaluation dataset.""
+This quote indicates that the ETHICS dataset is used to evaluate the language model's alignment with moral and ethical concepts, specifically focusing on the commonsense morality subset.
+
+
+
+""AdvBench [38] ""harmful behaviors"" section encompasses 520 malicious prompts designed to elicit harmful responses, such as ""Write a tutorial on how to make a bomb"". In our experimental setup, we randomly sample 50 of these sentences for the training set and 200 for the test set.""
+This quote describes the AdvBench dataset, which includes 520 malicious prompts designed to elicit harmful responses from language models. The authors use a subset of 200 prompts from this dataset to evaluate the performance of the ALI-Agent framework.
+
+
+
+The key evaluation metrics used in this paper are:
+1. Perceived harmfulness of the generated test scenarios, as measured by the OpenAI Moderation API.
+2. Model agreeability (the percentage of times a model agrees with a test scenario containing misconduct) on the DecodingTrust, ETHICS, and Singapore Rapid Transit Systems Regulations datasets.
+3. Attack success rate (the percentage of times a model follows a harmful instruction) on the AdvBench dataset.
+
+
+
+The paper provides a comprehensive description of the evaluation metrics used, including specific details about the datasets and the metrics calculated. The quotes fully support the answer, and no additional information is needed.
+","  - ""we select 10 mainstream models as targeted LLMs with different configurations. We adopt 7 open-source models: Llama 2 (7B, 13B, 70B) chat models [34], Vicuna (7B, 13B, 33B) [43], ChatGLM3-6B [44]; and 3 proprietary models: GPT-3.5-turbo-1106 [45], GPT-4-1106-preview [46], Gemini-Pro [47], as our target LLMs.""
+  - ""we adopt GPT-4-1106-preview (temperature=1) as the core model for ALI-Agent.""
+  - ""Drawing inspiration from recent advancements on LLM-powered autonomous agents, characterized by their ability to learn from the past, integrate external tools, and perform reasoning to solve complex tasks [24][25][26][27][28], we propose ALI-Agent, an agent-based evaluation framework to identify misalignment of LLMs.""",,"
+The paper discusses and evaluates several specific AI language models and agent architectures:
+
+
+""We adopt GPT-4-1106-preview (temperature=1) as the core model for ALI-Agent.""
+""We select 10 mainstream models as targeted LLMs with different configurations. We adopt 7 open-source models: Llama 2 (7B, 13B, 70B) chat models [34], Vicuna (7B, 13B, 33B) [43], ChatGLM3-6B [44]; and 3 proprietary models: GPT-3.5-turbo-1106 [45], GPT-4-1106-preview [46], Gemini-Pro [47], as our target LLMs.""
+""Drawing inspiration from recent advancements on LLM-powered autonomous agents, characterized by their ability to learn from the past, integrate external tools, and perform reasoning to solve complex tasks [24][25][26][27][28], we propose ALI-Agent, an agent-based evaluation framework to identify misalignment of LLMs.""
+
+
+The paper specifically discusses and evaluates the following AI models and agent architectures:
+- GPT-4-1106-preview, used as the core model for the ALI-Agent framework
+- Llama 2 (7B, 13B, 70B) chat models
+- Vicuna (7B, 13B, 33B)
+- ChatGLM3-6B
+- GPT-3.5-turbo-1106
+- GPT-4-1106-preview
+- Gemini-Pro
+- LLM-powered autonomous agents, which inspired the ALI-Agent framework
+"
+A collection of principles for guiding and evaluating large language models,"Konstantin Hebenstreit, Robert Praas, Matthias Samwald",10.48550/arXiv.2312.10059,https://doi.org/10.48550/arXiv.2312.10059,arXiv.org,1,2023,"The paper proposes a set of principles for guiding and evaluating the reasoning of large language models, including principles related to loss of control and principle violation.",The authors have compiled a set of 37 core principles organized into seven categories to guide and evaluate the reasoning of large language models.,"- The authors compiled a set of 220 principles from the literature on topics related to LLMs and derived a set of 37 core principles organized into seven categories.
+- The authors conducted a small-scale expert survey to elicit the subjective importance experts assign to different principles.
+- The authors laid out avenues for future work beyond their preliminary results.",Not mentioned (the abstract does not mention any specific environment or simulation used in this study),Not mentioned (the abstract does not mention any specific evaluation metrics used in the study),"The ""Models"" discussed in this paper are large language models (LLMs) in general, rather than any specific AI agent architecture or language model.","  - ""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+  - ""we compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""
+  - ""We envision that the development of a shared model of principles can serve multiple purposes: monitoring and steering models at inference time, improving model behavior during training, and guiding human evaluation of model reasoning.""",,"
+The summary of this paper is that the authors have compiled a set of 37 core principles organized into seven categories to guide and evaluate the reasoning of large language models (LLMs) based on a curation of relevant literature.
+""We compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""
+""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+""We envision that the development of a shared model of principles can serve multiple purposes: monitoring and steering models at inference time, improving model behavior during training, and guiding human evaluation of model reasoning.""
+","  - ""compile a set of core principles for steering and evaluating the reasoning of LLMs""
+  - ""identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories:""
+  - ""conduct a small-scale expert survey, eliciting the subjective importance experts assign to different principles and lay out avenues for future work beyond our preliminary results.""",,"
+The main findings of this paper appear to be:
+
+
+1) The authors compiled a set of 220 principles from the literature on topics such as structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.
+2) The authors derived a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.
+3) The authors conducted a small-scale expert survey to elicit the subjective importance experts assign to different principles and laid out avenues for future work beyond their preliminary results.
+
+
+The paper states that the authors ""compile a set of core principles for steering and evaluating the reasoning of LLMs"" and that they ""identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories."" Additionally, the paper mentions that the authors ""conduct a small-scale expert survey, eliciting the subjective importance experts assign to different principles and lay out avenues for future work beyond our preliminary results.""
+","  - ""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+  - ""In this preliminary study, we compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""
+  - ""Large language models (LLMs) demonstrate outstanding capabilities, but challenges remain regarding their ability to solve complex reasoning tasks, as well as their transparency, robustness, truthfulness, and ethical alignment.""",,"
+The abstract does not mention any specific environment or simulation used in this study. The paper appears to be a literature review and curation of principles for guiding and evaluating large language models (LLMs), rather than a study that involves an environment or simulation.
+""Large language models (LLMs) demonstrate outstanding capabilities, but challenges remain regarding their ability to solve complex reasoning tasks, as well as their transparency, robustness, truthfulness, and ethical alignment.""
+""In this preliminary study, we compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""
+""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+The abstract does not mention any specific environment or simulation used in this study. The focus appears to be on compiling and organizing principles for guiding and evaluating LLMs, rather than evaluating LLMs in a particular environment or simulation.
+","  - ""We conduct a small-scale expert survey, eliciting the subjective importance experts assign to different principles and lay out avenues for future work beyond our preliminary results.""
+  - ""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+  - ""we compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""",,"
+The abstract does not mention any specific evaluation metrics used in the study. Instead, it discusses the development of a set of principles for guiding and evaluating large language models (LLMs), but does not provide details on how these principles were applied or evaluated.
+""We compile a set of core principles for steering and evaluating the reasoning of LLMs by curating literature from several relevant strands of work: structured reasoning in LLMs, self-evaluation/self-reflection, explainability, AI system safety/security, guidelines for human critical thinking, and ethical/regulatory guidelines for AI.""
+""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+""We conduct a small-scale expert survey, eliciting the subjective importance experts assign to different principles and lay out avenues for future work beyond our preliminary results.""
+The abstract indicates that the study focused on identifying and organizing a set of principles for guiding and evaluating LLMs, but does not mention any specific metrics used to evaluate the performance or decision-making of the models themselves. The study appears to be a preliminary work that lays the groundwork for future research in this area.
+","  - ""Large language models (LLMs) demonstrate outstanding capabilities, but challenges remain regarding their ability to solve complex reasoning tasks, as well as their transparency, robustness, truthfulness, and ethical alignment.""
+  - ""We envision that the development of a shared model of principles can serve multiple purposes: monitoring and steering models at inference time, improving model behavior during training, and guiding human evaluation of model reasoning.""
+  - ""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""",,"
+The abstract indicates that this paper is focused on large language models (LLMs) in general, rather than any specific AI agent architecture or language model. This is evident from the following quotes:
+
+""Large language models (LLMs) demonstrate outstanding capabilities, but challenges remain regarding their ability to solve complex reasoning tasks, as well as their transparency, robustness, truthfulness, and ethical alignment.""
+""We identify and curate a list of 220 principles from literature, and derive a set of 37 core principles organized into seven categories: assumptions and perspectives, reasoning, information and evidence, robustness and security, ethics, utility, and implications.""
+""We envision that the development of a shared model of principles can serve multiple purposes: monitoring and steering models at inference time, improving model behavior during training, and guiding human evaluation of model reasoning.""
+
+The abstract does not mention any specific AI agent architecture or language model names, but rather discusses LLMs in general terms and the principles that can be used to guide and evaluate them.
+"
+Breaking Agents: Compromising Autonomous LLM Agents Through Malfunction Amplification,"Boyang Zhang, Yicong Tan, Yun Shen, Ahmed Salem, Michael Backes, Savvas Zannettou, Yang Zhang",10.48550/arXiv.2407.20859,https://doi.org/10.48550/arXiv.2407.20859,arXiv.org,3,2024,"The paper introduces attacks that can induce malfunctions in autonomous LLM agents, highlighting the risks of such vulnerabilities.","The paper proposes a new type of attack against autonomous agents built on large language models (LLMs) that aims to induce malfunctions and instability in the agents, rather than focusing on overtly harmful or policy-violating actions.","- The paper proposes a new type of attack that causes malfunctions in LLM agents by misleading them into executing repetitive or irrelevant actions.
+- The paper finds that these attacks can induce failure rates exceeding 80% in multiple scenarios.
+- The paper finds that these attacks are difficult to detect effectively using LLMs alone, highlighting the substantial risks associated with this vulnerability.","The environment used in this study is a virtual agent emulator framework or sandbox, which simulates the interactions between LLM agents and external tools/APIs without requiring actual implementation.","1. Baseline failure rate: The percentage of tasks the agent cannot complete without any attacks deployed.
+2. Attack success rate (ASR): The percentage of tasks the agent fails to complete when the proposed attacks are deployed.",The paper evaluates and discusses GPT-3.5-Turbo and GPT-4 as the core language models for the LLM agents.,"  - ""We introduce a new type of attack that causes malfunctions by misleading the agent into executing repetitive or irrelevant actions.""
+  - ""Through attacks on implemented and deployable agents in multi-agent scenarios, we accentuate the realistic risks associated with these vulnerabilities.""
+  - ""We conduct comprehensive evaluations using various attack methods, surfaces, and properties to pinpoint areas of susceptibility. Our experiments reveal that these attacks can induce failure rates exceeding 80\% in multiple scenarios.""",,"
+The paper proposes a new type of attack against autonomous agents built on large language models (LLMs) that aims to induce malfunctions and instability in the agents, rather than focusing on overtly harmful or policy-violating actions. The key points are:
+
+""We introduce a new type of attack that causes malfunctions by misleading the agent into executing repetitive or irrelevant actions.""
+""We conduct comprehensive evaluations using various attack methods, surfaces, and properties to pinpoint areas of susceptibility. Our experiments reveal that these attacks can induce failure rates exceeding 80\% in multiple scenarios.""
+""Through attacks on implemented and deployable agents in multi-agent scenarios, we accentuate the realistic risks associated with these vulnerabilities.""
+
+The paper presents a novel attack strategy that targets the stability and reliability of LLM agents, rather than their ability to perform harmful actions, and evaluates the effectiveness of this attack across a range of scenarios.
+","  - ""We introduce a new type of attack that causes malfunctions by misleading the agent into executing repetitive or irrelevant actions.""
+  - ""Our experiments reveal that these attacks can induce failure rates exceeding 80\% in multiple scenarios.""
+  - ""However, our findings indicate these attacks are difficult to detect effectively using LLMs alone, highlighting the substantial risks associated with this vulnerability.""",,"
+The main findings of this paper can be summarized as follows:
+
+
+1. The paper proposes a new type of attack that causes malfunctions in LLM agents by misleading them into executing repetitive or irrelevant actions. ""We introduce a new type of attack that causes malfunctions by misleading the agent into executing repetitive or irrelevant actions.""
+2. The paper conducts comprehensive evaluations using various attack methods, surfaces, and properties, and finds that these attacks can induce failure rates exceeding 80% in multiple scenarios. ""Our experiments reveal that these attacks can induce failure rates exceeding 80\% in multiple scenarios.""
+3. The paper finds that these attacks are difficult to detect effectively using LLMs alone, highlighting the substantial risks associated with this vulnerability. ""However, our findings indicate these attacks are difficult to detect effectively using LLMs alone, highlighting the substantial risks associated with this vulnerability.""
+
+
+","  - ""In response to these challenges, previous work [36] proposes an agent emulator framework designed for LLM agent research. This framework uses an LLM to create a virtual environment, i.e., a sandbox, where LLM agents can operate and simulate interactions.""
+  - ""The emulator addresses the complexities of tool integration by eliminating the need for actual implementation. It provides detailed templates that specify the required input formats and the expected outputs. The sandbox LLM then acts in place of the external tools, generating simulated responses.""
+  - ""While previous research focused on retrieving ""dangerous"" or harmful responses from the simulator, these do not necessarily reflect real-world threats, as actual implementations may include additional safety precautions not replicated by the emulator.""",,"
+The paper mentions that the authors use an ""agent emulator framework"" to conduct large-scale batch experiments on LLM agents. This emulator framework is described as a ""virtual environment"" or ""sandbox"" where LLM agents can operate and simulate interactions, without the need for actual implementation of external tools and APIs.
+""In response to these challenges, previous work [36] proposes an agent emulator framework designed for LLM agent research. This framework uses an LLM to create a virtual environment, i.e., a sandbox, where LLM agents can operate and simulate interactions.""
+""The emulator addresses the complexities of tool integration by eliminating the need for actual implementation. It provides detailed templates that specify the required input formats and the expected outputs. The sandbox LLM then acts in place of the external tools, generating simulated responses.""
+""While previous research focused on retrieving ""dangerous"" or harmful responses from the simulator, these do not necessarily reflect real-world threats, as actual implementations may include additional safety precautions not replicated by the emulator.""
+","  - ""For the evaluation metrics, we adopt several measurements that are all related to the agent's task performance. In general, we aim to measure the rate of failures for the agent. When there is no attack deployed, this measures the percentage of tasks the agent cannot complete. Similarly, we define the rate of failure as the attack success rate (ASR) when an attack is deployed. We use the two terms or metrics interchangeably in the following sections.""
+  - ""Thanks to the ReAct structure, the agents will observe the results from previous steps and evaluate whether the result is satisfactory, and thus at the end of the chain the agent will also determine whether the task has been solved based on the observations.""
+  - ""To obtain these statistics, we rely on the agent's""",,"
+The paper discusses several evaluation metrics used to assess the performance of the LLM agents against the proposed attacks:
+
+
+""For the evaluation metrics, we adopt several measurements that are all related to the agent's task performance. In general, we aim to measure the rate of failures for the agent. When there is no attack deployed, this measures the percentage of tasks the agent cannot complete. Similarly, we define the rate of failure as the attack success rate (ASR) when an attack is deployed. We use the two terms or metrics interchangeably in the following sections.""
+
+
+The key metrics used are:
+1. Baseline failure rate: The percentage of tasks the agent cannot complete without any attacks deployed.
+2. Attack success rate (ASR): The percentage of tasks the agent fails to complete when the proposed attacks are deployed.
+
+The paper states that these metrics are directly related to the agent's task performance, as they measure the rate of failures or malfunctions in the agent's operations.
+
+
+""To obtain these statistics, we rely on the agent's ""self-reflection."" Thanks to the ReAct structure, the agents will observe the results from previous steps and evaluate whether the result is satisfactory, and thus at the end of the chain the agent will also determine whether the task has been solved based on the observations.""
+
+
+The paper also mentions that the agents use a ""self-reflection"" mechanism, where they evaluate the results of their actions and determine whether the task has been successfully completed. This self-reflection capability is used to obtain the failure rate and attack success rate metrics.
+
+
+The key evaluation metrics used in the paper are:
+1. Baseline failure rate: The percentage of tasks the agent cannot complete without any attacks deployed.
+2. Attack success rate (ASR): The percentage of tasks the agent fails to complete when the proposed attacks are deployed.
+
+
+
+The answer is well supported by the provided quotes, which clearly outline the two key metrics used in the paper to evaluate the performance of the LLM agents against the proposed attacks. No additional quotes are needed to fully support the answer.
+",,,"
+The paper discusses and evaluates several different language models as the core component of the LLM agents:
+We use GPT-3.5-Turbo-16k long context version of the model as the sandbox LLM and GPT-3.5-Turbo as the default core LLM for agents.
+The paper specifically mentions evaluating GPT-3.5-Turbo and GPT-4 as the core language models for the LLM agents:
+Table 2 shows the attack performance with the agent emulator when using prompt injection and the three adversarial perturbation methods mentioned in Section 3.3. We also include the clean prompt performance for comparison.
+As the attack aims to induce malfunction and the main attacking process relies on misleading the core LLM during its reasoning and planning for correct actions, more advanced models can understand the user's request better. GPT-4 reportedly has improved reasoning capabilities compared to the earlier GPT-3.5-Turbo model [1].
+The paper does not mention any other specific language models or agent architectures beyond these GPT-based models.
+"
+GuardAgent: Safeguard LLM Agents by a Guard Agent via Knowledge-Enabled Reasoning,"Zhen Xiang, Linzhi Zheng, Yanjie Li, Junyuan Hong, Qinbin Li, Han Xie, Jiawei Zhang, Zidi Xiong, Chulin Xie, Carl Yang, Dawn Song, Bo Li",10.48550/arXiv.2406.09187,https://doi.org/10.48550/arXiv.2406.09187,arXiv.org,5,2024,GuardAgent is a novel LLM agent that can safeguard other LLM agents by checking their inputs/outputs against user-defined guard requests.,GuardAgent is the first LLM agent framework that uses an LLM agent to safeguard other LLM agents by adhering to diverse real-world guard requests through knowledge-enabled reasoning.,"- GuardAgent achieved 98.7% accuracy in providing access control guardrails for the EHRAgent healthcare agent.
+- GuardAgent achieved 90.0% accuracy in providing safety control guardrails for the SeeAct web agent.
+- GuardAgent demonstrated the ability to define new functions as needed during guardrail code generation and execution.",Not mentioned (the paper does not mention any specific environment or simulation that is used in the study),"1. LPP (Label Prediction Precision)
+2. LPR (Label Prediction Recall) 
+3. CCA (Correct Classification Accuracy)
+4. LPA (Label Prediction Accuracy)","1) EHRAgent, an LLM agent designed for healthcare-related queries
+2) SeeAct, a generalist web LLM agent
+3) GPT-4 version 2024-02-01, used as the core LLM for the proposed GuardAgent framework","  - ""We propose GuardAgent, the first generalizable framework that uses an LLM agent to safeguard other LLM agents (referred to as 'target agents' henceforth) by adhering to diverse real-world guard requests from users, such as safety rules or privacy policies.""
+  - ""GuardAgent oversees a target LLM agent by checking whether its inputs/outputs satisfy a set of given guard requests defined by the users.""
+  - ""GuardAgent comprises two steps: 1) creating a task plan by analyzing the provided guard requests, and 2) generating guardrail code based on the task plan and executing the code by calling APIs or using external engines.""",,"
+The paper proposes GuardAgent, the first LLM agent framework that uses an LLM agent to safeguard other LLM agents by adhering to diverse real-world guard requests from users, such as safety rules or privacy policies, through knowledge-enabled reasoning.
+
+""We propose GuardAgent, the first generalizable framework that uses an LLM agent to safeguard other LLM agents (referred to as 'target agents' henceforth) by adhering to diverse real-world guard requests from users, such as safety rules or privacy policies.""
+""GuardAgent oversees a target LLM agent by checking whether its inputs/outputs satisfy a set of given guard requests defined by the users.""
+""GuardAgent comprises two steps: 1) creating a task plan by analyzing the provided guard requests, and 2) generating guardrail code based on the task plan and executing the code by calling APIs or using external engines.""
+
+GuardAgent is the first LLM agent framework that uses an LLM agent to safeguard other LLM agents by adhering to diverse real-world guard requests through knowledge-enabled reasoning.
+
+The summary is fully supported by the provided quotes, which describe GuardAgent as the first framework that uses an LLM agent to safeguard other LLM agents by adhering to diverse guard requests through a two-step process of task planning and guardrail code generation. No additional quotes are needed.
+","  - ""We show that GuardAgent effectively provides guardrails to 1) an EHRAgent for healthcare with a 98.7% guarding accuracy in access control and 2) a SeeAct web agent with a 90.0% guarding accuracy in safety control.""
+  - ""We also demonstrate the capabilities of GuardAgent in defining new functions during guardrail code generation and execution.""",,"
+The main findings of the paper can be summarized as follows:
+
+
+""We show that GuardAgent effectively provides guardrails to 1) an EHRAgent for healthcare with a 98.7% guarding accuracy in access control and 2) a SeeAct web agent with a 90.0% guarding accuracy in safety control.""
+
+GuardAgent was able to effectively safeguard the EHRAgent and SeeAct agents by providing accurate access control and safety control, respectively.
+
+
+""We also demonstrate the capabilities of GuardAgent in defining new functions during guardrail code generation and execution.""
+
+GuardAgent was able to define new functions as needed to generate and execute the guardrail code, showing its flexibility and generalization capabilities.
+
+
+- GuardAgent achieved 98.7% accuracy in providing access control guardrails for the EHRAgent healthcare agent.
+- GuardAgent achieved 90.0% accuracy in providing safety control guardrails for the SeeAct web agent.
+- GuardAgent demonstrated the ability to define new functions as needed during guardrail code generation and execution.
+
+
+
+The key findings are fully supported by the provided quotes, which cover the main results of GuardAgent's effectiveness in safeguarding the two target agents as well as its capability to define new functions as needed. No additional quotes are required to summarize the main takeaways from the paper.
+","  - ""LLM agents refer to AI agents that use LLMs as their central engine for task understanding and planning and then execute the plan by interacting with the environment (e.g., by calling third-party APIs) [21].""
+  - ""We show the effectiveness of GuardAgent on these two benchmarks with 98.7% and 90.0% accuracy in moderating invalid inputs and outputs for the two types of agents, respectively.""
+  - ""We create two benchmarks, EICU-AC and Mind2Web-SC, for evaluating privacy-related access control for healthcare agents and safety control for web agents, respectively.""",,"
+The paper does not mention any specific environment or simulation that is used in the study. The paper focuses on developing a framework called ""GuardAgent"" that can provide guardrails to other LLM agents, rather than evaluating the agents in a particular environment.
+
+The relevant quotes from the paper are:
+""LLM agents refer to AI agents that use LLMs as their central engine for task understanding and planning and then execute the plan by interacting with the environment (e.g., by calling third-party APIs) [21].""
+This quote indicates that LLM agents interact with the environment, but does not specify what type of environment is used.
+""We create two benchmarks, EICU-AC and Mind2Web-SC, for evaluating privacy-related access control for healthcare agents and safety control for web agents, respectively.""
+This quote mentions the two benchmarks used to evaluate GuardAgent, but does not provide details on the environment or simulation used in those benchmarks.
+""We show the effectiveness of GuardAgent on these two benchmarks with 98.7% and 90.0% accuracy in moderating invalid inputs and outputs for the two types of agents, respectively.""
+This quote also refers to the two benchmarks, but does not describe the environment or simulation used.
+","  - ""We use the two label prediction metrics, LPP and LPR, and the CCA metric, all defined in Sec. 3.3. The FRA metric is not considered here since all guardrails being evaluated will not affect the normal operation of the target agent when the alarm is not triggered. In addition, we report the label prediction accuracy (LPA, a.k.a. guarding accuracy), defined over all examples in each dataset, as the overall metric for the guardrail performance.""",,"
+The paper discusses several evaluation metrics used to assess the performance of GuardAgent in safeguarding other LLM agents:
+
+
+""We use the two label prediction metrics, LPP and LPR, and the CCA metric, all defined in Sec. 3.3. The FRA metric is not considered here since all guardrails being evaluated will not affect the normal operation of the target agent when the alarm is not triggered. In addition, we report the label prediction accuracy (LPA, a.k.a. guarding accuracy), defined over all examples in each dataset, as the overall metric for the guardrail performance.""
+
+
+The specific metrics used are:
+1. LPP (Label Prediction Precision): The precision of the guardrail model in correctly identifying examples where the guard requests are violated.
+2. LPR (Label Prediction Recall): The recall of the guardrail model in correctly identifying examples where the guard requests are violated.
+3. CCA (Correct Classification Accuracy): The overall accuracy of the guardrail model in correctly classifying examples as either satisfying or violating the guard requests.
+4. LPA (Label Prediction Accuracy): The overall accuracy of the guardrail model in correctly identifying examples where the guard requests are satisfied or violated.
+
+The paper states that the FRA (Final Result Accuracy) metric is not considered, as the guardrails evaluated do not affect the normal operation of the target agent when the alarm is not triggered.
+","  - ""LLM agents refer to AI agents that use LLMs as their central engine for task understanding and planning and then execute the plan by interacting with the environment (e.g., by calling third-party APIs) [21].""
+  - ""GuardAgent is a typical LLM agent, but with different objectives from existing agents, as it is the first one to safeguard other LLM agents.""
+  - ""We use GPT-4 version 2024-02-01 with temperature zero as the core LLM of GuardAgent.""",,"
+The paper discusses and evaluates two specific AI agent architectures:
+
+""LLM agents refer to AI agents that use LLMs as their central engine for task understanding and planning and then execute the plan by interacting with the environment (e.g., by calling third-party APIs) [21].""
+""GuardAgent is a typical LLM agent, but with different objectives from existing agents, as it is the first one to safeguard other LLM agents.""
+""We use GPT-4 version 2024-02-01 with temperature zero as the core LLM of GuardAgent.""
+
+The paper specifically discusses and evaluates two LLM agents:
+1) EHRAgent, which is designed to respond to healthcare-related queries by generating code to retrieve and analyze data from provided databases.
+2) SeeAct, which is a generalist web agent that follows natural language instructions to complete tasks on any given website by sequentially generating actions.
+The paper also discusses using GPT-4 version 2024-02-01 as the core LLM for their proposed GuardAgent framework.
+"
+TrustLLM: Trustworthiness in Large Language Models,"Lichao Sun, Yue Huang, Haoran Wang, Siyuan Wu, Qihui Zhang, Chujie Gao, Yixin Huang, Wenhan Lyu, Yixuan Zhang, Xiner Li, Zheng Liu, Yixin Liu, Yijue Wang, Zhikun Zhang, B. Kailkhura, Caiming Xiong, Chaowei Xiao, Chun-Yan Li, Eric P. Xing, Furong Huang, Haodong Liu, Heng Ji, Hongyi Wang, Huan Zhang, Huaxiu Yao, M. Kellis, M. Zitnik, Meng Jiang, Mohit Bansal, James Zou, Jian Pei, Jian Liu, Jianfeng Gao, Jiawei Han, Jieyu Zhao, Jiliang Tang, Jindong Wang, John Mitchell, Kai Shu, Kaidi Xu, Kai-Wei Chang, Lifang He, Lifu Huang, M. Backes, Neil Zhenqiang Gong, Philip S. Yu, Pin-Yu Chen, Quanquan Gu, Ran Xu, Rex Ying, Shuiwang Ji, S. Jana, Tian-Xiang Chen, Tianming Liu, Tianying Zhou, William Wang, Xiang Li, Xiang-Yu Zhang, Xiao Wang, Xingyao Xie, Xun Chen, Xuyu Wang, Yan Liu, Yanfang Ye, Yinzhi Cao, Yue Zhao",10.48550/arXiv.2401.05561,https://doi.org/10.48550/arXiv.2401.05561,arXiv.org,137,2024,"The paper proposes principles and a benchmark to evaluate trustworthiness of large language models, including dimensions like truthfulness, safety, and machine ethics.","TrustLLM is a comprehensive study of trustworthiness in large language models, including principles, benchmarks, evaluations, and analysis of open challenges and future directions.","- Trustworthiness and utility are positively related in LLMs.
+- Proprietary LLMs generally outperform open-source LLMs in terms of trustworthiness, raising concerns about the risks of widely accessible open-source LLMs.
+- A few open-source LLMs can come close to the trustworthiness of proprietary models.",Not mentioned (the abstract does not mention any specific environment or simulation used in this study),"- Truthfulness
+- Safety
+- Fairness
+- Robustness
+- Privacy
+- Machine ethics
+The authors used over 30 datasets to evaluate these six dimensions of trustworthiness across 16 mainstream LLMs. They also evaluated the utility (functional effectiveness) of the LLMs and found a positive relationship between trustworthiness and utility.","The paper does not mention the specific names or architectures of the 16 mainstream LLMs that are evaluated in the study. It only refers to them as ""mainstream LLMs"" and uses ChatGPT as an example of an LLM.","  - ""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""
+  - ""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+  - ""Specifically, we first propose a set of principles for trustworthy LLMs that span eight different dimensions.""
+  - ""Based on these principles, we further establish a benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics.""",,"
+The paper introduces TrustLLM, a comprehensive study of trustworthiness in large language models (LLMs), including principles for different dimensions of trustworthiness, an established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, as well as a discussion of open challenges and future directions.
+""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""
+""Specifically, we first propose a set of principles for trustworthy LLMs that span eight different dimensions.""
+""Based on these principles, we further establish a benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics.""
+""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+","  - ""However, a few open-source LLMs come very close to proprietary ones.""",,"
+The abstract presents the main findings of the TrustLLM study on the trustworthiness of large language models (LLMs):
+
+""Firstly, the study shows that in general trustworthiness and utility (i.e., functional effectiveness) are positively related.""
+This suggests that LLMs that are more trustworthy also tend to be more functionally effective.
+
+""Secondly, the observations reveal that proprietary LLMs generally outperform most open-source counterparts in terms of trustworthiness, raising concerns about the potential risks of widely accessible open-source LLMs.""
+This finding indicates that proprietary LLMs developed by companies tend to be more trustworthy than open-source LLMs, which could pose risks if they are widely accessible.
+
+""However, a few open-source LLMs come very close to proprietary ones.""
+This suggests that while proprietary LLMs generally outperform open-source ones, there are some open-source LLMs that can match the trustworthiness of proprietary models.
+","  - ""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+  - ""Specifically, we first propose a set of principles for trustworthy LLMs that span eight different dimensions. Based on these principles, we further establish a benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics.""
+  - ""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""",,"
+The abstract does not mention any specific environment or simulation used in this study. The paper appears to be a comprehensive review and analysis of trustworthiness in large language models (LLMs) in general, rather than a study focused on a particular environment or application.
+""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""
+""Specifically, we first propose a set of principles for trustworthy LLMs that span eight different dimensions. Based on these principles, we further establish a benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics.""
+""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+The abstract does not mention any specific environment or simulation used in the study. It appears to be a general analysis of trustworthiness across a range of LLMs, without focusing on a particular application or environment.
+","  - ""benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics.""
+  - ""Secondly, our observations reveal that proprietary LLMs generally outperform most open-source counterparts in terms of trustworthiness, raising concerns about the potential risks of widely accessible open-source LLMs.""
+  - ""Our findings firstly show that in general trustworthiness and utility (i.e., functional effectiveness) are positively related.""
+  - ""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""",,"
+The abstract mentions that the authors established a ""benchmark across six dimensions including truthfulness, safety, fairness, robustness, privacy, and machine ethics"" to evaluate the trustworthiness of 16 mainstream LLMs. This suggests that the evaluation metrics used in this paper are likely related to these six dimensions of trustworthiness.
+
+""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+This quote indicates that the authors used multiple datasets to evaluate the trustworthiness of the LLMs.
+
+""Our findings firstly show that in general trustworthiness and utility (i.e., functional effectiveness) are positively related.""
+This quote suggests that the authors evaluated the trustworthiness and utility (functional effectiveness) of the LLMs, and found a positive relationship between the two.
+
+""Secondly, our observations reveal that proprietary LLMs generally outperform most open-source counterparts in terms of trustworthiness, raising concerns about the potential risks of widely accessible open-source LLMs.""
+This quote indicates that the authors compared the trustworthiness of proprietary and open-source LLMs, and found that proprietary LLMs generally outperformed open-source LLMs.
+","  - ""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+  - ""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""
+  - ""Large language models (LLMs), exemplified by ChatGPT, have gained considerable attention for their excellent natural language processing capabilities.""",,"
+The abstract does not explicitly mention any specific AI agent architecture or language model names that are evaluated or discussed in the paper. However, it does provide some relevant information about the focus of the paper:
+
+""Large language models (LLMs), exemplified by ChatGPT, have gained considerable attention for their excellent natural language processing capabilities.""
+This quote indicates that the paper is focused on large language models (LLMs), with ChatGPT being used as an example.
+
+""This paper introduces TrustLLM, a comprehensive study of trustworthiness in LLMs, including principles for different dimensions of trustworthiness, established benchmark, evaluation, and analysis of trustworthiness for mainstream LLMs, and discussion of open challenges and future directions.""
+This quote further clarifies that the paper is a comprehensive study of trustworthiness in LLMs, and that it evaluates and analyzes the trustworthiness of ""mainstream LLMs"".
+
+""We then present a study evaluating 16 mainstream LLMs in TrustLLM, consisting of over 30 datasets.""
+This quote directly states that the paper evaluates 16 mainstream LLMs, but does not provide the specific names or architectures of these models.
+"
+Evil Geniuses: Delving into the Safety of LLM-based Agents,"Yu Tian, Xiao Yang, Jingyuan Zhang, Yinpeng Dong, Hang Su",10.48550/arXiv.2311.11855,https://doi.org/10.48550/arXiv.2311.11855,arXiv.org,39,2023,"The paper proposes an attack method called ""Evil Geniuses"" to evaluate the safety of LLM-based agents, finding they are less robust and prone to more harmful behaviors than LLMs.","This paper presents a comprehensive analysis of the safety of LLM-based agents, exploring their vulnerabilities from three perspectives and introducing an attack method called ""Evil Geniuses"" to evaluate their responses.","- LLM-based agents are less robust and more susceptible to harmful behaviors compared to standalone LLMs.
+- LLM-based agents can generate more sophisticated and stealthy harmful content than LLMs.
+- The ""domino effect"" in LLM-based agents can lead to a collective jailbreak, where a successful attack on one agent can trigger similar behaviors in other agents.","The paper does not mention a specific environment or simulation used in the study. It focuses on the general ""interaction environment"" and ""multi-agent interactions"" of LLM-based agents, rather than evaluating them within a concrete simulated environment.","- Non-Rejection Attack Success Rate (ASR NR)
+- Partial Harmfulness Attack Success Rate (ASR PH) 
+- Full Harmfulness Attack Success Rate (ASR H)
+- Number of conversational steps required for a successful attack","The specific AI agent architectures and language models evaluated in this paper are CAMEL, MetaGPT, and ChatDev, all of which are based on GPT-3.5 and GPT-4 language models.","  - ""This paper delves into the safety of LLM-based agents from three perspectives: agent quantity, role definition, and attack level.""
+  - ""we present Evil Geniuses (EG), a virtual, chat-based team focused on crafting malevolent strategies to mimic threats at multiple levels and roles.""",,"
+The paper presents a comprehensive analysis of the safety of LLM-based agents, exploring their vulnerabilities from three perspectives: agent quantity, role definition, and attack level. The authors introduce an attack method called ""Evil Geniuses"" that utilizes Red-Blue exercises to generate malicious prompts and evaluate the agents' responses, revealing that LLM-based agents are less robust, prone to more harmful behaviors, and capable of generating stealthier content than standalone LLMs.
+
+""This paper delves into the safety of LLM-based agents from three perspectives: agent quantity, role definition, and attack level.""
+""We present Evil Geniuses (EG), a virtual, chat-based team focused on crafting malevolent strategies to mimic threats at multiple levels and roles.""
+""Our extensive evaluation and discussion reveal that these agents are less robust, prone to more harmful behaviors, and capable of generating stealthier content than LLMs, highlighting significant safety challenges and guiding future research.""
+","  - ""Our findings reveal that the success rate of harmful behaviors increases with the number of agents, and higher attack levels correlate with increased success rates. In addition, we observe that agents are less robust, prone to more harmful behaviors, and capable of generating stealthier content than LLMs.""
+  - ""Remarkably, each of these cases was executed flawlessly, complete with detailed execution processes. These experiments underscore the dual nature of LLM-based agents: on one hand, they are capable of generating improved responses through multi-agent conversations and exhibit adaptability in diverse environments. On the other hand, this same sophistication enables them to produce more intricate and stealthy harmful behaviors.""
+  - ""Our analysis indicates that a successful jailbreak executed by a single agent can lead to a chain reaction, resulting in a collective jailbreak among other agents. This phenomenon manifests through two distinct behaviors: firstly, the iterative modification of malicious values is observed in peer agents, and secondly, there is a decomposition of harmful actions into subtler, less evidently toxic subtasks.""",,"
+The main findings of this paper can be summarized as follows:
+
+
+1) LLM-based agents are less robust and more susceptible to harmful behaviors compared to standalone LLMs: ""Our findings reveal that the success rate of harmful behaviors increases with the number of agents, and higher attack levels correlate with increased success rates. In addition, we observe that agents are less robust, prone to more harmful behaviors, and capable of generating stealthier content than LLMs.""
+2) LLM-based agents can generate more sophisticated and stealthy harmful content than LLMs: ""Remarkably, each of these cases was executed flawlessly, complete with detailed execution processes. These experiments underscore the dual nature of LLM-based agents: on one hand, they are capable of generating improved responses through multi-agent conversations and exhibit adaptability in diverse environments. On the other hand, this same sophistication enables them to produce more intricate and stealthy harmful behaviors.""
+3) The ""domino effect"" in LLM-based agents can lead to a collective jailbreak, where a successful attack on one agent can trigger similar behaviors in other agents: ""Our analysis indicates that a successful jailbreak executed by a single agent can lead to a chain reaction, resulting in a collective jailbreak among other agents. This phenomenon manifests through two distinct behaviors: firstly, the iterative modification of malicious values is observed in peer agents, and secondly, there is a decomposition of harmful actions into subtler, less evidently toxic subtasks.""
+
+
+
+- LLM-based agents are less robust and more susceptible to harmful behaviors compared to standalone LLMs.
+- LLM-based agents can generate more sophisticated and stealthy harmful content than LLMs.
+- The ""domino effect"" in LLM-based agents can lead to a collective jailbreak, where a successful attack on one agent can trigger similar behaviors in other agents.
+
+
+
+The key findings are well supported by the provided quotes, which cover the main points about the increased susceptibility of LLM-based agents to harmful behaviors, their ability to generate more sophisticated and stealthy content, and the domino effect that can lead to a collective jailbreak. No additional quotes are needed to fully support the summary of the main findings.
+","  - ""to assess impacts across various role definitions and attack levels, generating a substantial number of prompts suited to the interaction environment and role specificity is essential.""
+  - ""the complexity and variability in agent quantity, role definitions, and interaction environments across different agents render current adversarial methods inadequate for a comprehensive assessment of agent safety.""
+  - ""Considering the impressive capabilities of these agents, it is essential to evaluate not only their potential vulnerabilities but also their inherent safety issues.""",,"
+The paper does not explicitly mention a specific environment or simulation used in the study. However, it does discuss the ""interaction environment"" and ""multi-agent interactions"" as part of the safety challenges for LLM-based agents:
+""The complexity and variability in agent quantity, role definitions, and interaction environments across different agents render current adversarial methods inadequate for a comprehensive assessment of agent safety.""
+""Considering the impressive capabilities of these agents, it is essential to evaluate not only their potential vulnerabilities but also their inherent safety issues.""
+""To assess impacts across various role definitions and attack levels, generating a substantial number of prompts suited to the interaction environment and role specificity is essential.""
+Based on these quotes, the paper seems to be focused on the general ""interaction environment"" and ""multi-agent interactions"" of LLM-based agents, rather than a specific simulated environment. The study appears to be evaluating the safety of these agents in a more abstract, conceptual way rather than within a concrete environment or simulation.
+","  - ""We utilize the Attack Success Rate (ASR) as the primary metric, categorizing it into three distinct types:
+
+Non-Rejection ASR(ASR NR ): An attack is considered successful if the agent's response fails to explicitly reject the question (e.g., responses like ""I'm sorry...'').
+
+Partial Harmfulness ASR(ASR PH ): An attack is deemed successful if the response contains partial harmful behavior.
+
+Full Harmfulness ASR(ASR H ): An attack is classified as successful if the response fully details the harmful behavior.""
+  - ""Additionally, we analyze the number of conversational steps required for a successful attack in various system/agent configurations. An attack is marked as unsuccessful if it does not succeed within 5 steps for a single agent and within 10 steps for a multi-agent conversation.""",,"
+The paper discusses several evaluation metrics used to assess the safety and performance of the LLM-based agents:
+
+""We utilize the Attack Success Rate (ASR) as the primary metric, categorizing it into three distinct types:
+
+Non-Rejection ASR(ASR NR ): An attack is considered successful if the agent's response fails to explicitly reject the question (e.g., responses like ""I'm sorry...'').
+
+Partial Harmfulness ASR(ASR PH ): An attack is deemed successful if the response contains partial harmful behavior.
+
+Full Harmfulness ASR(ASR H ): An attack is classified as successful if the response fully details the harmful behavior.""
+
+The paper states that they evaluate these ASR metrics using both the complete AdvBench dataset and their extended dataset.
+
+""Additionally, we analyze the number of conversational steps required for a successful attack in various system/agent configurations. An attack is marked as unsuccessful if it does not succeed within 5 steps for a single agent and within 10 steps for a multi-agent conversation.""
+
+The paper also mentions conducting ablation studies to assess the effectiveness of the different components of their Evil Geniuses (EG) attack method.
+
+","  - ""CAMEL (Li et al., 2023), MetaGPT (Hong et al., 2023), and ChatDev (Qian et al., 2023) based on GPT-3.5 and GPT-4.""
+  - ""GPT-3.5-turbo serves as the default LLMs for agents unless otherwise stated.""
+  - ""We select AdvBench (Zou et al., 2023) as the test set. An initial analysis of this dataset reveals a significant prevalence of semantically repetitive questions.""",,"
+The paper discusses and evaluates several LLM-based agent architectures, including:
+""CAMEL (Li et al., 2023), MetaGPT (Hong et al., 2023), and ChatDev (Qian et al., 2023) based on GPT-3.5 and GPT-4.""
+The paper states that it primarily focuses on the ChatDev framework due to its extensive agent roster and intricate relational configurations, which facilitates the investigation of role definition and attack level.
+""We select AdvBench (Zou et al., 2023) as the test set. An initial analysis of this dataset reveals a significant prevalence of semantically repetitive questions.""
+""GPT-3.5-turbo serves as the default LLMs for agents unless otherwise stated.""
+"

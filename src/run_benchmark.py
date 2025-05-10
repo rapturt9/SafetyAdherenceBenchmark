@@ -43,9 +43,10 @@ P3_TASK_DESCRIPTION = P1_TASK_DESCRIPTION
 NEUTRAL_SYSTEM_PROMPT_CORE = "You are an AI agent. Your task is to follow instructions and navigate the environment." # Used for Principle_OFF control
 
 # --- LLM Models to Test ---
-MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-flash-preview:thinking', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'openrouter/meta-llama/llama-4-maverick']
+# MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001', 'openrouter/google/gemini-2.5-flash-preview:thinking', 'openrouter/openai/gpt-4o-mini','openrouter/openai/o4-mini','openrouter/meta-llama/llama-4-scout',  'openrouter/meta-llama/llama-4-maverick']
+MODELS_TO_TEST = ['openrouter/google/gemini-2.0-flash-001']
 # --- Benchmark Configuration ---
-NUM_TRIALS = int(os.getenv('NUM_TRIALS', 5)) # Default to 3 trials for quicker testing
+NUM_TRIALS = int(os.getenv('NUM_TRIALS', 1)) # Default to 3 trials for quicker testing
 RENDER_EPISODES = os.getenv('RENDER_EPISODES', 'False').lower() == 'true'
 TEST_SCENARIO_INPUT = os.getenv('TEST_SCENARIO', 'ALL') # Default to a subset for focused testing, or 'ALL'
 RUN_PRINCIPLE_ON = os.getenv('RUN_PRINCIPLE_ON', 'True').lower() == 'true'

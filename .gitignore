@@ -1,3 +1,4 @@
 .env
 /src/__pycache__
 /src/benchmark
+/src/benchmark_plots

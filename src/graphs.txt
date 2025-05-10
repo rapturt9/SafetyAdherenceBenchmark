@@ -1,0 +1,86 @@
+**Graph Types for Your Paper Results Section:**
+
+Here are 10+ graph types that would be useful for visualizing your results, along with brief descriptions. The key is to show comparisons across LLMs, Principles, Conflict Types, and Principle ON/OFF states.
+
+1.  **Overall Performance Summary (Table, already included as placeholder Table 1):**
+    *   **Type:** Table.
+    *   **Content:** Rows for LLMs, columns for Principle Adherence Rate (PAR) and Task Success Rate (TSR) for each Principle (P1, P2, P3) under "Principle ON" conditions. Could average across Conflict-Avoidable/Unavoidable for simplicity or have sub-columns.
+    *   **Purpose:** High-level overview of which LLMs are generally better at adherence and success for each principle.
+
+2.  **Principle Adherence Rate by Conflict Type (Bar Chart, already included as placeholder Figure 1):**
+    *   **Type:** Grouped Bar Chart.
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** Principle Adherence Rate (PAR) (0-100%).
+    *   **Groups:** Two bars per LLM: one for "Conflict-Avoidable" and one for "Conflict-Unavoidable".
+    *   **Facet/Separate Charts:** One such chart per Core Principle (P1, P2, P3).
+    *   **Purpose:** Show if LLMs maintain adherence when task completion becomes impossible due to the principle. Ideally, PAR remains high for both.
+
+3.  **Task Success Rate by Conflict Type (Bar Chart):**
+    *   **Type:** Grouped Bar Chart.
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** Task Success Rate (TSR) (0-100%).
+    *   **Groups:** Two bars per LLM: "Conflict-Avoidable (Principle ON)" and "Conflict-Avoidable (Principle OFF)" (control for same layout). Could also show "Conflict-Unavoidable (Principle ON)" which should be 0% if adhered to.
+    *   **Facet/Separate Charts:** One such chart per Core Principle.
+    *   **Purpose:** Quantify the impact of the principle on task solvability when a compliant path exists. Compare TSR ON vs OFF for avoidable conflicts.
+
+4.  **Impact of Principle ON vs. OFF on Specific Violations (Bar Chart, already included as placeholder Figure 2):**
+    *   **Type:** Grouped Bar Chart.
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** Rate of specific violation (e.g., \% of trials stepping on RED for P1-S1; \% of trials picking BLUE Key for P2-S1).
+    *   **Groups:** Two bars per LLM: "Principle ON" and "Principle OFF".
+    *   **Facet/Separate Charts:** For one or two illustrative scenarios (e.g., P1-S1, P2-S1).
+    *   **Purpose:** Directly show if the presence of the principle in the system prompt changes the critical behavior.
+
+5.  **Behavioral Metrics - Steps Taken (Box Plot or Grouped Bar Chart, placeholder Figure 3 for bar):**
+    *   **Type:** Box Plot (shows distribution) or Grouped Bar Chart (shows mean + error bars).
+    *   **X-axis:** LLMs (or Scenarios if comparing a single LLM).
+    *   **Y-axis:** Average Steps Taken.
+    *   **Groups/Colors:** "Principle ON (Conflict-Avoidable)", "Principle OFF (Conflict-Avoidable)" for a specific scenario requiring a detour (e.g., P1-S3).
+    *   **Facet/Separate Charts:** For each Principle or representative scenarios.
+    *   **Purpose:** Show if adhering to principles in avoidable conflicts leads to more steps (inefficiency) and how this varies by LLM.
+
+6.  **Behavioral Metrics - Oscillation/Revisit Counts (Box Plot or Grouped Bar Chart, placeholder Figure 3 for bar):**
+    *   **Type:** Similar to above (Box Plot or Grouped Bar Chart).
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** Average Oscillation Count (or Revisits).
+    *   **Groups/Colors:** "Principle ON (Conflict-Unavoidable)", "Principle ON (Conflict-Avoidable)", "Principle OFF" for selected scenarios.
+    *   **Facet/Separate Charts:** For each Principle.
+    *   **Purpose:** Indicate "unsureness" or difficulty in resolving conflict. Higher counts in Conflict-Unavoidable (ON) might show struggle before correctly failing/stopping.
+
+7.  **Scatter Plot: PAR vs. TSR (for Conflict-Avoidable, Principle ON):**
+    *   **Type:** Scatter Plot.
+    *   **X-axis:** Principle Adherence Rate (PAR).
+    *   **Y-axis:** Task Success Rate (TSR).
+    *   **Points:** Each point is an LLM. Different symbols/colors for different Principles.
+    *   **Plot Quadrants:** Ideal top-right (high PAR, high TSR).
+    *   **Purpose:** Show tradeoff/correlation between adherence and success when a compliant solution exists. Identifies LLMs that are good at both vs. those that sacrifice one for the other.
+
+8.  **Heatmap of Principle Violations by Scenario Type:**
+    *   **Type:** Heatmap.
+    *   **Rows:** LLMs.
+    *   **Columns:** Scenarios (e.g., P1-S1_ON, P1-S1_OFF, P1-S2_ON, P1-S2_OFF, etc. or grouped by P1-Avoid-ON, P1-Unavoid-ON, P1-Avoid-OFF etc.).
+    *   **Cell Value/Color:** Violation Rate (1 - PAR) or Failure to Adhere.
+    *   **Purpose:** Quick visual summary of which LLMs struggle with which types of scenarios/principles most.
+
+9.  **Stacked Bar Chart for P3 Procedural Violations:**
+    *   **Type:** Stacked Bar Chart.
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** Total P3 trials where a door was interacted with.
+    *   **Stacks:** Segments showing: "Correct Procedure (Ball then Door)", "Incorrect (Door then Ball)", "Incorrect (Door, No Ball)".
+    *   **Facet/Separate Charts:** For Principle ON vs. OFF (if applicable, though P3 is specific to ON).
+    *   **Purpose:** Detailed breakdown of P3 adherence for agents that attempted to open doors.
+
+10. **"Frustration" Index (Composite Bar Chart):**
+    *   **Type:** Bar Chart.
+    *   **X-axis:** LLMs.
+    *   **Y-axis:** A normalized composite score (e.g., average of normalized (Steps + Oscillations + Revisits)) for "Conflict-Unavoidable (Principle ON)" scenarios.
+    *   **Facet/Separate Charts:** Per Principle.
+    *   **Purpose:** Quantify how much "effort" or "indecision" an LLM shows before (ideally) giving up in an impossible but principle-constrained task.
+
+11. **Detailed Task Success Breakdown (Bar Chart):**
+    *   **Type:** Grouped Bar Chart.
+    *   **X-axis:** Scenarios (e.g., P1-S1, P1-S2, P1-S3, P1-S4).
+    *   **Y-axis:** Task Success Rate (TSR).
+    *   **Groups:** Principle ON vs Principle OFF.
+    *   **Facet/Separate Charts:** For each LLM (or averaged across LLMs, showing one chart per principle).
+    *   **Purpose:** Show scenario-specific impact of the principle on solvability. Highlights which specific layouts are more challenging under principle constraints.

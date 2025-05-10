@@ -1,0 +1,553 @@
+﻿Title,Authors,DOI,DOI link,Venue,Citation count,Year,Abstract summary,Summary,Main findings,Environment,Evaluation Metrics Used,Models,"Supporting quotes for ""Summary""","Supporting  tables for ""Summary""","Reasoning for ""Summary""","Supporting quotes for ""Main findings""","Supporting  tables for ""Main findings""","Reasoning for ""Main findings""","Supporting quotes for ""Environment""","Supporting  tables for ""Environment""","Reasoning for ""Environment""","Supporting quotes for ""Evaluation Metrics Used""","Supporting  tables for ""Evaluation Metrics Used""","Reasoning for ""Evaluation Metrics Used""","Supporting quotes for ""Models""","Supporting  tables for ""Models""","Reasoning for ""Models"""
+Benchmarking Complex Instruction-Following with Multiple Constraints Composition,"Bosi Wen, Pei Ke, Xiaotao Gu, Lindong Wu, Hao Huang, Jinfeng Zhou, Wenchuang Li, Binxin Hu, Wendy Gao, Jiaxin Xu, Yiming Liu, Jie Tang, Hongning Wang, Minlie Huang",10.48550/arXiv.2407.03978,https://doi.org/10.48550/arXiv.2407.03978,arXiv.org,14,2024,ComplexBench is a benchmark for evaluating LLM ability to follow complex instructions with multiple hierarchical constraints.,ComplexBench is a new benchmark proposed to comprehensively evaluate the ability of large language models to follow complex instructions composed of multiple constraints.,"- ComplexBench, a new benchmark, was developed to comprehensively evaluate the ability of large language models (LLMs) to follow complex instructions with multiple constraints.
+- ComplexBench revealed significant deficiencies in the ability of existing LLMs to handle complex instructions with multiple constraints composition.
+- The authors developed a hierarchical taxonomy to categorize complex instructions and collected a high-quality dataset based on this taxonomy.",Not mentioned (the abstract does not mention any specific environment or simulation used in this study),"1. Ability to satisfy each individual constraint in the complex instruction
+2. Ability to satisfy the composition of multiple constraints
+3. A final evaluation score based on the dependency structure of the different constraint compositions",Not mentioned (the abstract does not mention any specific language models or ai agent architectures that are evaluated in this paper),"  - ""To this end, we propose ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+  - ""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""
+  - ""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+  - ""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""",,"
+The summary of this paper is that the authors propose a new benchmark called ComplexBench to comprehensively evaluate the ability of large language models (LLMs) to follow complex instructions composed of multiple constraints.
+""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""
+""To this end, we propose ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""
+""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+","  - ""ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+  - ""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+  - ""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""",,"
+The abstract does not explicitly state the ""Main findings"" or conclusions of the study. However, based on the information provided, I can infer the following key takeaways:
+
+""ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+The main finding is that ComplexBench, a new benchmark, was developed to evaluate the ability of large language models (LLMs) to follow complex instructions with multiple constraints.
+
+""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+The second key finding is that ComplexBench revealed significant limitations in the ability of existing LLMs to handle complex instructions with multiple constraints.
+
+""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""
+The third key finding is that the authors developed a hierarchical taxonomy to categorize complex instructions, including different constraint types and composition types, and collected a high-quality dataset based on this taxonomy.
+","  - ""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""
+  - ""To this end, we propose ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+  - ""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""",,"
+The abstract does not mention any specific environment or simulation used in this study. The focus of the paper appears to be on evaluating the ability of large language models (LLMs) to follow complex instructions composed of multiple constraints, rather than on a particular environment or task.
+""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""
+""To this end, we propose ComplexBench, a benchmark for comprehensively evaluating the ability of LLMs to follow complex instructions composed of multiple constraints.""
+""We propose a hierarchical taxonomy for complex instructions, including 4 constraint types, 19 constraint dimensions, and 4 composition types, and manually collect a high-quality dataset accordingly.""
+The abstract does not provide any information about a specific environment or simulation used in the study. It focuses on the development of a benchmark for evaluating LLMs' ability to follow complex instructions with multiple constraints.
+","  - ""augment LLM-based evaluators with rules to effectively verify whether generated texts can satisfy each constraint and composition.""
+  - ""To make the evaluation reliable, we augment LLM-based evaluators with rules to effectively verify whether generated texts can satisfy each constraint and composition.""
+  - ""based on the dependency structure determined by different composition types.""
+  - ""Furthermore, we obtain the final evaluation score based on the dependency structure determined by different composition types.""",,"
+The abstract mentions that the authors propose a benchmark called ""ComplexBench"" to comprehensively evaluate the ability of large language models (LLMs) to follow complex instructions composed of multiple constraints. To make the evaluation reliable, the authors state that they ""augment LLM-based evaluators with rules to effectively verify whether generated texts can satisfy each constraint and composition."" Additionally, the abstract mentions that the ""final evaluation score"" is ""based on the dependency structure determined by different composition types.""
+
+""To make the evaluation reliable, we augment LLM-based evaluators with rules to effectively verify whether generated texts can satisfy each constraint and composition.""
+""Furthermore, we obtain the final evaluation score based on the dependency structure determined by different composition types.""
+
+From these quotes, it appears that the key evaluation metrics used in this paper are:
+1. Ability to satisfy each individual constraint in the complex instruction
+2. Ability to satisfy the composition of multiple constraints
+3. A final evaluation score based on the dependency structure of the different constraint compositions
+","  - ""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+  - ""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""",,"
+The abstract does not mention any specific language models or AI agent architectures that are evaluated in this paper. Instead, it refers to ""large language models (LLMs)"" in general as the focus of the evaluation:
+""Instruction following is one of the fundamental capabilities of large language models (LLMs). As the ability of LLMs is constantly improving, they have been increasingly applied to deal with complex human instructions in real-world scenarios.""
+""ComplexBench identifies significant deficiencies in existing LLMs when dealing with complex instructions with multiple constraints composition.""
+The abstract does not provide the names or details of any specific LLMs that were evaluated. It only discusses LLMs in general terms, without identifying any particular models or architectures.
+"
+LogicGame: Benchmarking Rule-Based Reasoning Abilities of Large Language Models,"Jiayi Gui, Yiming Liu, Jiale Cheng, Xiaotao Gu, Xiao Liu, Hongning Wang, Yuxiao Dong, Jie Tang, Minlie Huang",10.48550/arXiv.2408.15778,https://doi.org/10.48550/arXiv.2408.15778,arXiv.org,0,2024,"LogicGame is a benchmark designed to evaluate the rule understanding, execution, and planning capabilities of large language models.","LogicGame is a novel benchmark designed to evaluate the rule understanding, execution, and planning capabilities of large language models.","- LogicGame is a novel benchmark designed to evaluate the rule understanding, execution, and planning capabilities of large language models.
+- LogicGame presents diverse game scenarios that require models to comprehend and apply predefined rules to solve problems.
+- The study found that various large language models have notable shortcomings in their rule-based logical reasoning abilities when tested using the LogicGame benchmark.","The ""Environment"" used in this study is a series of simulated game scenarios, referred to as ""LogicGame"", that are designed to evaluate the rule-based reasoning capabilities of large language models.","1. Success rate: The percentage of game scenarios where the model successfully achieves the desired outcome.
+2. Violation rate: The percentage of intermediate steps taken by the model that violate the predefined rules.
+3. Steps taken: The number of steps required by the model to solve each game scenario.
+4. Specific scores (e.g., F1, accuracy): Metrics that capture the models' performance on tasks of varying difficulty, from simple rule applications to complex reasoning chains.",Not mentioned (the abstract does not mention the specific ai agent architectures or language model names that were evaluated in this study),"  - ""In this paper, we introduce LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""
+  - ""LogicGame provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems.""
+  - ""These game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+  - ""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""",,"
+The summary of this paper is that it introduces a new benchmark called LogicGame to evaluate the rule-based reasoning and planning capabilities of large language models (LLMs).
+""In this paper, we introduce LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""
+""LogicGame provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems.""
+""These game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""
+The key points are that the paper introduces a new benchmark called LogicGame to evaluate LLMs' rule-based reasoning and planning capabilities, and that the benchmark is designed to specifically test logical reasoning rather than just knowledge.
+","  - ""LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""
+  - ""LogicGame provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems.""
+  - ""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""",,"
+The abstract does not explicitly state the ""Main findings"" or conclusions of the study. However, based on the information provided, I can infer the following key takeaways:
+
+""LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""
+The main purpose of this study was to introduce a new benchmark called LogicGame to assess the rule-based reasoning abilities of large language models (LLMs).
+
+""LogicGame provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems.""
+LogicGame presents various game scenarios that test the models' ability to understand and execute predefined rules to achieve specific outcomes.
+
+""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""
+The study used the LogicGame benchmark to evaluate the rule-based reasoning capabilities of different LLMs and found that they have notable limitations in this area.
+","  - ""provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems.""
+  - ""We create simulated scenarios in which models execute or plan operations to achieve specific outcomes. These game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+  - ""game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+  - ""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+  - ""LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""",,"
+Based on the abstract, the ""Environment"" used in this study appears to be a series of simulated game scenarios designed to evaluate the rule-based reasoning capabilities of large language models (LLMs). The abstract states that the benchmark, called ""LogicGame"", ""provides diverse games that contain a series of rules with an initial state, requiring models to comprehend and apply predefined regulations to solve problems."" It also mentions that these ""game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+
+""LogicGame, a novel benchmark designed to evaluate the comprehensive rule understanding, execution, and planning capabilities of LLMs.""
+""We create simulated scenarios in which models execute or plan operations to achieve specific outcomes. These game scenarios are specifically designed to distinguish logical reasoning from mere knowledge by relying exclusively on predefined rules.""
+""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+","  - ""The evaluation considers not only final outcomes but also intermediate steps, providing a comprehensive assessment of model performance.""
+  - ""defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+  - ""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+  - ""not only final outcomes but also intermediate steps, providing a comprehensive assessment of model performance.""
+  - ""intermediate steps are deterministic and can be automatically verified.""
+  - ""Moreover, these intermediate steps are deterministic and can be automatically verified.""",,"
+The abstract mentions that the evaluation in this paper considers ""not only final outcomes but also intermediate steps, providing a comprehensive assessment of model performance."" This suggests that the evaluation metrics likely include both the final outcome (e.g., success rate) as well as the quality of the intermediate steps taken by the models (e.g., violation rate, steps taken).
+""The evaluation considers not only final outcomes but also intermediate steps, providing a comprehensive assessment of model performance.""
+The abstract also states that the ""intermediate steps are deterministic and can be automatically verified."" This implies that the evaluation may include metrics related to the accuracy or correctness of the intermediate steps taken by the models.
+""Moreover, these intermediate steps are deterministic and can be automatically verified.""
+Additionally, the abstract mentions that the benchmark ""defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution."" This suggests that the evaluation may include metrics that capture the models' performance on tasks of varying difficulty, potentially including specific scores like F1 or accuracy.
+""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+","  - ""Large Language Models (LLMs) have demonstrated notable capabilities across various tasks, showcasing complex problem-solving abilities.""
+  - ""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+  - ""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""",,"
+The abstract does not explicitly mention the specific AI agent architectures or language model names that were evaluated in this study. However, it does state that the paper introduces a new benchmark called ""LogicGame"" to evaluate the ""rule understanding, execution, and planning capabilities of LLMs (Large Language Models)"". This suggests that the study focused on evaluating the performance of various large language models on this new benchmark, but the specific model names are not provided.
+""Large Language Models (LLMs) have demonstrated notable capabilities across various tasks, showcasing complex problem-solving abilities.""
+""Utilizing LogicGame, we test various LLMs and identify notable shortcomings in their rule-based logical reasoning abilities.""
+""LogicGame defines game scenarios with varying difficulty levels, from simple rule applications to complex reasoning chains, in order to offer a precise evaluation of model performance on rule understanding and multi-step execution.""
+"
+The Ability of Large Language Models to Evaluate Constraint-satisfaction in Agent Responses to Open-ended Requests,"Lior Madmoni, Amir Zait, Ilia Labzovsky, Danny Karmon",10.48550/arXiv.2409.14371,https://doi.org/10.48550/arXiv.2409.14371,arXiv.org,0,2024,The paper introduces a novel benchmark dataset to evaluate the ability of large language models to assess constraint-satisfaction in agent responses to open-ended requests.,"The paper develops and releases a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset to study the ability of large language models to evaluate constraint-satisfaction in agent responses to open-ended requests, and it benchmarks both open and proprietary LLMs on this task, finding that most models still have significant room for improvement, with errors primarily stemming from reasoning issues.","- The authors developed a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset to study the ability of large language models (LLMs) to evaluate constraint-satisfaction in agent responses to open-ended requests.
+- The authors found that most LLMs still have significant room for improvement in evaluating constraint-satisfaction, with errors primarily due to reasoning issues.
+- Most LLMs exhibited a skewed pattern in their constraint-satisfaction predictions, with higher accuracy when the ground-truth label was ""satisfied"", and few-shot prompting for the task proved to be challenging, as many models showed a degradation in performance.",Not mentioned (the abstract does not mention any specific environment or simulation used in this study),"The primary evaluation metrics used in this paper are the accuracy or success rate in satisfying the constraints in the agent's responses, as well as the accuracy in evaluating the constraint-satisfaction of the agent's responses. The paper also assesses the agent's ability to perform reasoning, data extraction, arithmetic calculations, and counting in order to satisfy the constraints.","The paper does not specify the names of the LLM models that were evaluated, only referring to them as ""open and proprietary LLMs"".","  - ""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+  - ""In addition, most models exhibit a skewed constraint-satisfaction prediction pattern, with higher accuracy where the ground-truth label is""satisfied"".""
+  - ""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""",,"
+The summary of this paper is that it develops and releases a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset to study the ability of large language models (LLMs) to evaluate constraint-satisfaction in agent responses to open-ended requests, and it benchmarks both open and proprietary LLMs on this task, finding that most models still have significant room for improvement, with errors primarily stemming from reasoning issues.
+
+""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+""In addition, most models exhibit a skewed constraint-satisfaction prediction pattern, with higher accuracy where the ground-truth label is""satisfied"".""
+","  - ""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+  - ""In addition, most models exhibit a skewed constraint-satisfaction prediction pattern, with higher accuracy where the ground-truth label is""satisfied"".""
+  - ""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+  - ""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""",,"
+The main findings of this study, as summarized in the abstract, are:
+
+""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+The authors developed a novel dataset to study the ability of large language models (LLMs) to evaluate constraint-satisfaction in agent responses to open-ended requests.
+
+""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+The authors benchmarked various LLMs on the dataset and found that most models still have significant room for improvement in evaluating constraint-satisfaction, with errors primarily due to reasoning issues.
+
+""In addition, most models exhibit a skewed constraint-satisfaction prediction pattern, with higher accuracy where the ground-truth label is""satisfied"".""
+The authors also found that most models exhibited a skewed pattern in their constraint-satisfaction predictions, with higher accuracy when the ground-truth label was ""satisfied"".
+
+""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""
+Finally, the authors found that few-shot prompting for the task was challenging, as many of the studied models showed a degradation in performance when it was introduced.
+","  - ""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""
+  - ""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+  - ""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""",,"
+Based on the abstract, there is no mention of any specific environment or simulation used in this study. The abstract focuses on the development of a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset and the evaluation of large language models (LLMs) on their ability to evaluate constraint-satisfaction in agent responses to open-ended requests. The abstract does not provide any details about the environment or simulation in which the agent responses were generated.
+""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""
+","  - ""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+  - ""A unique property of this dataset is that validating many of its constraints requires reviewing the response as a whole (in contrast to many other benchmarks that require the validation of a single independent item). Moreover, it assesses LLMs in performing reasoning, in-context data extraction, arithmetic calculations, and counting.""
+  - ""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""",,"
+The paper does not explicitly state the specific evaluation metrics used to assess the agent's performance. However, based on the abstract, we can infer the following about the evaluation approach:
+
+""To study this, we develop and release a novel Arithmetic Constraint-Satisfaction (ACS) benchmarking dataset. The dataset consists of complex user requests with corresponding constraints, agent responses and human labels indicating each constraint's satisfaction level in the response.""
+The paper developed a novel dataset that includes human labels indicating the satisfaction level of each constraint in the agent's response. This suggests that the primary evaluation metric is likely the accuracy or success rate in satisfying the constraints in the agent's responses.
+
+""A unique property of this dataset is that validating many of its constraints requires reviewing the response as a whole (in contrast to many other benchmarks that require the validation of a single independent item). Moreover, it assesses LLMs in performing reasoning, in-context data extraction, arithmetic calculations, and counting.""
+The abstract also indicates that the evaluation assesses the agent's ability to perform reasoning, data extraction, arithmetic calculations, and counting in order to satisfy the constraints, which implies that the evaluation may involve more nuanced metrics beyond just the binary satisfaction of constraints.
+
+""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+Finally, the abstract states that the paper benchmarks LLMs on evaluating constraint-satisfaction, suggesting that the primary evaluation metric is the accuracy or success rate in correctly evaluating whether the agent's responses satisfy the given constraints.
+","  - ""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""
+  - ""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+  - ""Recently, large language models (LLMs) have been adopted as versatile evaluators for many NORA tasks, but their ability to evaluate constraint-satisfaction in generated text remains unclear.""",,"
+The abstract indicates that the paper evaluates the ability of large language models (LLMs) to evaluate constraint-satisfaction in agent responses to open-ended requests. Specifically, the abstract states:
+""Recently, large language models (LLMs) have been adopted as versatile evaluators for many NORA tasks, but their ability to evaluate constraint-satisfaction in generated text remains unclear.""
+""We then benchmark both open and proprietary LLMs on evaluating constraint-satisfaction, and show that most models still have a significant headroom for improvement, and that errors primarily stem from reasoning issues.""
+""Lastly, few-shot prompting for our task proved to be rather challenging, since many of the studied models showed a degradation in performance when it was introduced.""
+The abstract does not provide the specific names of the LLM models that were evaluated in this study. It only refers to them as ""open and proprietary LLMs"" without naming them.
+"
+BENCHAGENTS: Automated Benchmark Creation with Agent Interaction,"Natasha Butt, Varun Chandrasekaran, Neel Joshi, Besmira Nushi, Vidhisha Balachandran",10.48550/arXiv.2410.22584,https://doi.org/10.48550/arXiv.2410.22584,arXiv.org,0,2024,BENCHAGENTS automates the creation of benchmarks to evaluate LLM capabilities related to planning and constraint satisfaction during text generation.,"BENCHAGENTS is a framework that leverages large language models to automate the creation of high-quality, diverse, and challenging benchmarks for complex and generative natural language processing capabilities.","- All LLMs struggled with jointly satisfying multiple constraints, with performance decreasing as the number of constraints increased.
+- LLMs differed in how they prioritized which constraints to satisfy when they could not satisfy all constraints.
+- LLMs often failed on constraints that required numerical or logical reasoning.","The paper does not describe any specific environment or simulation that is used in the study. Rather, the paper introduces a framework called BENCHAGENTS that is used to automatically create benchmarks for evaluating complex natural language processing (NLP) capabilities of large language models (LLMs).","1. Constraint-specific metrics that mark whether each individual constraint was satisfied or not (pass vs. fail)
+2. The fraction of constraints satisfied across all constraints (""fraction passed"")
+3. Whether all constraints were satisfied (""pass all"")","The models evaluated in this paper are: OpenAI o1-preview, GPT-4o, Claude 3.5, Gemini 1.5 Pro, Llama 3.1 70B, Llama 3.1 405B, and Mistral 2407.","  - ""BENCHAGENTS breaks down benchmark creation into four components and instantiates each component via dedicated LLM agents as shown in Fig. 1""
+  - ""We demonstrate the utility of BENCHAGENTS, by generating benchmarks on two complex and generative problem settings -calendar scheduling (BA-CALENDAR) and constrained long-form text generation (BA-TEXT) -each with 2, 000 test instances.""",,"
+The paper introduces BENCHAGENTS, a framework that leverages large language models (LLMs) to automate the creation of high-quality, diverse, and challenging benchmarks for complex and generative natural language processing capabilities.
+
+""We introduce BENCHAGENTS, a multi-agent evaluation framework for automated, high-quality, and diverse benchmark creation.""
+""BENCHAGENTS breaks down benchmark creation into four components and instantiates each component via dedicated LLM agents as shown in Fig. 1.""
+""We demonstrate the utility of BENCHAGENTS, by generating benchmarks on two complex and generative problem settings -calendar scheduling (BA-CALENDAR) and constrained long-form text generation (BA-TEXT) -each with 2, 000 test instances.""
+
+","  - ""We find that (i) all LLMs struggle with joint constraint satisfaction across both datasets, with performance decreasing as the number of constraints increases; (ii) LLMs differ in their prioritisation of constraints when all cannot be met; and (iii) failures often involve constraints requiring numerical or logical reasoning.""
+  - ""For BA-CALENDAR, in Fig. 4b , we observe that in contrast to other strong models, o1-preview, Gemini-1-5-Pro and Mistral-2407 have lower performance with respect to simple constraints such as meeting duration or time restrictions. On further inspection, we see that these models are the most likely to respond with""
+  - ""For BA-CALENDAR and models with known size, in Fig. 4a , we observe""
+  - ""increases w.r.t. model size for Llama 3-1-70b, Mistral-2407 and Llama 3-1-405b, as expected. However, this trend is not consistent with BA-TEXT in Fig. 4d where we observe Mistral-2407 outperforming Llama 3-1-70b and Llama 3-1-405b, and matching performance of GPT-4o.""
+  - ""for both feasible and infeasible instances (Fig. 5c""",,"
+The main findings of the paper are summarized as follows:
+
+
+""We find that (i) all LLMs struggle with joint constraint satisfaction across both datasets, with performance decreasing as the number of constraints increases; (ii) LLMs differ in their prioritisation of constraints when all cannot be met; and (iii) failures often involve constraints requiring numerical or logical reasoning.""
+
+The paper found that all the large language models (LLMs) evaluated struggled to satisfy multiple constraints simultaneously, with their performance decreasing as the number of constraints increased. Additionally, the LLMs differed in how they prioritized which constraints to satisfy when they could not satisfy all constraints. The paper also found that the LLMs often failed on constraints that required numerical or logical reasoning.
+
+
+""For BA-CALENDAR, in Fig. 4b, we observe that in contrast to other strong models, o1-preview, Gemini-1-5-Pro and Mistral-2407 have lower performance with respect to simple constraints such as meeting duration or time restrictions. On further inspection, we see that these models are the most likely to respond with ""no solution exists"" for both feasible and infeasible instances (Fig. 5c).""
+
+The paper found that for the BA-CALENDAR benchmark, the o1-preview, Gemini-1-5-Pro and Mistral-2407 models had lower performance on simple constraints like meeting duration or time restrictions, and were also the most likely to respond that no solution exists even for feasible instances.
+
+
+""For BA-CALENDAR and models with known size, in Fig. 4a, we observe ""pass all"" increases w.r.t. model size for Llama 3-1-70b, Mistral-2407 and Llama 3-1-405b, as expected. However, this trend is not consistent with BA-TEXT in Fig. 4d where we observe Mistral-2407 outperforming Llama 3-1-70b and Llama 3-1-405b, and matching performance of GPT-4o.""
+
+The paper found that for the BA-CALENDAR benchmark, larger models like Llama 3-1-70b, Mistral-2407 and Llama 3-1-405b performed better at satisfying all constraints, as expected. However, this trend did not hold for the BA-TEXT benchmark, where the Mistral-2407 model outperformed the larger Llama models and matched the performance of GPT-4o.
+
+
+- All LLMs struggled with jointly satisfying multiple constraints, with performance decreasing as the number of constraints increased.
+- LLMs differed in how they prioritized which constraints to satisfy when they could not satisfy all constraints.
+- LLMs often failed on constraints that required numerical or logical reasoning.
+
+
+
+The answer is well supported by the provided quotes, which cover the key findings from the paper. No additional quotes are needed.
+","  - ""Grounding the data generation on a shared plan (that consists of a structured set of parameters) across agents enables precise control on the diversity of the data distribution.""
+  - ""BENCHAGENTS breaks down benchmark creation into four components and instantiates each component via dedicated LLM agents as shown in Fig. 1 . The Planning Agent creates a high-level plan/specification based on the problem and user requirements, breaks it down to tasks, and communicates the plan with the other agents.""
+  - ""We demonstrate the utility of BENCHAGENTS, by generating benchmarks on two complex and generative problem settings -calendar scheduling (BA-CALENDAR) and constrained long-form text generation (BA-TEXT) -each with 2, 000 test instances.""",,"
+The paper does not describe any specific environment or simulation that is used in the study. Rather, the paper introduces a framework called BENCHAGENTS that is used to automatically create benchmarks for evaluating complex natural language processing (NLP) capabilities of large language models (LLMs).
+
+The paper states:
+""BENCHAGENTS breaks down benchmark creation into four components and instantiates each component via dedicated LLM agents as shown in Fig. 1. The Planning Agent creates a high-level plan/specification based on the problem and user requirements, breaks it down to tasks, and communicates the plan with the other agents.""
+""Grounding the data generation on a shared plan (that consists of a structured set of parameters) across agents enables precise control on the diversity of the data distribution.""
+""We demonstrate the utility of BENCHAGENTS, by generating benchmarks on two complex and generative problem settings -calendar scheduling (BA-CALENDAR) and constrained long-form text generation (BA-TEXT) -each with 2, 000 test instances.""
+
+The paper does not describe any specific environment or simulation that is used to evaluate the models. Rather, the BENCHAGENTS framework is used to automatically generate diverse and challenging benchmark datasets for evaluating the capabilities of LLMs on complex NLP tasks.
+","  - ""More specifically, for each constraint, there exists an evaluation metric that marks whether the constraint was satisfied or not (pass vs. fail) by a proposed solution.""
+  - ""In addition to metrics associated to a single constraint, E-AGENT also computes the fraction of constraints satisfied from the whole list of constraints (i.e., ""fraction passed"") as well as whether all constraints were satisfied (i.e., ""pass all"").""
+  - ""E-AGENT evaluates the solutions generated by target models. This is necessary in generative settings since we cannot always simply compare a solution to ground truth. E-AGENT operates based on the evaluation metrics defined by P-AGENT, which are all grounded on the set of constraints present in the plan.""",,"
+The paper discusses the evaluation metrics used by the Evaluation Agent (E-AGENT) in the BENCHAGENTS framework. According to the paper, the E-AGENT operates based on the evaluation metrics defined by the Planning Agent (P-AGENT), which are grounded on the set of constraints present in the plan.
+
+""E-AGENT evaluates the solutions generated by target models. This is necessary in generative settings since we cannot always simply compare a solution to ground truth. E-AGENT operates based on the evaluation metrics defined by P-AGENT, which are all grounded on the set of constraints present in the plan.""
+
+""More specifically, for each constraint, there exists an evaluation metric that marks whether the constraint was satisfied or not (pass vs. fail) by a proposed solution.""
+
+""In addition to metrics associated to a single constraint, E-AGENT also computes the fraction of constraints satisfied from the whole list of constraints (i.e., ""fraction passed"") as well as whether all constraints were satisfied (i.e., ""pass all"").""
+
+The specific evaluation metrics used by the E-AGENT include:
+1. Constraint-specific metrics that mark whether each individual constraint was satisfied or not (pass vs. fail)
+2. The fraction of constraints satisfied across all constraints (""fraction passed"")
+3. Whether all constraints were satisfied (""pass all"")
+
+
+
+The paper provides clear and detailed information about the specific evaluation metrics used by the E-AGENT, including quotes that fully support the answer. No additional quotes are needed.
+","  - ""We evaluated the generated benchmarks on Ope-nAI o1-preview (OpenAI, 2024b), GPT-4o (Ope-nAI, 2024a), Claude 3.5 (Anthropic, 2024), Gemini 1.5 Pro (Reid et al., 2024), Llama 3.1 70B and 405B (Dubey et al., 2024) , and Mistral 2407 (Mis-tralAI, 2024).2""",,"
+The paper discusses the evaluation of several state-of-the-art large language models (LLMs) on the benchmarks created using the BENCHAGENTS framework. Specifically, the models evaluated are:
+
+
+""We evaluated the generated benchmarks on OpenAI o1-preview (OpenAI, 2024b), GPT-4o (OpenAI, 2024a), Claude 3.5 (Anthropic, 2024), Gemini 1.5 Pro (Reid et al., 2024), Llama 3.1 70B and 405B (Dubey et al., 2024), and Mistral 2407 (MistralAI, 2024).""
+
+
+The paper discusses the performance of these models on the two benchmarks created using BENCHAGENTS, BA-CALENDAR and BA-TEXT, and provides insights into the models' capabilities for planning, reasoning, and constraint satisfaction.
+"
+"IDEA: Enhancing the Rule Learning Ability of Large Language Model Agent through Induction, Deduction, and Abduction","Kaiyu He, Mian Zhang, Shuo Yan, Peilin Wu, Z. Chen",-,-,-,0,2024,"RULEARN, a benchmark to assess the rule-learning abilities of LLM agents, and IDEA, a reasoning framework integrating induction, deduction, and abduction to enhance LLM rule learning.","The authors introduce a novel benchmark called RULEARN to assess the rule-learning abilities of large language model agents, and they propose a new reasoning framework called IDEA that integrates induction, deduction, and abduction to enhance the rule-learning capabilities of these agents.","- The IDEA framework, which integrates induction, deduction, and abduction, significantly improves the rule-learning abilities of large language model agents compared to baseline approaches.
+- There are notable discrepancies in rule-learning behaviors between humans and large language models, indicating that large language models still have room for improvement in matching human-like rule-learning capabilities.",Not mentioned (the abstract does not provide enough information to determine the specific type of environment or simulation used in this study),Not mentioned (the abstract does not explicitly mention the specific evaluation metrics used in this study),"The paper does not explicitly state the specific LLM model names that were evaluated, but it mentions that the IDEA framework was evaluated on ""five representative LLMs"".","  - ""We introduce RULEARN, a novel benchmark to assess the rule-learning abilities of LLM agents in interactive settings.""
+  - ""To enhance the rule-learning capabilities for LLM agents, we propose IDEA, a novel reasoning framework that integrates the process of Induction, Deduction, and Abduction.""
+  - ""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""",,"
+The summary of this paper is that the authors introduce a novel benchmark called RULEARN to assess the rule-learning abilities of large language model (LLM) agents in interactive settings, and they propose a new reasoning framework called IDEA that integrates induction, deduction, and abduction to enhance the rule-learning capabilities of LLM agents.
+""We introduce RULEARN, a novel benchmark to assess the rule-learning abilities of LLM agents in interactive settings.""
+""To enhance the rule-learning capabilities for LLM agents, we propose IDEA, a novel reasoning framework that integrates the process of Induction, Deduction, and Abduction.""
+""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+The paper introduces a new benchmark and a new framework to improve the rule-learning abilities of LLM agents, and it evaluates the effectiveness of the proposed framework.
+","  - ""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+  - ""Furthermore, our study with human participants reveals notable discrepancies in rule-learning behaviors between humans and LLMs.""",,"
+The main findings of this paper are:
+
+""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+The paper states that the proposed IDEA framework, which integrates induction, deduction, and abduction, leads to significant improvements in the rule-learning abilities of large language model (LLM) agents compared to baseline approaches.
+
+""Furthermore, our study with human participants reveals notable discrepancies in rule-learning behaviors between humans and LLMs.""
+The paper also found that there are notable differences in rule-learning behaviors between humans and LLMs, suggesting that LLMs still have room for improvement in matching human-like rule-learning capabilities.
+","  - ""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""
+  - ""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+  - ""In RULEARN, agents strategically interact with simulated environments to gather observations, discern patterns, and solve complex problems.""",,"
+The abstract does not explicitly state the type of environment or simulation used in this study. However, it provides some clues about the environment:
+""In RULEARN, agents strategically interact with simulated environments to gather observations, discern patterns, and solve complex problems.""
+This quote indicates that the study uses a simulated environment, but does not specify the type of environment.
+""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+This quote suggests that the study evaluates the IDEA framework on multiple large language models (LLMs), but does not provide any additional details about the environment.
+""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""
+This quote indicates that the study aims to develop LLM agents capable of human-like rule learning in real-world scenarios, but does not specify the type of environment used in the study.
+","  - ""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+  - ""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""
+  - ""Furthermore, our study with human participants reveals notable discrepancies in rule-learning behaviors between humans and LLMs.""",,"
+To determine the evaluation metrics used in this paper, I will look for any mentions of specific metrics or measures of performance in the abstract.
+""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+This quote indicates that the authors evaluated the IDEA framework against a baseline, but does not specify the exact metrics used.
+""Furthermore, our study with human participants reveals notable discrepancies in rule-learning behaviors between humans and LLMs.""
+This quote suggests that the authors also compared the rule-learning behaviors of humans and LLMs, but again does not mention the specific metrics used.
+""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""
+This quote implies that the authors developed a benchmark (likely the ""RULEARN"" benchmark mentioned earlier) to assess the rule-learning abilities of LLM agents, but does not provide details on the specific metrics used in this benchmark.
+","  - ""To enhance the rule-learning capabilities for LLM agents, we propose IDEA, a novel reasoning framework that integrates the process of Induction, Deduction, and Abduction.""
+  - ""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+  - ""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""",,"
+The abstract mentions that the paper evaluates ""five representative LLMs"" for the IDEA framework, but it does not explicitly state the specific model names. However, we can infer some details about the models from the information provided:
+
+""To enhance the rule-learning capabilities for LLM agents, we propose IDEA, a novel reasoning framework that integrates the process of Induction, Deduction, and Abduction.""
+This quote indicates that the paper is focused on enhancing the rule-learning abilities of large language model (LLM) agents, suggesting that the models evaluated are likely large language models.
+
+""Our evaluation of the IDEA framework, which involves five representative LLMs, demonstrates significant improvements over the baseline.""
+This quote directly states that the paper evaluates five representative LLMs, but does not provide the specific model names.
+
+""We believe our benchmark will serve as a valuable and challenging resource, and IDEA will provide crucial insights for the development of LLM agents capable of human-like rule learning in real-world scenarios.""
+This quote further reinforces that the paper is focused on developing LLM agents with improved rule-learning capabilities, but does not mention any specific model names.
+"
+Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents,"Shihan Deng, Weikai Xu, Hongda Sun, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Rui Yan, Shuo Shang",10.48550/arXiv.2407.00993,https://doi.org/10.48550/arXiv.2407.00993,Annual Meeting of the Association for Computational Linguistics,2,2024,"Mobile-Bench is a novel benchmark for evaluating the capabilities of LLM-based mobile agents, including their ability to handle hierarchical rules or constraints.","Mobile-Bench is a novel benchmark for evaluating the capabilities of LLM-based mobile agents that supports both UI and API interactions, includes a diverse dataset of real-world tasks, and introduces a new evaluation metric called CheckPoint.","- Mobile-Bench is the first platform that supports both UI and API interactions for evaluating LLM-based mobile agents.
+- The Mobile-Bench dataset contains diverse multi-app tasks that start from the home page, which is better suited for evaluating the planning capabilities of mobile agents.
+- The paper introduces a new evaluation metric called ""CheckPoint"" that assesses the agent's capabilities in completing tasks using both UI and API interactions.","The environment used in this study is a mobile phone environment called ""Mobile-Bench"" that supports both UI and API interactions for evaluating LLM-based mobile agents.","1. PassRate: The proportion of tasks successfully completed within the specified step limits.
+2. Average Steps: The number of steps (UI operations or API calls) required to complete a task.
+3. CheckPoint coverage rate: A multi-level metric that evaluates whether the agent correctly selects the appropriate applications, UI elements, and APIs to complete the task.","The specific LLM models evaluated in this paper are: GPT-3.5-turbo, GPT-4, LLaMA-13B, LLaMA-70B, ChatGPT-3.5 (accessed through the OpenAI API), and GPT-4 (accessed through the OpenAI API).","  - ""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+  - ""We introduce a new category-based evaluation metric to assess the task completion capabilities of the agent in the context of both UI and API interactions.""
+  - ""We propose an evaluation dataset containing diverse tasks for multi-APP interactions. Our tasks starting from the home page are more appropriate for testing the planning capabilities for agents.""",,"
+The paper proposes a novel benchmark called Mobile-Bench for evaluating the capabilities of LLM-based mobile agents, which addresses the limitations of existing platforms by incorporating both UI and API interactions, collecting a diverse dataset of real-world tasks, and introducing a new evaluation metric called CheckPoint.
+""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+""We propose an evaluation dataset containing diverse tasks for multi-APP interactions. Our tasks starting from the home page are more appropriate for testing the planning capabilities for agents.""
+""We introduce a new category-based evaluation metric to assess the task completion capabilities of the agent in the context of both UI and API interactions.""
+","  - ""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+  - ""We introduce a new category-based evaluation metric to assess the task completion capabilities of the agent in the context of both UI and API interactions.""
+  - ""We propose an evaluation dataset containing diverse tasks for multi-APP interactions. Our tasks starting from the home page are more appropriate for testing the planning capabilities for agents.""",,"
+The paper presents several key findings from the Mobile-Bench benchmark for evaluating LLM-based mobile agents:
+
+
+""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+This indicates that Mobile-Bench is the first platform to support both UI and API interactions for evaluating LLM-based mobile agents.
+
+
+
+""We propose an evaluation dataset containing diverse tasks for multi-APP interactions. Our tasks starting from the home page are more appropriate for testing the planning capabilities for agents.""
+This suggests that the Mobile-Bench dataset contains a variety of multi-app tasks that start from the home page, which is better suited for evaluating the planning capabilities of mobile agents.
+
+
+
+""We introduce a new category-based evaluation metric to assess the task completion capabilities of the agent in the context of both UI and API interactions.""
+The paper introduces a new evaluation metric called ""CheckPoint"" that assesses the agent's capabilities in completing tasks using both UI and API interactions.
+
+
+
+- Mobile-Bench is the first platform that supports both UI and API interactions for evaluating LLM-based mobile agents.
+- The Mobile-Bench dataset contains diverse multi-app tasks that start from the home page, which is better suited for evaluating the planning capabilities of mobile agents.
+- The paper introduces a new evaluation metric called ""CheckPoint"" that assesses the agent's capabilities in completing tasks using both UI and API interactions.
+
+
+
+The key findings from the paper are well supported by the provided quotes, which cover the main contributions of the Mobile-Bench platform, dataset, and evaluation metric. No additional quotes are needed to fully summarize the main findings.
+","  - ""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+  - ""Mobile-Bench is designed as a universal interaction platform that supports hybrid API and UI interactions.""
+  - ""Users are able to construct their own evaluation data following a fixed format, yet they must adhere to our prescribed evaluation method.""",,"
+The paper describes a mobile phone environment called ""Mobile-Bench"" that is used to evaluate the capabilities of LLM-based mobile agents. This is evident from the following quotes:
+""To the best of our knowledge, we are the first to establish a running platform for LLM-based mobile agents that simultaneously supports both UI and API calls.""
+""Mobile-Bench is designed as a universal interaction platform that supports hybrid API and UI interactions.""
+""Users are able to construct their own evaluation data following a fixed format, yet they must adhere to our prescribed evaluation method.""
+The paper states that Mobile-Bench is a mobile phone environment that supports both UI and API interactions, allowing for the evaluation of LLM-based mobile agents.
+","  - ""We assess an agent's human-computer interaction capabilities by calculating the proportion of queries successfully completed within the specified step limits. During this process, we organized the emulator's current state. Subsequently, GPT-4 evaluates the task completion status. We computed the percentage of pass tasks, yielding a PassRate as an indicator of agent's human-computer interaction capabilities.""",,"
+The paper discusses several evaluation metrics used to assess the performance of LLM-based mobile agents on the Mobile-Bench benchmark:
+
+""We assess an agent's human-computer interaction capabilities by calculating the proportion of queries successfully completed within the specified step limits. During this process, we organized the emulator's current state. Subsequently, GPT-4 evaluates the task completion status. We computed the percentage of pass tasks, yielding a PassRate as an indicator of agent's human-computer interaction capabilities.""
+The PassRate metric measures the proportion of tasks that are successfully completed within a specified step limit.
+
+""We quantified the step size required by Mobile-Bench to complete tasks as a metric for evaluating the efficiency of the agent. In Mobile-Bench, a 'step' is defined as the completion of a UI operation or the execution of an API call.""
+The Average Steps metric measures the number of steps required to complete a task, as an indicator of the agent's efficiency.
+
+""For CheckPoints, we identify three logical relationships: sequential, conjunctive, and disjunctive checks. These correspond to the instability of LLM output and its tendency for synonym substitution. The weighted sum of the above three scores will be the final CheckPoint coverage rate.""
+The CheckPoint coverage rate is a multi-level metric that evaluates whether the agent correctly selects the appropriate applications, UI elements, and APIs to complete the task.
+","  - ""We evaluate four popular LLMs on the proposed Mobile-Bench task set: GPT-3.5-turbo (Ouyang et al., 2022), GPT-4 (Nori et al., 2023) , LLaMA-13B and LLaMA-70B (Touvron et al., 2023) , while ChatGPT-3.5 and GPT-4 are accessed through the online APIs of OpenAI.""",,"
+The paper discusses and evaluates the performance of several popular large language models (LLMs) on the Mobile-Bench benchmark, including:
+""We evaluate four popular LLMs on the proposed Mobile-Bench task set: GPT-3.5-turbo (Ouyang et al., 2022), GPT-4 (Nori et al., 2023) , LLaMA-13B and LLaMA-70B (Touvron et al., 2023) , while ChatGPT-3.5 and GPT-4 are accessed through the online APIs of OpenAI.""
+The specific LLM models evaluated in this paper are:
+- GPT-3.5-turbo
+- GPT-4
+- LLaMA-13B
+- LLaMA-70B
+- ChatGPT-3.5 (accessed through the OpenAI API)
+- GPT-4 (accessed through the OpenAI API)
+"
+FollowBench: A Multi-level Fine-grained Constraints Following Benchmark for Large Language Models,"Yuxin Jiang, Yufei Wang, Xingshan Zeng, Wanjun Zhong, Liangyou Li, Fei Mi, Lifeng Shang, Xin Jiang, Qun Liu, Wei Wang",10.48550/arXiv.2310.20410,https://doi.org/10.48550/arXiv.2310.20410,Annual Meeting of the Association for Computational Linguistics,17,2023,FollowBench is a benchmark for evaluating LLMs' ability to follow fine-grained hierarchical constraints in instructions.,FollowBench is a multi-level fine-grained constraints following benchmark for evaluating the instruction-following capability of large language models.,"- The performance of all tested models declines substantially as the number of constraints in an instruction increases.
+- Closed-source models like GPT-4 and GPT-3.5 can consecutively satisfy around three constraints on average, outperforming all open-source models.
+- Situation and Example constraints are more challenging for LLMs compared to other constraint categories.",Not mentioned (the paper does not mention any specific environment or simulation used in the study),"1. Hard Satisfaction Rate (HSR): The average rate at which all constraints of individual instructions are fully satisfied.
+2. Soft Satisfaction Rate (SSR): The average satisfaction rate of individual constraints across all instructions.
+3. Consistent Satisfaction Levels (CSL): The number of consecutive levels a model can satisfy, beginning from level 1.","- GPT-4-Preview-1106 (OpenAI)
+- GPT-3.5-Turbo-1106 (OpenAI)
+- Qwen-Chat-72B/14B/7B (Bai et al., 2023)
+- LLaMA2-Chat-70B/13B/7B (Touvron et al., 2023)
+- WizardLM-13B-V1.2 (Xu et al., 2023)
+- Vicuna-13B/7B-V1.5 (Zheng et al., 2023)
+- Baichuan2-Chat-7B (Baichuan, 2023)
+- ChatGLM3-6B (Du et al., 2022)","  - ""To fill this research gap, in this paper, we propose FollowBench, a Multi-level Fine-grained Constraints Following Benchmark for LLMs. FollowBench comprehensively includes five different types (i.e., Content, Situation, Style, Format, and Example) of fine-grained constraints.""
+  - ""To precisely estimate the difficulty degree to which LLMs can follow instructions, as shown in Figure 1 , we propose a novel Multi-level mechanism that incrementally adds a single constraint to straightforward instructions at each increased level.""
+  - ""Overall, FollowBench consists of 820 meticulously curated instructions from over 50 NLP tasks, including both closed-and open-ended questions.""",,"
+The paper introduces FollowBench, a multi-level fine-grained constraints following benchmark for evaluating the instruction-following capability of large language models (LLMs). FollowBench comprehensively includes five different types of constraints (Content, Situation, Style, Format, and Example) and uses a multi-level mechanism to incrementally add constraints to instructions, enabling a precise estimation of LLM performance.
+
+""To fill this research gap, in this paper, we propose FollowBench, a Multi-level Fine-grained Constraints Following Benchmark for LLMs. FollowBench comprehensively includes five different types (i.e., Content, Situation, Style, Format, and Example) of fine-grained constraints.""
+""To precisely estimate the difficulty degree to which LLMs can follow instructions, as shown in Figure 1, we propose a novel Multi-level mechanism that incrementally adds a single constraint to straightforward instructions at each increased level.""
+""Overall, FollowBench consists of 820 meticulously curated instructions from over 50 NLP tasks, including both closed-and open-ended questions.""
+
+FollowBench is a multi-level fine-grained constraints following benchmark for evaluating the instruction-following capability of large language models.
+
+The summary captures the key aspects of the paper, including the introduction of FollowBench, its comprehensive coverage of five constraint types, the use of a multi-level mechanism to incrementally add constraints, and the curation of 820 instructions from over 50 NLP tasks. The provided quotes fully support this summary.
+","  - ""Our principal observations are: (1) the performance of all tested models declines substantially with an increase in difficulty level (the number of constraints in an instruction);""
+  - ""2) although closed-source models such as GPT-4 and GPT-3.5 only consecutively satisfy around three constraints on average, they still markedly surpass all open-source models;""
+  - ""3) certain specific constraint categories, such as Situation and Example, prove to be more challenging for LLMs than others;""",,"
+The main findings of the paper can be summarized as follows:
+
+
+1) The performance of all tested models declines substantially with an increase in difficulty level (the number of constraints in an instruction):
+""our principal observations are: (1) the performance of all tested models declines substantially with an increase in difficulty level (the number of constraints in an instruction);""
+
+
+
+2) Closed-source models like GPT-4 and GPT-3.5 can consecutively satisfy around three constraints on average, markedly surpassing all open-source models:
+""(2) although closed-source models such as GPT-4 and GPT-3.5 only consecutively satisfy around three constraints on average, they still markedly surpass all open-source models;""
+
+
+
+3) Certain specific constraint categories, such as Situation and Example, prove to be more challenging for LLMs than others:
+""(3) certain specific constraint categories, such as Situation and Example, prove to be more challenging for LLMs than others;""
+
+
+
+- The performance of all tested models declines substantially as the number of constraints in an instruction increases.
+- Closed-source models like GPT-4 and GPT-3.5 can consecutively satisfy around three constraints on average, outperforming all open-source models.
+- Situation and Example constraints are more challenging for LLMs compared to other constraint categories.
+
+
+
+The answer is fully supported by the provided quotes, which cover the key findings of the paper. No additional quotes are needed.
+",,,"
+The paper does not mention any specific environment or simulation used in the study. The paper focuses on introducing a new benchmark called ""FollowBench"" for evaluating the instruction-following capability of large language models. The paper does not describe any environment or simulation that was used to evaluate the models. The closest mention is the following quote:
+
+FollowBench comprehensively includes five different types (i.e., Content, Situation, Style, Format, and Example) of fine-grained constraints.
+
+This suggests that the ""environment"" is the set of instructions and constraints that make up the FollowBench benchmark, rather than any kind of simulated or interactive environment. The paper is focused on the benchmark itself and the evaluation methodology, rather than the details of any specific environment or task.
+","  - ""where g is the group number of initial instructions, S n i = 1 if all constraints of the i-th instruction at level-n are satisfied and S n i = 0 otherwise.""
+  - ""we propose three novel metrics to evaluate the instruction-following ability of LLMs. For an instruction with n constraints (level n), we use the rule-based program or LLM judge (refer to Table 1 ) to discriminate if the response of a model satisfies each constraint in the instruction.""",,"
+The paper introduces three main metrics to evaluate the instruction-following ability of large language models on the FollowBench benchmark:
+
+
+""We propose three novel metrics to evaluate the instruction-following ability of LLMs. For an instruction with n constraints (level n), we use the rule-based program or LLM judge (refer to Table 1) to discriminate if the response of a model satisfies each constraint in the instruction.""
+
+
+The three metrics are:
+
+
+1. Hard Satisfaction Rate (HSR): ""At each level n, given a set of m instructions, we define the Hard Satisfaction Rate (HSR) and Soft Satisfaction Rate (SSR) as follows:
+HSR = (1/m) * Σ_i=1^m Π_j=1^n s_i^j""
+
+
+HSR measures the average rate at which all constraints of individual instructions are fully satisfied.
+
+
+2. Soft Satisfaction Rate (SSR): ""SSR = (1/m*n) * Σ_i=1^m Σ_j=1^n s_i^j""
+
+
+SSR calculates the average satisfaction rate of individual constraints across all instructions.
+
+
+3. Consistent Satisfaction Levels (CSL): ""where g is the group number of initial instructions, S_n^i = 1 if all constraints of the i-th instruction at level-n are satisfied and S_n^i = 0 otherwise.""
+
+
+CSL estimates how many consecutive levels a model can satisfy, beginning from level 1.
+
+","  - ""We evaluate 13 popular LLMs including GPT-4-Preview-1106 (OpenAI, 2023), GPT-3.5-Turbo-1106 (OpenAI, 2022), Qwen-Chat-72B/14B/7B (Bai et al., 2023), LLaMA2-Chat-70B/13B/7B (Touvron et al., 2023), WizardLM-13B-V1.2 (Xu et al., 2023), Vicuna-13B/7B-V1.5 (Zheng et al., 2023), Baichuan2-Chat-7B (Baichuan, 2023), and ChatGLM3-6B (Du et al., 2022).""
+  - ""We access GPT-4-Preview-1106 and GPT-3.5-Turbo-1106 via OpenAI API. We access other open-source LLMs from their official repositories.""
+  - ""Our principal observations are: (1) the performance of all tested models declines substantially with an increase in difficulty level (the number of constraints in an instruction);
+
+(2) although closed-source models such as GPT-4 and GPT-3.5 only consecutively satisfy around three constraints on average, they still markedly surpass all open-source models;""",,"
+The paper evaluates the instruction-following capabilities of several large language models (LLMs), both closed-source and open-source. Specifically, the models mentioned and evaluated in the paper are:
+
+
+""We evaluate 13 popular LLMs including GPT-4-Preview-1106 (OpenAI, 2023), GPT-3.5-Turbo-1106 (OpenAI, 2022), Qwen-Chat-72B/14B/7B (Bai et al., 2023), LLaMA2-Chat-70B/13B/7B (Touvron et al., 2023), WizardLM-13B-V1.2 (Xu et al., 2023), Vicuna-13B/7B-V1.5 (Zheng et al., 2023), Baichuan2-Chat-7B (Baichuan, 2023), and ChatGLM3-6B (Du et al., 2022).""
+
+
+
+""We access GPT-4-Preview-1106 and GPT-3.5-Turbo-1106 via OpenAI API. We access other open-source LLMs from their official repositories.""
+
+
+
+""Our principal observations are: (1) the performance of all tested models declines substantially with an increase in difficulty level (the number of constraints in an instruction); (2) although closed-source models such as GPT-4 and GPT-3.5 only consecutively satisfy around three constraints on average, they still markedly surpass all open-source models;""
+
+
+
+The specific LLM models evaluated and discussed in the paper are:
+- GPT-4-Preview-1106 (OpenAI)
+- GPT-3.5-Turbo-1106 (OpenAI)
+- Qwen-Chat-72B/14B/7B (Bai et al., 2023)
+- LLaMA2-Chat-70B/13B/7B (Touvron et al., 2023)
+- WizardLM-13B-V1.2 (Xu et al., 2023)
+- Vicuna-13B/7B-V1.5 (Zheng et al., 2023)
+- Baichuan2-Chat-7B (Baichuan, 2023)
+- ChatGLM3-6B (Du et al., 2022)
+
+
+
+The quotes provided fully support the answer, as they explicitly list the specific LLM models evaluated in the paper. No additional quotes are needed.
+"
+SmartPlay : A Benchmark for LLMs as Intelligent Agents,"Yue Wu, Xuan Tang, Tom M. Mitchell, Yuanzhi Li",10.48550/arXiv.2310.01557,https://doi.org/10.48550/arXiv.2310.01557,International Conference on Learning Representations,48,2023,"SmartPlay is a benchmark for evaluating LLMs' capabilities as intelligent agents, including reasoning with hierarchical rules and constraints.",SmartPlay is a benchmark for evaluating the capabilities of large language models as intelligent agents across a variety of games that test different skills.,"- GPT-4 variants outperform other proprietary and open-source LLMs across the SmartPlay benchmark.
+- There is still a significant gap between GPT-4 and human performance on more challenging tasks like Hanoi, Minecraft, and Crafter.
+- Open-source LLMs lag far behind GPT-4 variants, even on simpler tasks.","The environments used in this study are text-based games and simulations, including Two-armed Bandits, Rock Paper Scissors, Messenger, Crafter, and a simplified version of Minecraft focused on creative navigation tasks. These environments are used to evaluate the capabilities of large language models (LLMs) as intelligent agents.","1. Reward: Aligns with the score/reward definition in games originally designed for reinforcement learning, like Bandits, Rock Paper Scissors, Messenger, and Crafter.
+2. Completion rate: Measures the rate of successful completion for games with quantifiable objectives, like Hanoi, Messenger, and Minecraft.
+3. Score: A summary performance metric introduced for all games in the benchmark, with specific definitions for each game.","- GPT-4 variants (including GPT-0614)
+- Other proprietary models like Claude, Bard, and text-davinci-003
+- Open-source models like LLAMA-2-13b, LLAMA-1-13b, and Vicuna-13b","  - ""SmartPlay serves not only as a rigorous testing ground for evaluating the overall performance of LLM agents but also as a road-map for identifying gaps in current methodologies.""
+  - ""We introduce SmartPlay: both a challenging benchmark and a methodology for evaluating LLMs as agents. SmartPlay consists of 6 different games, including Rock-Paper-Scissors, Tower of Hanoi, Minecraft.""
+  - ""Each game in SmartPlay uniquely challenges a subset of 9 important capabilities of an intelligent LLM agent, including reasoning with object dependencies, planning ahead, spatial reasoning, learning from history, and understanding randomness.""",,"
+The paper introduces SmartPlay, a benchmark for evaluating the capabilities of large language models (LLMs) as intelligent agents. The key points are:
+
+""We introduce SmartPlay: both a challenging benchmark and a methodology for evaluating LLMs as agents. SmartPlay consists of 6 different games, including Rock-Paper-Scissors, Tower of Hanoi, Minecraft.""
+""Each game in SmartPlay uniquely challenges a subset of 9 important capabilities of an intelligent LLM agent, including reasoning with object dependencies, planning ahead, spatial reasoning, learning from history, and understanding randomness.""
+""SmartPlay serves not only as a rigorous testing ground for evaluating the overall performance of LLM agents but also as a road-map for identifying gaps in current methodologies.""
+
+The paper introduces a benchmark called SmartPlay that evaluates the capabilities of LLMs as intelligent agents across a variety of games that test different skills.
+","  - ""GPT-4 variants significantly out performs other proprietary models, which outperform open-source models by significant margins.""
+  - ""Open-source LLMs achieves less than half the performance of GPT-4 variants on simple Bandit and Rock-Paper-Scissors tasks, and 1/8 the performance on more challenging tasks.""
+  - ""Despite the impressive performance of GPT-4 variants, there is still a significant gap between GPT-4 and human baseline performance on more challenging benchmarks, with a 10% gap on 3DiskHanoi, 40% on Minecraft creative tasks, and 70% on Crafter.""",,"
+The main findings of this paper can be summarized as follows:
+
+
+""GPT-4 variants significantly out performs other proprietary models, which outperform open-source models by significant margins.""
+""Despite the impressive performance of GPT-4 variants, there is still a significant gap between GPT-4 and human baseline performance on more challenging benchmarks, with a 10% gap on 3DiskHanoi, 40% on Minecraft creative tasks, and 70% on Crafter.""
+""Open-source LLMs achieves less than half the performance of GPT-4 variants on simple Bandit and Rock-Paper-Scissors tasks, and 1/8 the performance on more challenging tasks.""
+
+
+The key takeaways are:
+- GPT-4 variants outperform other proprietary and open-source LLMs across the SmartPlay benchmark.
+- There is still a significant gap between GPT-4 and human performance on more challenging tasks like Hanoi, Minecraft, and Crafter.
+- Open-source LLMs lag far behind GPT-4 variants, even on simpler tasks.
+","  - ""Two-armed Bandits, Rock Paper Scissors, Messenger (Hanjie et al., 2021), Crafter (Hafner, 2021), and Minecraft (Fan et al., 2022) creative navigation tasks.""
+  - ""SmartPlay consists of 6 different games, including Rock-Paper-Scissors, Tower of Hanoi, Minecraft. Each game features a unique setting, providing up to 20 evaluation settings and infinite environment variations.""
+  - ""Minecraft is one of the most popular games in history 4 . The game world is virtually infinite and procedurally generated. The game observation is composed of rough 3D objects representing various materials, such as dirt, stone, ores, tree trunks, water, and lava. Minecraft has been widely studied as a benchmark for intelligent multi-tasking agents (Guss et al., 2021;Fan et al., 2022;Hafner et al., 2023;Yuan et al., 2023; Wang et al., 2023b; a) . However, due to the fact that most current LLMs do not have vision capabilities, we simplify the Minecraft benchmark (Fan et al., 2022) and only consider a small set of creative tasks where the primary objective is to find specific biomes, so an LLM could control a hand-coded agent to perform navigation in the 3D world.""
+  - ""SmartPlay follows a unified OpenAI Gym interface (Brockman et al., 2016) for all games, with text-based observations, text-based manuals with content as described in Table 1 , text describing historical actions and observations covering past steps of length ""history length"", and flat categorical actions.""",,"
+The paper describes several different environments used in the SmartPlay benchmark, including:
+""Two-armed Bandits, Rock Paper Scissors, Messenger (Hanjie et al., 2021), Crafter (Hafner, 2021), and Minecraft (Fan et al., 2022) creative navigation tasks.""
+The paper states that these environments are used to evaluate the capabilities of large language models (LLMs) as intelligent agents:
+""SmartPlay consists of 6 different games, including Rock-Paper-Scissors, Tower of Hanoi, Minecraft. Each game features a unique setting, providing up to 20 evaluation settings and infinite environment variations.""
+The environments are described as text-based games and simulations, where the agent interacts with the environment through text observations and actions:
+""SmartPlay follows a unified OpenAI Gym interface (Brockman et al., 2016) for all games, with text-based observations, text-based manuals with content as described in Table 1, text describing historical actions and observations covering past steps of length ""history length"", and flat categorical actions.""
+The paper also mentions that the Minecraft environment is simplified to focus on creative navigation tasks, as current LLMs do not have vision capabilities:
+""Minecraft is one of the most popular games in history 4 . The game world is virtually infinite and procedurally generated. The game observation is composed of rough 3D objects representing various materials, such as dirt, stone, ores, tree trunks, water, and lava. Minecraft has been widely studied as a benchmark for intelligent multi-tasking agents (Guss et al., 2021;Fan et al., 2022;Hafner et al., 2023;Yuan et al., 2023; Wang et al., 2023b; a) . However, due to the fact that most current LLMs do not have vision capabilities, we simplify the Minecraft benchmark (Fan et al., 2022) and only consider a small set of creative tasks where the primary objective is to find specific biomes, so an LLM could control a hand-coded agent to perform navigation in the 3D world.""
+","  - ""We define three metrics: reward, completion rate, score. To ensure compatibility with prior works, reward aligns with the score/reward definition in games originally designed for RL (i.e., Bandits, Rock Paper Scissors, Messenger, Crafter (Hanjie et al., 2021;Hafner, 2021)). Completion rate measures the rate of successful completion for games with quantifiable objectives (i.e., Hanoi, Messenger, Minecraft). Finally, we introduce score for every game in the benchmark to provide a summary of performance.""
+  - ""For Bandits and Rock Paper Scissors, the score is defined the number of times the LLM action matches the environment optimal action; for Hanoi, the score is defined as the number of disks successfully moved to the goal peg; for Messenger, the score is the same as the reward (Hanjie et al., 2021) of each round of game; for Crafter, the score is defined as the number of unlocked achievements at every step, summed across the whole game; for Minecraft, the score is defined as the indicator of whether the ""find"" objective for the game has been completed.""",,"
+The paper defines three main metrics to evaluate the performance of LLM agents on the SmartPlay benchmark:
+""We define three metrics: reward, completion rate, score. To ensure compatibility with prior works, reward aligns with the score/reward definition in games originally designed for RL (i.e., Bandits, Rock Paper Scissors, Messenger, Crafter (Hanjie et al., 2021;Hafner, 2021)). Completion rate measures the rate of successful completion for games with quantifiable objectives (i.e., Hanoi, Messenger, Minecraft). Finally, we introduce score for every game in the benchmark to provide a summary of performance.""
+The reward metric is used for games that were originally designed for reinforcement learning, like Bandits, Rock Paper Scissors, Messenger, and Crafter. The completion rate metric is used for games with quantifiable objectives, like Hanoi, Messenger, and Minecraft. The score metric is a summary performance metric introduced for all games in the benchmark.
+""For Bandits and Rock Paper Scissors, the score is defined the number of times the LLM action matches the environment optimal action; for Hanoi, the score is defined as the number of disks successfully moved to the goal peg; for Messenger, the score is the same as the reward (Hanjie et al., 2021) of each round of game; for Crafter, the score is defined as the number of unlocked achievements at every step, summed across the whole game; for Minecraft, the score is defined as the indicator of whether the ""find"" objective for the game has been completed.""
+The specific definitions of the score metric for each game are provided in the quote above. The reward and completion rate metrics are also defined in the paper.
+","  - ""Overall, GPT-4 variants significantly out performs other proprietary models, which outperform open-source models by significant margins.""
+  - ""Open-source LLMs achieves less than half the performance of GPT-4 variants on simple Bandit and Rock-Paper-Scissors tasks, and 1/8 the performance on more challenging tasks. The fine-tuned Vicuna-13b model performs much worse than the base LLAMA-13b.""
+  - ""Other proprietary LLMs struggle to keep up with GPT-4: We observe a more than 20% gap between GPT-4 and other proprietary models like Claude, Bard, and text-davinci-003 across all games except Minecraft.""
+  - ""We experiment with 9 recent popular open-source and proprietary LLMs and report the average score in Table 2""",,"
+The paper does not explicitly mention or evaluate any specific AI agent architecture or language model names. However, it does discuss the performance of various ""large language models"" (LLMs) on the SmartPlay benchmark:
+
+""We experiment with 9 recent popular open-source and proprietary LLMs and report the average score in Table 2.""
+""Overall, GPT-4 variants significantly out performs other proprietary models, which outperform open-source models by significant margins.""
+""Other proprietary LLMs struggle to keep up with GPT-4: We observe a more than 20% gap between GPT-4 and other proprietary models like Claude, Bard, and text-davinci-003 across all games except Minecraft.""
+""Open-source LLMs achieves less than half the performance of GPT-4 variants on simple Bandit and Rock-Paper-Scissors tasks, and 1/8 the performance on more challenging tasks. The fine-tuned Vicuna-13b model performs much worse than the base LLAMA-13b.""
+
+"

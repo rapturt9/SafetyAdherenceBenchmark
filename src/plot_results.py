@@ -1,136 +1,156 @@
-import pandas as pd
 import os
-import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
 import argparse
 
 def plot_benchmark_results(csv_filepath, output_dir):
-    """
-    Generates and saves plots from the benchmark results CSV.
-
-    Args:
-        csv_filepath (str): Path to the benchmark results CSV file.
-        output_dir (str): Directory to save the generated plots.
-    """
-    try:
-        df = pd.read_csv(csv_filepath)
-    except FileNotFoundError:
-        print(f"Error: Results CSV file not found at {csv_filepath}")
-        return
-    except Exception as e:
-        print(f"Error reading CSV file {csv_filepath}: {e}")
-        return
-
-    if df.empty:
-        print("Warning: Results CSV is empty. No plots will be generated.")
-        return
+    df = pd.read_csv(csv_filepath)
 
     # Ensure output directory exists
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    os.makedirs(output_dir, exist_ok=True)
 
-    # Plot 1: Principle Adherence Rate (per model, scenario, control_type)
-    plt.figure(figsize=(15, 7))
-    # Group by model, scenario_id, and control_type, then unstack scenario_id and control_type for grouped bars
-    adherence_rate = df.groupby(['model', 'scenario_id', 'control_type'])['principle_adhered'].mean().mul(100)
-    if not adherence_rate.empty:
-        adherence_rate.unstack(['scenario_id', 'control_type']).plot(kind='bar', ax=plt.gca())
-        plt.title('Principle Adherence Rate (%) by Model, Scenario, and Control Type')
-        plt.ylabel('Adherence Rate (%)')
+    # 1. Overall Performance Summary (Table)
+    overall_summary = df[df['control_type'] == 'Principle_ON'].groupby(['model', 'principle_id'])[['principle_adhered', 'task_success']].mean().reset_index()
+    overall_summary.to_csv(os.path.join(output_dir, "overall_performance_summary.csv"), index=False)
+
+    # 2. Principle Adherence Rate by Conflict Type (Bar Chart)
+    adherence_df = df.groupby(['model', 'principle_id', 'control_type'])['principle_adhered'].mean().reset_index()
+    for principle in adherence_df['principle_id'].unique():
+        principle_data = adherence_df[adherence_df['principle_id'] == principle]
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=principle_data, x='model', y='principle_adhered', hue='control_type')
+        plt.title(f'Principle Adherence Rate for {principle}')
+        plt.ylabel('Adherence Rate')
+        plt.xlabel('Model')
         plt.xticks(rotation=45, ha="right")
+        plt.legend(title='Control Type')
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "principle_adherence_rate.png"))
+        plt.savefig(os.path.join(output_dir, f"adherence_rate_{principle}.png"))
         plt.close()
-    else:
-        print("No data for principle adherence rate plot.")
 
-
-    # Plot 2: Task Success Rate (per model, scenario, control_type)
-    plt.figure(figsize=(15, 7))
-    success_rate = df.groupby(['model', 'scenario_id', 'control_type'])['task_success'].mean().mul(100)
-    if not success_rate.empty:
-        success_rate.unstack(['scenario_id', 'control_type']).plot(kind='bar', ax=plt.gca())
-        plt.title('Task Success Rate (%) by Model, Scenario, and Control Type')
-        plt.ylabel('Success Rate (%)')
+    # 3. Task Success Rate by Conflict Type (Bar Chart)
+    success_df = df.groupby(['model', 'principle_id', 'control_type'])['task_success'].mean().reset_index()
+    for principle in success_df['principle_id'].unique():
+        principle_data = success_df[success_df['principle_id'] == principle]
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=principle_data, x='model', y='task_success', hue='control_type')
+        plt.title(f'Task Success Rate for {principle}')
+        plt.ylabel('Success Rate')
+        plt.xlabel('Model')
         plt.xticks(rotation=45, ha="right")
+        plt.legend(title='Control Type')
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "task_success_rate.png"))
+        plt.savefig(os.path.join(output_dir, f"success_rate_{principle}.png"))
         plt.close()
-    else:
-        print("No data for task success rate plot.")
 
-    # Plot 3: Steps Taken (Box plot per model, scenario, control_type)
-    if 'steps_taken' in df.columns and not df['steps_taken'].isnull().all():
-        plt.figure(figsize=(18, 10))
-        sns.boxplot(data=df, x='model', y='steps_taken', hue='scenario_id', dodge=True)
-        plt.title('Distribution of Steps Taken by Model and Scenario')
-        plt.ylabel('Steps Taken')
+    # 4. Impact of Principle ON vs. OFF on Specific Violations (Bar Chart)
+    violation_df = df.groupby(['model', 'principle_id', 'control_type'])['principle_adhered'].mean().reset_index()
+    for principle in violation_df['principle_id'].unique():
+        principle_data = violation_df[violation_df['principle_id'] == principle]
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=principle_data, x='model', y='principle_adhered', hue='control_type')
+        plt.title(f'Impact of Principle ON vs OFF for {principle}')
+        plt.ylabel('Adherence Rate')
+        plt.xlabel('Model')
         plt.xticks(rotation=45, ha="right")
-        plt.legend(title='Scenario ID', bbox_to_anchor=(1.05, 1), loc='upper left')
+        plt.legend(title='Control Type')
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "steps_taken_distribution.png"))
+        plt.savefig(os.path.join(output_dir, f"impact_principle_{principle}.png"))
         plt.close()
 
-        # Facet by control_type as well for more detail
-        g = sns.catplot(data=df, x='model', y='steps_taken', hue='scenario_id', col='control_type', kind='box', height=6, aspect=1.5, dodge=True)
-        g.fig.suptitle('Distribution of Steps Taken by Model, Scenario, and Control Type', y=1.03)
-        g.set_xticklabels(rotation=45, ha="right")
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "steps_taken_distribution_by_control.png"))
-        plt.close()
-    else:
-        print("No data or 'steps_taken' column missing for steps taken distribution plot.")
+    # 5. Behavioral Metrics - Steps Taken (Box Plot)
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(data=df, x='model', y='steps_taken', hue='control_type')
+    plt.title('Steps Taken by Model and Control Type')
+    plt.ylabel('Steps Taken')
+    plt.xlabel('Model')
+    plt.xticks(rotation=45, ha="right")
+    plt.legend(title='Control Type')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "steps_taken.png"))
+    plt.close()
 
+    # 6. Behavioral Metrics - Oscillation/Revisit Counts (Box Plot)
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(data=df, x='model', y='oscillation_count', hue='control_type')
+    plt.title('Oscillation Counts by Model and Control Type')
+    plt.ylabel('Oscillation Count')
+    plt.xlabel('Model')
+    plt.xticks(rotation=45, ha="right")
+    plt.legend(title='Control Type')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "oscillation_counts.png"))
+    plt.close()
 
-    # Plot 4: Oscillation Count (Box plot per model, scenario, control_type)
-    if 'oscillation_count' in df.columns and not df['oscillation_count'].isnull().all():
-        plt.figure(figsize=(18, 10))
-        sns.boxplot(data=df, x='model', y='oscillation_count', hue='scenario_id', dodge=True)
-        plt.title('Distribution of Oscillation Counts by Model and Scenario')
-        plt.ylabel('Oscillation Count')
+    # 7. Scatter Plot: PAR vs. TSR
+    scatter_df = df[df['control_type'] == 'Principle_ON'].groupby(['model', 'principle_id'])[['principle_adhered', 'task_success']].mean().reset_index()
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(data=scatter_df, x='principle_adhered', y='task_success', hue='principle_id', style='model', s=100)
+    plt.title('PAR vs TSR (Principle ON)')
+    plt.xlabel('Principle Adherence Rate (PAR)')
+    plt.ylabel('Task Success Rate (TSR)')
+    plt.legend(title='Principle ID')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "par_vs_tsr.png"))
+    plt.close()
+
+    # 8. Heatmap of Principle Violations by Scenario Type
+    heatmap_df = df.pivot_table(index='model', columns='scenario_id', values='principle_adhered', aggfunc='mean')
+    plt.figure(figsize=(12, 8))
+    sns.heatmap(heatmap_df, annot=True, cmap='coolwarm', cbar_kws={'label': 'Adherence Rate'})
+    plt.title('Principle Violations by Scenario Type')
+    plt.ylabel('Model')
+    plt.xlabel('Scenario ID')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "violations_heatmap.png"))
+    plt.close()
+
+    # 9. Stacked Bar Chart for P3 Procedural Violations
+    p3_df = df[df['principle_id'] == 'P3']
+    p3_summary = p3_df.groupby(['model', 'control_type'])['steps_taken'].sum().unstack()
+    p3_summary.plot(kind='bar', stacked=True, figsize=(10, 6))
+    plt.title('P3 Procedural Violations')
+    plt.ylabel('Total Steps Taken')
+    plt.xlabel('Model')
+    plt.xticks(rotation=45, ha="right")
+    plt.legend(title='Control Type')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "p3_procedural_violations.png"))
+    plt.close()
+
+    # 10. "Frustration" Index (Composite Bar Chart)
+    df['frustration_index'] = (df['steps_taken'] + df['oscillation_count'] + df['revisited_states_count']) / 3
+    frustration_df = df.groupby(['model', 'principle_id'])['frustration_index'].mean().reset_index()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(data=frustration_df, x='model', y='frustration_index', hue='principle_id')
+    plt.title('Frustration Index by Model and Principle')
+    plt.ylabel('Frustration Index')
+    plt.xlabel('Model')
+    plt.xticks(rotation=45, ha="right")
+    plt.legend(title='Principle ID')
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "frustration_index.png"))
+    plt.close()
+
+    # 11. Detailed Task Success Breakdown (Bar Chart)
+    for principle in df['principle_id'].unique():
+        principle_data = df[df['principle_id'] == principle]
+        plt.figure(figsize=(10, 6))
+        sns.barplot(data=principle_data, x='scenario_id', y='task_success', hue='control_type')
+        plt.title(f'Task Success Breakdown for {principle}')
+        plt.ylabel('Task Success Rate')
+        plt.xlabel('Scenario ID')
         plt.xticks(rotation=45, ha="right")
-        plt.legend(title='Scenario ID', bbox_to_anchor=(1.05, 1), loc='upper left')
+        plt.legend(title='Control Type')
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "oscillation_count_distribution.png"))
+        plt.savefig(os.path.join(output_dir, f"task_success_breakdown_{principle}.png"))
         plt.close()
 
-        g = sns.catplot(data=df, x='model', y='oscillation_count', hue='scenario_id', col='control_type', kind='box', height=6, aspect=1.5, dodge=True)
-        g.fig.suptitle('Distribution of Oscillation Counts by Model, Scenario, and Control Type', y=1.03)
-        g.set_xticklabels(rotation=45, ha="right")
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "oscillation_count_distribution_by_control.png"))
-        plt.close()
-    else:
-        print("No data or 'oscillation_count' column missing for oscillation count distribution plot.")
-
-    # Plot 5: Revisited States Count (Box plot per model, scenario, control_type)
-    if 'revisited_states_count' in df.columns and not df['revisited_states_count'].isnull().all():
-        plt.figure(figsize=(18, 10))
-        sns.boxplot(data=df, x='model', y='revisited_states_count', hue='scenario_id', dodge=True)
-        plt.title('Distribution of Revisited States Counts by Model and Scenario')
-        plt.ylabel('Revisited States Count')
-        plt.xticks(rotation=45, ha="right")
-        plt.legend(title='Scenario ID', bbox_to_anchor=(1.05, 1), loc='upper left')
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "revisited_states_count_distribution.png"))
-        plt.close()
-
-        g = sns.catplot(data=df, x='model', y='revisited_states_count', hue='scenario_id', col='control_type', kind='box', height=6, aspect=1.5, dodge=True)
-        g.fig.suptitle('Distribution of Revisited States Counts by Model, Scenario, and Control Type', y=1.03)
-        g.set_xticklabels(rotation=45, ha="right")
-        plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, "revisited_states_count_distribution_by_control.png"))
-        plt.close()
-    else:
-        print("No data or 'revisited_states_count' column missing for revisited states count distribution plot.")
-
-    print(f"Plots saved to {output_dir}")
+    print(f"All plots saved to {output_dir}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate plots from benchmark results CSV.")
-    parser.add_argument("csv_filepath", type=str, help="Path to the benchmark results CSV file.")
-    parser.add_argument("output_dir", type=str, help="Directory to save the generated plots.")
-    
-    args = parser.parse_args()
-    
-    plot_benchmark_results(args.csv_filepath, args.output_dir)
+   
+    csv_filepath = os.path.join(os.path.dirname(__file__), "benchmark_results.csv")
+    output_dir = os.path.join(os.path.dirname(__file__), "benchmark_plots")
+    plot_benchmark_results(csv_filepath, output_dir)

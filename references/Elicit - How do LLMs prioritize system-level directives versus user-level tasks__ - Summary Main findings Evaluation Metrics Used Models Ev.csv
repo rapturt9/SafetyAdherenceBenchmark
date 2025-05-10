@@ -1,0 +1,433 @@
+﻿Title,Authors,DOI,DOI link,Venue,Citation count,Year,Abstract summary,Summary,Main findings,Evaluation Metrics Used,Models,"Supporting quotes for ""Summary""","Supporting  tables for ""Summary""","Reasoning for ""Summary""","Supporting quotes for ""Main findings""","Supporting  tables for ""Main findings""","Reasoning for ""Main findings""","Supporting quotes for ""Evaluation Metrics Used""","Supporting  tables for ""Evaluation Metrics Used""","Reasoning for ""Evaluation Metrics Used""","Supporting quotes for ""Models""","Supporting  tables for ""Models""","Reasoning for ""Models"""
+The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions,"Eric Wallace, Kai Xiao, R. Leike, Lilian Weng, Jo-hannes Heidecke, Alex Beutel",10.48550/arXiv.2404.13208,https://doi.org/10.48550/arXiv.2404.13208,arXiv.org,66,2024,LLMs can be trained to prioritize privileged system-level instructions over user-level tasks to increase robustness against prompt injections and jailbreaks.,"The authors propose an ""instruction hierarchy"" to teach language models to prioritize privileged instructions over lower-priority instructions, in order to address vulnerabilities like prompt injections, jailbreaks, and system prompt extractions.","- The instruction hierarchy approach significantly improves the robustness of language models against various attacks, including prompt injections, system prompt extractions, and jailbreaks.
+- The model is able to generalize to new types of attacks that were not seen during training.
+- The instruction hierarchy approach can lead to some over-refusal behavior, but the authors believe this can be addressed with further data collection and refinement.","- Success rate/violation rate on in-domain attacks
+- Generalization performance on held-out attack types
+- ""Over-refusal"" metrics to assess the model's ability to follow benign instructions
+- Qualitative examples of the model's behavior compared to a baseline
+The paper aims to maximize performance on the in-domain and generalization attacks while minimizing over-refusal, with the goal of matching baseline performance on benign instructions.",The specific AI agent architecture or language model evaluated and discussed in this paper is GPT-3.5 Turbo.,"  - ""we propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a data generation method to demonstrate this hierarchical instruction following behavior, which teaches LLMs to selectively ignore lower-privileged instructions.""
+  - ""Our approach yields dramatically improved robustness across all evaluations (Figure 2 ), e.g. defense against system prompt extraction is improved by 63%. Moreover, we observe generalization to held-out attacks that are not directly modeled in our data generation pipeline, e.g., jailbreak robustness increases by over 30%.""
+  - ""We apply this method to GPT-3.5, showing that it drastically increases robustness -- even for attack types not seen during training -- while imposing minimal degradations on standard capabilities.""",,"
+The summary of this paper is that the authors propose an ""instruction hierarchy"" to teach language models to prioritize privileged instructions over lower-priority instructions, in order to address vulnerabilities like prompt injections, jailbreaks, and system prompt extractions.
+
+""We propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a data generation method to demonstrate this hierarchical instruction following behavior, which teaches LLMs to selectively ignore lower-privileged instructions.""
+""We apply this method to GPT-3.5, showing that it drastically increases robustness -- even for attack types not seen during training -- while imposing minimal degradations on standard capabilities.""
+""Our approach yields dramatically improved robustness across all evaluations (Figure 2 ), e.g. defense against system prompt extraction is improved by 63%. Moreover, we observe generalization to held-out attacks that are not directly modeled in our data generation pipeline, e.g., jailbreak robustness increases by over 30%.""
+
+The authors propose an ""instruction hierarchy"" to teach language models to prioritize privileged instructions over lower-priority instructions, in order to address vulnerabilities like prompt injections, jailbreaks, and system prompt extractions.
+
+The summary is well supported by the key quotes from the paper, which clearly outline the main contribution of the work - the instruction hierarchy approach to improve robustness of language models against various attacks. No additional quotes are needed.
+","  - ""our models sometimes ignore or refuse benign queries-but the generic capabilities of our models remains otherwise unscathed and we are confident this can be resolved with further data collection.""
+  - ""We do observe some regressions in""",,"
+The main findings of the paper can be summarized as follows:
+
+
+""Our approach yields dramatically improved robustness across all evaluations (Figure 2 ), e.g. defense against system prompt extraction is improved by 63%. Moreover, we observe generalization to held-out attacks that are unlike those seen during training time, e.g., jailbreak robustness increases by over 30%.""
+
+The paper demonstrates that their proposed instruction hierarchy approach significantly improves the robustness of language models against various attacks, including prompt injections, system prompt extractions, and jailbreaks. The model is able to generalize to new types of attacks that were not seen during training.
+
+
+""We do observe some regressions in ""over-refusals""-our models sometimes ignore or refuse benign queries-but the generic capabilities of our models remains otherwise unscathed and we are confident this can be resolved with further data collection.""
+
+The paper also notes that the instruction hierarchy approach can lead to some over-refusal behavior, where the model refuses to comply with benign instructions. However, the authors believe this can be addressed with further data collection and refinement.
+
+
+- The instruction hierarchy approach significantly improves the robustness of language models against various attacks, including prompt injections, system prompt extractions, and jailbreaks.
+- The model is able to generalize to new types of attacks that were not seen during training.
+- The instruction hierarchy approach can lead to some over-refusal behavior, but the authors believe this can be addressed with further data collection and refinement.
+
+
+
+The answer is well supported by the provided quotes, which cover the key findings of the paper regarding improved robustness, generalization to new attacks, and the potential issue of over-refusal. No additional quotes are needed.
+","  - ""We create an evaluation suite using open-source and novel datasets. This includes both in-domain attacks, attacks that are aimed to test generalization, and ""overrefusal"" evaluations that test our models ability to follow benign instructions.""
+  - ""For the over-refusal evaluations, which consist of benign instructions and boundary cases (i.e. prompts that look like attacks but are in fact safe to comply with), our goal is to match the baseline performance.""
+  - ""We show qualitative examples of our model's behavior versus the baseline's for three of these evaluations in Table 2""
+  - ""For each evaluation, we report error bars of one standard deviation above/below the mean. All metrics are framed such that a higher value is better.""",,"
+The paper discusses several different evaluation metrics used to assess the performance of the instruction hierarchy approach:
+
+""We create an evaluation suite using open-source and novel datasets. This includes both in-domain attacks, attacks that are aimed to test generalization, and ""overrefusal"" evaluations that test our models ability to follow benign instructions.""
+The paper mentions that they use a suite of evaluation datasets, including in-domain attacks, generalization attacks, and ""overrefusal"" evaluations to test the model's ability to follow benign instructions.
+
+""For each evaluation, we report error bars of one standard deviation above/below the mean. All metrics are framed such that a higher value is better.""
+The paper states that they report the mean performance with error bars of one standard deviation, and that higher values indicate better performance.
+
+""We show qualitative examples of our model's behavior versus the baseline's for three of these evaluations in Table 2.""
+The paper also includes qualitative examples of the model's behavior compared to a baseline for some of the evaluations.
+
+""For the over-refusal evaluations, which consist of benign instructions and boundary cases (i.e. prompts that look like attacks but are in fact safe to comply with), our goal is to match the baseline performance.""
+The paper specifically mentions ""over-refusal"" evaluations, which test the model's ability to follow benign instructions, and the goal is to match the baseline performance on these.
+","  - ""We fine-tune GPT-3.5 Turbo using supervised finetuning and reinforcement learning from human feedback (Ouyang et al., 2022; OpenAI, 2023) on the aforementioned data, as well as data for model capabilities.""
+  - ""The baseline is a similarly fine-tuned model but only trained with data for model capabilities and not our instruction hierarchy examples.""
+  - ""Both models achieved comparable metrics on capabilities evaluations (e.g., TriviaQA, LAMBADA, HellaSwag), showing that the instruction hierarchy does not degrade generic capabilities.""",,"
+The paper discusses evaluating and training the instruction hierarchy on GPT-3.5 Turbo, a version of the GPT-3 language model. This is evident from the following quotes:
+
+""We fine-tune GPT-3.5 Turbo using supervised finetuning and reinforcement learning from human feedback (Ouyang et al., 2022; OpenAI, 2023) on the aforementioned data, as well as data for model capabilities.""
+""The baseline is a similarly fine-tuned model but only trained with data for model capabilities and not our instruction hierarchy examples.""
+""Both models achieved comparable metrics on capabilities evaluations (e.g., TriviaQA, LAMBADA, HellaSwag), showing that the instruction hierarchy does not degrade generic capabilities.""
+
+The paper does not mention or evaluate any other specific language models like GPT-4, LLaMA, etc. It is focused on training and evaluating the instruction hierarchy on the GPT-3.5 Turbo model.
+"
+Instructional Segment Embedding: Improving LLM Safety with Instruction Hierarchy,"Tong Wu, Shujian Zhang, Kaiqiang Song, Silei Xu, Sanqiang Zhao, Ravi Agrawal, Sathish Indurthi, Chong Xiang, Prateek Mittal, Wenxuan Zhou",10.48550/arXiv.2410.09102,https://doi.org/10.48550/arXiv.2410.09102,arXiv.org,1,2024,Instructional Segment Embedding technique enables LLMs to prioritize system-level directives over user-level tasks.,The paper introduces a new technique called Instructional Segment Embedding (ISE) that aims to improve the safety and robustness of large language models by enabling them to better differentiate and prioritize various types of instructions.,"- Instructional Segment Embedding (ISE) consistently improves the robustness of large language models against various attacks, including indirect and direct prompt injection, prompt extraction, and harmful requests, while maintaining or even enhancing their general capabilities.
+- On the Structured Query benchmark, ISE achieves an average robust accuracy improvement of up to 15.75% and a worst robust accuracy improvement of up to 32.17% against in-domain indirect prompt injection attacks.
+- On the Instruction Hierarchy benchmark, ISE yields an average boost in robustness of up to 18.68% across multiple vulnerabilities, and also maintains or improves the instruction-following capability by as much as 4.1% on AlpacaEval.","1. Robust accuracy: Measures the rate at which the model does not generate the word ""hacked"" in response to prompt injection attacks.
+2. ROUGE-L recall: Measures how much of the secret system message was extracted by the attacker in prompt extraction attacks.
+3. Robust accuracy: Measures the ratio of cases where the model either rejects or does not provide sufficient details to answer malicious requests in harmful request attacks.
+4. AlpacaEval 1.0 and MT-Bench: Measure the models' general instruction-following capabilities.","Llama-2-13B, Llama-3-8B, and Llama-3.1-8B","  - ""We introduce the Instructional Segment Embedding (ISE) technique, inspired by BERT, to modern large language models, which embeds instruction priority information directly into the model. This approach enables models to explicitly differentiate and prioritize various instruction types, significantly improving safety against malicious prompts that attempt to override priority rules.""
+  - ""Our experiments on the Structured Query and Instruction Hierarchy benchmarks demonstrate an average robust accuracy increase of up to 15.75% and 18.68%, respectively. Furthermore, we observe an improvement in instruction-following capability of up to 4.1% evaluated on AlpacaEval.""
+  - ""Overall, our approach offers a promising direction for enhancing the safety and effectiveness of LLM architectures.""",,"
+The paper introduces a new technique called Instructional Segment Embedding (ISE) that aims to improve the safety and robustness of large language models (LLMs) by enabling them to better differentiate and prioritize various types of instructions, such as system messages, user prompts, and data inputs.
+
+""We introduce the Instructional Segment Embedding (ISE) technique, inspired by BERT, to modern large language models, which embeds instruction priority information directly into the model. This approach enables models to explicitly differentiate and prioritize various instruction types, significantly improving safety against malicious prompts that attempt to override priority rules.""
+""Our experiments on the Structured Query and Instruction Hierarchy benchmarks demonstrate an average robust accuracy increase of up to 15.75% and 18.68%, respectively. Furthermore, we observe an improvement in instruction-following capability of up to 4.1% evaluated on AlpacaEval.""
+""Overall, our approach offers a promising direction for enhancing the safety and effectiveness of LLM architectures.""
+
+The paper introduces a new technique called Instructional Segment Embedding (ISE) that aims to improve the safety and robustness of large language models by enabling them to better differentiate and prioritize various types of instructions.
+
+The summary captures the key points of the paper, which are the introduction of the ISE technique and its demonstrated improvements in model robustness and instruction-following capability. The provided quotes fully support these main aspects of the summary.
+",,,"
+The main findings of the paper can be summarized as follows:
+
+
+1) Instructional Segment Embedding (ISE) consistently improves the robustness of large language models against various attacks, including indirect and direct prompt injection, prompt extraction, and harmful requests, while maintaining or even enhancing their general capabilities.
+2) On the Structured Query benchmark, ISE achieves an average robust accuracy improvement of up to 15.75% and a worst robust accuracy improvement of up to 32.17% against in-domain indirect prompt injection attacks.
+3) On the Instruction Hierarchy benchmark, ISE yields an average boost in robustness of up to 18.68% across multiple vulnerabilities, and also maintains or improves the instruction-following capability by as much as 4.1% on AlpacaEval.
+
+
+The paper demonstrates that incorporating ISE, which embeds information about the hierarchy of instructions (system, user, data, output) directly into the model architecture, can significantly enhance the robustness of large language models against a wide range of safety and security threats. This is achieved while either maintaining or improving the models' general capabilities on standard instruction-following benchmarks.
+
+","  - ""and refer to this as robustness or robust accuracy.""
+  - ""We also evaluate our models using two instruction-following benchmarks: AlpacaEval 1.0 (Li et al., 2023) and MT-Bench (Zheng et al., 2023) . Specifically, we follow the steps of AlpacaEval 1.0 to assess model performance. For MT-Bench, we evaluate only 1-turn conversations, as our model is trained for single-turn interactions.""",,"
+The paper discusses several different evaluation metrics used to assess the performance and robustness of the proposed Instructional Segment Embedding (ISE) method:
+
+
+""For the Structured Query benchmark, we compute the rate at which the model does not generate content containing the word ""hacked"" and refer to this as robustness or robust accuracy.""
+
+This indicates that for the Structured Query benchmark, the key metric is the ""robust accuracy"", which measures the rate at which the model does not generate the word ""hacked"" in its output.
+
+
+""For prompt extraction, we use the ShareGPT and Unnatural Instructions datasets (Honovich et al., 2023), each consisting of 500 prompts, as described in (Zhang et al., 2024) , to serve as the secret system messages. To perform prompt extraction, we utilize 15 effective prompts selected by the authors. This metric computes the length of the longest common subsequence (LCS) between the extracted system message (e) and the ground truth (t). The resulting score is the ratio of the LCS length to the length of the ground truth. An attack is considered successful if this score exceeds 0.9, as presented in Equation 1.""
+
+For prompt extraction attacks, the key metric is an approximate ROUGE-L recall score, which measures how much of the secret system message was extracted by the attacker. An attack is considered successful if this score exceeds 0.9.
+
+
+""For harmful requests, we follow the evaluation approach of Wallace et al. (2024), utilizing prompts from Jailbreakchat (Chat) and ""Do Anything Now"" (DAN). These prompts are concatenated with malicious requests from StrongREJECT (Souly et al., 2024) to create the final harmful prompts. For each sample, we randomly select one attacking prompt to concatenate with the instruction, resulting in a dataset of 313 evaluation samples. For evaluation metrics, we query GPT-4o to determine whether the response adheres to safety guardrails (i.e., whether the response provides sufficient details to answer malicious requests). Robust accuracy is then computed as the ratio of cases where the model either rejects or does not provide sufficient detail in response to malicious questions.""
+
+For harmful request attacks, the key metric is the ""robust accuracy"", which measures the ratio of cases where the model either rejects or does not provide sufficient details to answer the malicious requests.
+
+
+""We also evaluate our models using two instruction-following benchmarks: AlpacaEval 1.0 (Li et al., 2023) and MT-Bench (Zheng et al., 2023) . Specifically, we follow the steps of AlpacaEval 1.0 to assess model performance. For MT-Bench, we evaluate only 1-turn conversations, as our model is trained for single-turn interactions.""
+
+In addition to the attack-specific metrics, the paper also evaluates the models' general instruction-following capabilities using the AlpacaEval 1.0 and MT-Bench benchmarks.
+
+
+The key evaluation metrics used in the paper are:
+1. Robust accuracy: Measures the rate at which the model does not generate the word ""hacked"" in response to prompt injection attacks.
+2. ROUGE-L recall: Measures how much of the secret system message was extracted by the attacker in prompt extraction attacks.
+3. Robust accuracy: Measures the ratio of cases where the model either rejects or does not provide sufficient details to answer malicious requests in harmful request attacks.
+4. AlpacaEval 1.0 and MT-Bench: Measure the models' general instruction-following capabilities.
+
+
+
+The paper provides a comprehensive set of evaluation metrics that cover different aspects of the model's performance, including robustness against various attacks and general instruction-following capabilities. The quotes fully support the key metrics used in the paper, and no additional quotes are needed to answer the question.
+","  - ""we utilize Llama-2-13B (Touvron et al., 2023) and Llama-3-8B (Llama Team, 2024) as the pretrained models for Structured Query and Instruction Hierarchy, respectively. Experiments with Llama-3.1-8B are presented in Section 6.4.""
+  - ""By default, we utilize Llama-2-13B (Touvron et al., 2023) and Llama-3-8B (Llama Team, 2024) as the pretrained models for Structured Query and Instruction Hierarchy, respectively.""",,"
+The paper discusses and evaluates several large language models (LLMs), including:
+
+""We utilize Llama-2-13B (Touvron et al., 2023) and Llama-3-8B (Llama Team, 2024) as the pretrained models for Structured Query and Instruction Hierarchy, respectively. Experiments with Llama-3.1-8B are presented in Section 6.4.""
+""By default, we utilize Llama-2-13B (Touvron et al., 2023) and Llama-3-8B (Llama Team, 2024) as the pretrained models for Structured Query and Instruction Hierarchy, respectively.""
+""We also conduct experiments with the advanced Llama-3.1-8B model in Section 6.4.""
+
+The paper specifically evaluates the Llama-2-13B, Llama-3-8B, and Llama-3.1-8B models, which are large language models developed by the Llama team.
+"
+What do Users Really Ask Large Language Models? An Initial Log Analysis of Google Bard Interactions in the Wild,"Johanne R. Trippas, Sara Fahad Dawood Al Lawati, Joel Mackenzie, L. Gallagher",10.1145/3626772.3657914,https://doi.org/10.1145/3626772.3657914,Annual International ACM SIGIR Conference on Research and Development in Information Retrieval,4,2024,"This paper does not directly address how LLMs prioritize system-level directives versus user-level tasks, but it provides an analysis of the types of prompts users give to the Google Bard LLM.","The paper analyzes a dataset of 15,023 interactions with the Google Bard large language model to understand the types of prompts and information needs that users have when interacting with such models, finding that users engage in a broader range of tasks beyond the traditional informational, navigational, and transactional queries.","- Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative tasks beyond traditional search queries.
+- Large language models can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.
+- Large language models have versatile applications across content creation, writing style preferences, and information extraction.",Not mentioned (the abstract does not mention any specific evaluation metrics used in the study),"The specific LLMs discussed in this paper are OpenAI ChatGPT, Google Bard (Gemini), and Microsoft Copilot, with a primary focus on the Google Bard LLM.","  - ""This preliminary work analyses a Google Bard prompt log with 15 , 023 interactions called the Bard Intelligence and Dialogue Dataset ( BIDD ), providing an understanding akin to query log analyses.""
+  - ""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+  - ""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""",,"
+The summary of this paper is that it analyzes a dataset of 15,023 interactions with the Google Bard large language model to understand the types of prompts and information needs that users have when interacting with such models, finding that users engage in a broader range of tasks beyond the traditional informational, navigational, and transactional queries.
+
+""This preliminary work analyses a Google Bard prompt log with 15 , 023 interactions called the Bard Intelligence and Dialogue Dataset ( BIDD ), providing an understanding akin to query log analyses.""
+""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""
+","  - ""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+  - ""Our findings emphasise the versatile application of LLMs across content creation, LLM writing style preferences, and information extraction.""
+  - ""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""",,"
+The main findings of this study, based on the abstract, can be summarized as follows:
+
+""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+This finding suggests that users interact with large language models like Google Bard in a more complex and structured way, going beyond the typical informational, navigational, and transactional search queries.
+
+""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""
+This finding indicates that large language models can be used for a wider range of tasks, beyond the traditional search query types.
+
+""Our findings emphasise the versatile application of LLMs across content creation, LLM writing style preferences, and information extraction.""
+This finding highlights the diverse ways in which users can leverage large language models, including for content creation, expressing writing style preferences, and information extraction.
+","  - ""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""
+  - ""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+  - ""This preliminary work analyses a Google Bard prompt log with 15 , 023 interactions called the Bard Intelligence and Dialogue Dataset ( BIDD ), providing an understanding akin to query log analyses.""",,"
+The abstract does not mention any specific evaluation metrics used in the study. The abstract focuses on describing the dataset of Google Bard interactions and providing a high-level analysis of the types of prompts and tasks that users engage in with the language model. There is no information provided about how the performance, rule adherence, or decision-making of the language model was evaluated.
+""This preliminary work analyses a Google Bard prompt log with 15 , 023 interactions called the Bard Intelligence and Dialogue Dataset ( BIDD ), providing an understanding akin to query log analyses.""
+""We show that Google Bard prompts are often verbose and structured, encapsulating a broader range of information needs and imperative (e.g., directive) tasks distinct from traditional search queries.""
+""We show that LLMs can support users in tasks beyond the three main types based on user intent: informational, navigational, and transactional.""
+","  - ""Advancements in large language models (LLMs) have changed information retrieval, offering users a more personalised and natural search experience with technologies like OpenAI ChatGPT, Google Bard (Gemini), or Microsoft Copilot.""",,"
+The abstract mentions several large language models (LLMs) that are discussed in the paper, including:
+""Advancements in large language models (LLMs) have changed information retrieval, offering users a more personalised and natural search experience with technologies like OpenAI ChatGPT, Google Bard (Gemini), or Microsoft Copilot.""
+The specific LLMs mentioned are:
+1. OpenAI ChatGPT
+2. Google Bard (Gemini)
+3. Microsoft Copilot
+The abstract also states that the paper analyzes a Google Bard prompt log, indicating that the primary focus is on the Google Bard LLM.
+"
+Leveraging Local LLMs for Secure In-System Task Automation With Prompt-Based Agent Classification,"Suthir Sriram, C. H. Karthikeya, K. P. Kishore Kumar, Nivethitha Vijayaraj, Thangavel Murugan",10.1109/ACCESS.2024.3505298,https://doi.org/10.1109/ACCESS.2024.3505298,IEEE Access,0,2024,"The paper proposes a framework to integrate LLMs with personal file systems while maintaining data privacy, but does not address prioritization of system-level directives versus user-level tasks.","The study proposes a new framework to integrate powerful large language models (LLMs) with personal file systems while maintaining strict privacy safeguards, and the findings demonstrate high accuracy for the task-specific LLM agents and modules that perform various functions locally on the user's device.","- The classification agent achieved an accuracy of 86%.
+- The document summarization agent achieved a BERT score of 0.9243.
+- The proposed framework splits the LLM system into modules, enabling the integration of new task-specific modules in the future.","1. Accuracy for the classification agent, which achieved 86% accuracy.
+2. BERT score for the document summarization agent, which reached 0.9243.",Not mentioned (the abstract does not mention the specific llm models or ai agent architectures that were evaluated or discussed in the paper),"  - ""In this study, a new framework is proposed to merge LLMs with personal file systems, enabling intelligent data interaction while maintaining strict privacy safeguards.""
+  - ""Recent progress in the field of intelligence has led to the creation of powerful large language models (LLMs). While these models show promise in improving personal computing experiences concerns surrounding data privacy and security have hindered their integration with sensitive personal information.""
+  - ""The methodology organizes tasks based on LLM agents, which apply designated tags to the tasks before sending them to specific LLM modules. Every module is has its own function, including file search, document summarization, code interpretation, and general tasks, to make certain that all processing happens locally on the user’s device.""
+  - ""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""",,"
+To summarize the full paper, I will look for the key points that capture the main purpose, methodology, and findings of the study:
+
+""Recent progress in the field of intelligence has led to the creation of powerful large language models (LLMs). While these models show promise in improving personal computing experiences concerns surrounding data privacy and security have hindered their integration with sensitive personal information.""
+This quote outlines the motivation for the study, which is to address the privacy and security concerns around integrating powerful LLMs with personal data.
+
+""In this study, a new framework is proposed to merge LLMs with personal file systems, enabling intelligent data interaction while maintaining strict privacy safeguards.""
+This quote describes the key objective of the study, which is to develop a framework that allows LLMs to interact with personal file systems while preserving data privacy.
+
+""The methodology organizes tasks based on LLM agents, which apply designated tags to the tasks before sending them to specific LLM modules. Every module is has its own function, including file search, document summarization, code interpretation, and general tasks, to make certain that all processing happens locally on the user's device.""
+This quote outlines the main components of the proposed framework, which includes task-specific LLM agents and modules that perform various functions locally on the user's device.
+
+""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+This quote summarizes the key findings of the study, which demonstrate high accuracy for the task-specific LLM agents and modules.
+","  - ""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+  - ""The key point of this framework is that it splits the LLM system into modules, which enables future development by integrating new task-specific modules as required.""
+  - ""Findings suggest that integrating local LLMs can significantly improve interactions with file systems without compromising data privacy.""",,"
+The main findings of this study, as described in the abstract, are:
+
+""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+The study found that the classification agent achieved an accuracy of 86%, and the document summarization agent achieved a BERT score of 0.9243, indicating high accuracy for these tasks.
+
+""The key point of this framework is that it splits the LLM system into modules, which enables future development by integrating new task-specific modules as required.""
+The study's key finding is that the proposed framework splits the LLM system into modules, allowing for the integration of new task-specific modules in the future as needed.
+
+""Findings suggest that integrating local LLMs can significantly improve interactions with file systems without compromising data privacy.""
+The study found that integrating local LLMs can significantly improve interactions with file systems without compromising data privacy.
+","  - ""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+  - ""The key point of this framework is that it splits the LLM system into modules, which enables future development by integrating new task-specific modules as required.""",,"
+To determine the evaluation metrics used in this paper, I will look for specific mentions of the metrics or scores used to evaluate the performance of the proposed framework.
+""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+This quote directly states two specific metrics used to evaluate the performance of the framework: accuracy for the classification agent and the BERT score for the document summarization agent.
+""The key point of this framework is that it splits the LLM system into modules, which enables future development by integrating new task-specific modules as required.""
+While this quote does not mention specific evaluation metrics, it suggests that the framework was designed to be modular and extensible, which could imply that the evaluation focused on the ability to integrate new modules rather than just the performance of the existing ones.
+","  - ""The methodology organizes tasks based on LLM agents, which apply designated tags to the tasks before sending them to specific LLM modules. Every module is has its own function, including file search, document summarization, code interpretation, and general tasks, to make certain that all processing happens locally on the user’s device.""
+  - ""Recent progress in the field of intelligence has led to the creation of powerful large language models (LLMs). While these models show promise in improving personal computing experiences concerns surrounding data privacy and security have hindered their integration with sensitive personal information.""
+  - ""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""",,"
+The abstract does not explicitly mention any specific large language models (LLMs) or AI agent architectures that were evaluated or discussed in the paper. However, it does provide some relevant information about the framework proposed in the study:
+
+""Recent progress in the field of intelligence has led to the creation of powerful large language models (LLMs). While these models show promise in improving personal computing experiences concerns surrounding data privacy and security have hindered their integration with sensitive personal information.""
+This quote indicates that the study is focused on leveraging LLMs to improve personal computing experiences, while addressing concerns around data privacy and security.
+
+""The methodology organizes tasks based on LLM agents, which apply designated tags to the tasks before sending them to specific LLM modules. Every module is has its own function, including file search, document summarization, code interpretation, and general tasks, to make certain that all processing happens locally on the user's device.""
+This quote suggests that the proposed framework involves using LLM agents to classify tasks and send them to specific LLM modules for processing, all of which happens locally on the user's device.
+
+""Findings indicate high accuracy across agents: classification agent managed to get an accuracy rating of 86%, document summarization reached a BERT score of 0.9243.""
+This quote provides some performance metrics for the LLM agents and modules, but does not specify the actual LLM models used.
+"
+When Young Scholars Cooperate with LLMs in Academic Tasks: The Influence of Individual Differences and Task Complexities,"Jiyao Wang, Chunxi Huang, Song Yan, Weiyi Xie, Dengbo He",10.1080/10447318.2024.2352919,https://doi.org/10.1080/10447318.2024.2352919,International Journal of Human-Computer Interaction,1,2024,"This paper does not directly address how LLMs prioritize system-level directives versus user-level tasks, but it examines how early-stage scholars perform on academic tasks with the use of LLMs.","The paper investigates how young scholars perform on academic tasks when using large language models (LLMs) like ChatGPT, and how individual differences and task complexities influence their performance and attitudes towards the LLMs.","- Young scholars upheld high academic integrity when using LLMs for academic tasks and were able to adjust their reliance on LLMs adaptively.
+- Individual differences in personality traits, such as emotional stability and agreeableness, influenced users' performance when collaborating with LLMs on academic tasks.
+- Users' trust in LLMs and perceived workload when using them varied based on the type of academic task and time pressure, reflecting the current limitations of LLM capabilities.","1. Task Score: The quality of the participants' answers on the academic tasks, as graded by two senior expert raters. The inter-rater reliability between the two raters was very high.
+2. Adoption Rate: Whether participants fully adopted the responses provided by the LLM (ChatGPT) or only partially/did not adopt them, reported as the adoption rate for each experimental condition.",ChatGPT,"  - ""Based on a BN and regression-based approach, we found that:
+
+• When using LLMs to conduct academic tasks, young scholars in our experiment commonly have upheld relatively high academic integrity and were able to adjust their reliance on the LLMs adaptively.""
+  - ""Individual heterogeneity has moderated the user-LLM performance in academic tasks. Specific user personality traits (i.e., Emotional Stability and Agreeableness) can affect the performance of users in collaborating with LLMs to accomplish academic tasks.""
+  - ""this study aims to focus on the following three research LLMs. Specifically, for RQ3, we adopted two theoretical frameworks, the Technology Acceptance Model (TAM) (Davis, 1989) and Automation Acceptance Model (AAM) (Ghazizadeh et al., 2012), which can conceptualize one's acceptance of and attitude toward LLMs.""",,"
+The paper investigates how young scholars perform on academic tasks when using large language models (LLMs) like ChatGPT, and how individual differences and task complexities influence their performance and attitudes towards the LLMs.
+
+""This study aims to focus on the following three research LLMs. Specifically, for RQ3, we adopted two theoretical frameworks, the Technology Acceptance Model (TAM) (Davis, 1989) and Automation Acceptance Model (AAM) (Ghazizadeh et al., 2012), which can conceptualize one's acceptance of and attitude toward LLMs.""
+""Based on a BN and regression-based approach, we found that: • When using LLMs to conduct academic tasks, young scholars in our experiment commonly have upheld relatively high academic integrity and were able to adjust their reliance on the LLMs adaptively.""
+""Individual heterogeneity has moderated the user-LLM performance in academic tasks. Specific user personality traits (i.e., Emotional Stability and Agreeableness) can affect the performance of users in collaborating with LLMs to accomplish academic tasks.""
+
+
+The paper investigates how young scholars perform on academic tasks when using large language models (LLMs) like ChatGPT, and how individual differences and task complexities influence their performance and attitudes towards the LLMs.
+
+
+The summary captures the key aspects of the paper, including the research questions, the main findings, and the overall focus on how young scholars use LLMs for academic tasks. The provided quotes fully support the summary by highlighting the specific research questions, the finding that young scholars maintained academic integrity, and the influence of individual differences on performance. No additional quotes are needed.
+","  - ""When using LLMs to conduct academic tasks, young scholars in our experiment commonly have upheld relatively high academic integrity and were able to adjust their reliance on the LLMs adaptively.""
+  - ""Individual heterogeneity has moderated the user-LLM performance in academic tasks. Specific user personality traits (i.e., Emotional Stability and Agreeableness) can affect the performance of users in collaborating with LLMs to accomplish academic tasks.""
+  - ""Users' trust in the LLMs and the workload in cooperating LLMs varied with academic task type and time pressure, as the LLMs may bring different levels of benefits to users in different situations, given the limited capabilities of the LLMs at this stage.""",,"
+The main findings of this study can be summarized as follows:
+
+
+""When using LLMs to conduct academic tasks, young scholars in our experiment commonly have upheld relatively high academic integrity and were able to adjust their reliance on the LLMs adaptively.""
+""Individual heterogeneity has moderated the user-LLM performance in academic tasks. Specific user personality traits (i.e., Emotional Stability and Agreeableness) can affect the performance of users in collaborating with LLMs to accomplish academic tasks.""
+""Users' trust in the LLMs and the workload in cooperating LLMs varied with academic task type and time pressure, as the LLMs may bring different levels of benefits to users in different situations, given the limited capabilities of the LLMs at this stage.""
+
+
+The study found that young scholars were able to use LLMs for academic tasks while maintaining high academic integrity, and their performance was influenced by individual differences in personality traits. Additionally, users' trust and perceived workload when using LLMs varied based on the type of academic task and time pressure, reflecting the current limitations of LLM capabilities.
+","  - ""the quality of the participants' answers was quantified as the Task Score graded by two senior Ph.D. students in the field of human factors.""
+  - ""In addition, we also recorded whether a participant adopted the responses provided by the LLM in a task. A response was marked as fully-adopted if the participant fully used the answers provided by the LLM; otherwise, a response was marked as un/partially-adopted. The adoption rates (the number of fully-adopted cases over the number of un/partially-adopted cases) in each experimental condition are provided in Table 2""
+  - ""To measure the consistency and inter-rater reliability of the scores, an intra-class correlation coefficient (ICC) analysis was conducted. The ratings from the two raters reached a high ICC of 0.94, with 95% confidence interval (95%CI) of [0.91, 0.97], p < .0001, indicating strong agreement and consistency between the two raters.""",,"
+The paper discusses several evaluation metrics used in the study:
+""The quality of the participants' answers was quantified as the Task Score graded by two senior Ph.D. students in the field of human factors.""
+The paper states that the participants' answers were scored by two senior experts to quantify the quality of their performance on the academic tasks.
+""To measure the consistency and inter-rater reliability of the scores, an intra-class correlation coefficient (ICC) analysis was conducted. The ratings from the two raters reached a high ICC of 0.94, with 95% confidence interval (95%CI) of [0.91, 0.97], p < .0001, indicating strong agreement and consistency between the two raters.""
+The paper also reports that the inter-rater reliability between the two expert raters was very high, indicating a high level of consistency in their scoring.
+""In addition, we also recorded whether a participant adopted the responses provided by the LLM in a task. A response was marked as fully-adopted if the participant fully used the answers provided by the LLM; otherwise, a response was marked as un/partially-adopted. The adoption rates (the number of fully-adopted cases over the number of un/partially-adopted cases) in each experimental condition are provided in Table 2.""
+The paper also tracked whether participants fully adopted the responses provided by the LLM or only partially/did not adopt them, and reported the adoption rates for each experimental condition.
+","  - ""In order to ensure fairness, the use of other LLMs was restricted, and only the official ChatGPT interface was allowed.""
+  - ""To provide access to ChatGPT, a virtual machine (VM) was set up on Microsoft Azure. This VM was equipped with preinstalled Google Chrome 3 and Microsoft Office Packages.""
+  - ""The ChatGPT, a commonly used LLM tool that utilizes advanced language technology, was adopted in the experiment. The ChatGPT was selected as it was widely known, and to the best of our knowledge, there was no other LLM tool that is available to the general public and is with comparable performance to ChatGPT at the time of the study (early 2023).""",,"
+The paper specifically discusses the use of the ChatGPT language model in their experiment:
+""The ChatGPT, a commonly used LLM tool that utilizes advanced language technology, was adopted in the experiment. The ChatGPT was selected as it was widely known, and to the best of our knowledge, there was no other LLM tool that is available to the general public and is with comparable performance to ChatGPT at the time of the study (early 2023).""
+""In order to ensure fairness, the use of other LLMs was restricted, and only the official ChatGPT interface was allowed.""
+""To provide access to ChatGPT, a virtual machine (VM) was set up on Microsoft Azure. This VM was equipped with preinstalled Google Chrome 3 and Microsoft Office Packages.""
+The paper clearly states that the specific LLM model evaluated in this study was ChatGPT, and no other LLM models were used.
+"
+Anticipate & Act: Integrating LLMs and Classical Planning for Efficient Task Execution in Household Environments†,"Raghav Arora, Shivam Singh, Karthik Swaminathan, Ahana Datta, Snehasis Banerjee, B. Bhowmick, Krishna Murthy Jatavallabhula, Mohan Sridharan, Madhava Krishna",10.1109/ICRA57147.2024.10611164,https://doi.org/10.1109/ICRA57147.2024.10611164,IEEE International Conference on Robotics and Automation,7,2024,"The paper does not directly address how LLMs prioritize system-level directives versus user-level tasks, but it describes a framework that integrates LLMs and classical planning to anticipate and efficiently execute sequences of household tasks.","The paper presents a framework that leverages Large Language Models and classical planning to anticipate upcoming household tasks and compute a sequence of fine-granularity actions that jointly accomplish the anticipated tasks, leading to a 31% reduction in execution time and 12% reduction in plan length compared to a system that does not consider anticipated tasks.","- LLMs are able to accurately anticipate future tasks based on a small number of prompts of task routines, with GPT-4 providing the correct task order 100% of the time.
+- Considering anticipated tasks as joint goals reduces plan length by 12% and plan execution time by 31% compared to considering one task at a time.
+- The framework allows the agent to adapt to unexpected successes and failures by interrupting plan execution and replanning as necessary.","1. Task anticipation metrics:
+   - Miss Ratio: Ratio of tasks not anticipated to the length of the sampled sequence
+   - Partial Ordering Count: Measures capability to maintain the relative order of tasks
+   - Kendall rank correlation coefficient: Measures match between predicted and actual task order
+2. Planning performance metrics:
+   - Plan execution time: Total time taken to execute the computed sequence of actions
+   - Plan length: Number of actions in the computed plan","The specific LLM models evaluated and discussed in this paper are PaLM, GPT-3.5, GPT-3.5-turbo, and GPT-4.","  - ""We present a 31% reduction in execution time and a 12% reduction in plan length compared to a system that does not anticipate upcoming tasks.""
+  - ""We pose high-level task anticipation and finer-granularity action execution as a combined prediction and planning problem. Our framework seeks to leverage the complementary strengths of data-driven estimation based on generic prior knowledge of household tasks, and planning based on domain-specific action theories.""
+  - ""We prompt existing LLMs for high-level task anticipation, use the Planning Domain Definition Language (PDDL) [6] as the action language, and use the Fast Downward (FD) solver [7] to generate fine-granularity plans for any given task.""",,"
+The paper presents a framework that leverages the generic knowledge of Large Language Models (LLMs) to anticipate upcoming household tasks, and then uses classical planning based on domain-specific knowledge to compute a sequence of fine-granularity actions that jointly accomplish the anticipated tasks, leading to a 31% reduction in execution time and 12% reduction in plan length compared to a system that does not consider anticipated tasks.
+
+""We pose high-level task anticipation and finer-granularity action execution as a combined prediction and planning problem. Our framework seeks to leverage the complementary strengths of data-driven estimation based on generic prior knowledge of household tasks, and planning based on domain-specific action theories.""
+
+""We prompt existing LLMs for high-level task anticipation, use the Planning Domain Definition Language (PDDL) [6] as the action language, and use the Fast Downward (FD) solver [7] to generate fine-granularity plans for any given task.""
+
+""We present a 31% reduction in execution time and a 12% reduction in plan length compared to a system that does not anticipate upcoming tasks.""
+","  - ""Even in the absence of contextual examples, all LLMs maintained the order of tasks in a routine. However, PaLM was not able to correctly anticipate all the tasks; it missed approx36% of the tasks. When the LLMs had access to the contextual examples, all three provided very good performance, with GPT-4 providing the correct task order 100% of the time along with a very low Miss Ratio (0.06%).""",,"
+The main findings of this paper are:
+
+
+1. LLMs are able to accurately anticipate future tasks based on a small number of prompts of task routines: ""Even in the absence of contextual examples, all LLMs maintained the order of tasks in a routine. However, PaLM was not able to correctly anticipate all the tasks; it missed approx36% of the tasks. When the LLMs had access to the contextual examples, all three provided very good performance, with GPT-4 providing the correct task order 100% of the time along with a very low Miss Ratio (0.06%).""
+2. Considering anticipated tasks as joint goals reduces plan length and plan execution time compared to considering one task at a time: ""As the number of anticipated tasks increased, the plan length decreased. Furthermore, the plan execution time decreased with an increase in the number of anticipated tasks, indicating that the agent became more efficient when it interleaved the actions for different tasks.""
+3. The framework allows the agent to adapt to unexpected successes and failures by interrupting plan execution and replanning if necessary: ""In these experiments, the execution of a plan generated by a planner was randomly interrupted by the user. The agent was able to plan suitable actions and put the vegetables back in their original location because it was no longer necessary to cook a hot breakfast; the agent instead computed action sequences to prepare the laptop and suitable clothes for the meeting.""
+
+
+","  - ""we measured the cost of executing the computed sequence of finer-granularity actions. Specifically, we prompted the LLM with contextual examples and asked it to provide different number of anticipated tasks for a partially-specified routine. These anticipated tasks were considered as joint goals by the planning system, with the resultant plan of actions being executed by the agent. Since the cost of the actions (in the domain description) was based on the execution time, we used the total cost of any executed plan as the execution time (in seconds) of the plan.""
+  - ""Table IV shows the plan length and execution time as the number of anticipated tasks changes from zero to three and six, under three configuration options supported by FD: seq-sat-fd-autotune-1, seq-sat-lama-2011, and seqsat-fd-autotune-2.""",,"
+The paper describes several metrics used to evaluate the performance of the agent's task anticipation capabilities:
+
+
+""We considered four task anticipation performance measures:
+• Miss Ratio (Miss.): ratio of number of tasks not anticipated to the length of the sampled sequence.
+• Partial Ordering Count (POC): measures capability to maintain the relative order of tasks in the routines.
+• Kendall rank correlation coefficient (KRCC) [32]: measures match between predicted and actual task order.""
+
+
+The paper also describes metrics used to evaluate the planning performance of the agent:
+
+
+""We measured the cost of executing the computed sequence of finer-granularity actions. Specifically, we prompted the LLM with contextual examples and asked it to provide different number of anticipated tasks for a partially-specified routine. These anticipated tasks were considered as joint goals by the planning system, with the resultant plan of actions being executed by the agent. Since the cost of the actions (in the domain description) was based on the execution time, we used the total cost of any executed plan as the execution time (in seconds) of the plan.""
+
+
+
+""Table IV shows the plan length and execution time as the number of anticipated tasks changes from zero to three and six, under three configuration options supported by FD: seq-sat-fd-autotune-1, seq-sat-lama-2011, and seqsat-fd-autotune-2.""
+
+
+","  - ""To evaluate H1, we evaluated the ability of PaLM, GPT-3.5 and GPT-4 to anticipate future tasks, as stated in Section IV-A.1.""
+  - ""For the other hypotheses we used GPT-4 as the default LLM.""",,"
+The paper discusses the use of several large language models (LLMs) for task anticipation in their framework, including:
+""We prompted existing LLMs such as GPT-4 [9], PaLM [10], and Llama [11] for high-level task anticipation...""
+The paper specifically evaluates the performance of PaLM, GPT-3.5, and GPT-4 for task anticipation:
+""To evaluate H1, we evaluated the ability of PaLM, GPT-3.5 and GPT-4 to anticipate future tasks, as stated in Section IV-A.1.""
+""We then experimented with GPT-3.5-turbo and GPT-4 under specific conditions.""
+The paper also mentions using GPT-4 as the default LLM for evaluating the other hypotheses:
+""For the other hypotheses we used GPT-4 as the default LLM.""
+"
+OSAgent: Copiloting Operating System with LLM-based Agent,"Jiaming Xu, Kaibin Guo, Wuxuan Gong, Runyu Shi",10.1109/IJCNN60899.2024.10650304,https://doi.org/10.1109/IJCNN60899.2024.10650304,IEEE International Joint Conference on Neural Network,1,2024,The paper introduces an LLM-based agent that can assist users in operating system tasks by leveraging external memory and task planning.,A memory-enhanced LLM-based agent called OSAgent that is designed to assist users in copiloting their operating systems by retrieving similar user requests and task planning instructions from an external memory to generate prompts and then use LLM to conduct task planning to manipulate OS tools.,"- The OSAgent system demonstrated remarkable proficiency in integrating AI capabilities, third-party applications, system settings, and data resources to assist users in operating their mobile systems.
+- The OSAgent system employs an external memory to store historical user requests and task planning instructions, which are then used to generate prompts and conduct task planning.",Not mentioned (the abstract does not explicitly mention the specific evaluation metrics used in this paper),"The paper evaluates seven different large language models (LLMs) as part of their OSAgent system, but the specific model names are not provided in the abstract.","  - ""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+  - ""When receiving a user request, OSAgent first retrieves similar user requests and task planning instructions as examples to generate prompt, then LLM conducts task planning to manipulate OS tools.""
+  - ""Specifically, we employ an external memory to store historical user requests, along with corresponding semantic vectors, intent vectors, and human-annotated task planning instructions.""",,"
+The summary of this paper is that it introduces a memory-enhanced LLM-based agent called OSAgent that is designed to assist users in copiloting their operating systems by retrieving similar user requests and task planning instructions from an external memory to generate prompts and then use LLM to conduct task planning to manipulate OS tools.
+
+""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+""Specifically, we employ an external memory to store historical user requests, along with corresponding semantic vectors, intent vectors, and human-annotated task planning instructions.""
+""When receiving a user request, OSAgent first retrieves similar user requests and task planning instructions as examples to generate prompt, then LLM conducts task planning to manipulate OS tools.""
+","  - ""Extensive experiments were conducted on mobile operating systems employing seven LLMs. The results are indicative of OSAgent’s remarkable proficiency in invoking AI capabilities, third-party applications, system settings, and data resources.""
+  - ""Specifically, we employ an external memory to store historical user requests, along with corresponding semantic vectors, intent vectors, and human-annotated task planning instructions. When receiving a user request, OSAgent first retrieves similar user requests and task planning instructions as examples to generate prompt, then LLM conducts task planning to manipulate OS tools.""",,"
+The main findings of this paper are:
+
+
+""Extensive experiments were conducted on mobile operating systems employing seven LLMs. The results are indicative of OSAgent's remarkable proficiency in invoking AI capabilities, third-party applications, system settings, and data resources.""
+
+
+This quote directly states the main finding of the paper, which is that the OSAgent system demonstrated remarkable proficiency in integrating various capabilities to assist users in operating their mobile systems.
+
+
+""Specifically, we employ an external memory to store historical user requests, along with corresponding semantic vectors, intent vectors, and human-annotated task planning instructions. When receiving a user request, OSAgent first retrieves similar user requests and task planning instructions as examples to generate prompt, then LLM conducts task planning to manipulate OS tools.""
+
+
+This quote provides more details on the key components of the OSAgent system, including the use of external memory to store user requests and task planning instructions, which are then leveraged to generate prompts and conduct task planning.
+
+","  - ""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+  - ""Extensive experiments were conducted on mobile operating systems employing seven LLMs. The results are indicative of OSAgent’s remarkable proficiency in invoking AI capabilities, third-party applications, system settings, and data resources.""
+  - ""Despite these efforts, the task completion rate remains less than satisfactory.""",,"
+To determine the evaluation metrics used in this paper, I will look for any mentions of specific metrics or measures of performance in the abstract.
+""Extensive experiments were conducted on mobile operating systems employing seven LLMs. The results are indicative of OSAgent's remarkable proficiency in invoking AI capabilities, third-party applications, system settings, and data resources.""
+This quote suggests that the authors evaluated the performance of their OSAgent system, but it does not specify the exact metrics used.
+""Despite these efforts, the task completion rate remains less than satisfactory.""
+This quote indicates that the authors may have used task completion rate as a metric, but it does not provide any further details.
+""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+This quote describes the system being evaluated, but does not mention any specific evaluation metrics.
+","  - ""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+  - ""Extensive experiments were conducted on mobile operating systems employing seven LLMs.""",,"
+The abstract mentions that the paper introduces an ""LLM-based OSAgent"" and that ""Extensive experiments were conducted on mobile operating systems employing seven LLMs."" This indicates that the paper evaluates multiple large language models (LLMs) as part of their OSAgent system.
+""This paper introduces a memory-enhanced LLM-based OSAgent designed to assist users in copiloting their operating systems.""
+""Extensive experiments were conducted on mobile operating systems employing seven LLMs.""
+However, the abstract does not explicitly state the specific names of the LLMs that were evaluated. It only refers to them as ""seven LLMs"" without providing any further details.
+"
+Sensecape: Enabling Multilevel Exploration and Sensemaking with Large Language Models,"Sangho Suh, Bryan Min, Srishti Palani, Haijun Xia",10.1145/3586183.3606756,https://doi.org/10.1145/3586183.3606756,ACM Symposium on User Interface Software and Technology,38,2023,"The paper does not address how LLMs prioritize system-level directives versus user-level tasks, but rather explores an interface to support complex information tasks with LLMs.",Sensecape is an interactive system that enables users to engage in exploratory search tasks by supporting multilevel exploration and sensemaking through a canvas view and a hierarchy view.,"- Sensecape enables users to explore more topics and structure their knowledge hierarchically, thanks to the externalization of levels of abstraction.
+- Sensecape supports users in developing a deeper understanding of a topic.
+- Some users found the complexity of Sensecape's interface, especially the hierarchy view, challenging.","1. Number of prompts issued
+2. Number of nodes created in the knowledge structure 
+3. Number of unique, relevant, domain-specific concepts on the canvas
+4. Number of hierarchical levels in the knowledge structures
+5. Number of revisits to previous topics",The specific LLM models discussed and evaluated in this paper are GPT-3.5-turbo and GPT-4.,"  - ""Sensecape, an interactive system that leverages the flexibility of a nonlinear interface suitable for exploratory tasks and the ability to flexibly navigate between the levels of abstraction in the information space;""
+  - ""A user study demonstrating that enabling seamless exploration of semantic levels motivates and enables users to explore information space in an efficient and comprehensive manner.""
+  - ""Externalization of multilevel abstraction for a more comprehensive and effective exploration of the information space for sensemaking;""",,"
+The paper presents Sensecape, an interactive system that leverages large language models to enable users to engage in exploratory search tasks by supporting multilevel exploration and sensemaking through a canvas view and a hierarchy view.
+
+""Sensecape, an interactive system that leverages the flexibility of a nonlinear interface suitable for exploratory tasks and the ability to flexibly navigate between the levels of abstraction in the information space.""
+""Externalization of multilevel abstraction for a more comprehensive and effective exploration of the information space for sensemaking.""
+""A user study demonstrating that enabling seamless exploration of semantic levels motivates and enables users to explore information space in an efficient and comprehensive manner.""
+
+Sensecape is an interactive system that enables users to engage in exploratory search tasks by supporting multilevel exploration and sensemaking through a canvas view and a hierarchy view.
+
+The summary is fully supported by the provided quotes, which describe Sensecape as an interactive system that supports multilevel exploration and sensemaking, and that the user study demonstrated the benefits of this approach. No additional quotes are needed.
+","  - ""Sensecape empowers users to explore more topics and structure their knowledge hierarchically, thanks to the externalization of levels of abstraction.""
+  - ""while most participants demonstrated the ability to organize and navigate the information space across different levels of abstraction using the hierarchy view within the limited study time frame (~20 min), some found it complex and overwhelming.""",,"
+The main findings of this paper can be summarized as follows:
+
+
+1) Sensecape enables users to explore more topics and structure their knowledge hierarchically, thanks to the externalization of levels of abstraction:
+""Sensecape empowers users to explore more topics and structure their knowledge hierarchically, thanks to the externalization of levels of abstraction.""
+2) Sensecape supports users in developing a deeper understanding of a topic:
+""Sensecape enables users to develop a deeper understanding of a topic, as evidenced by their self-reports and the multiple levels of hierarchy in their knowledge representation.""
+3) Some users found the complexity of Sensecape's interface challenging, especially the hierarchy view:
+""While most participants demonstrated the ability to organize and navigate the information space across different levels of abstraction using the hierarchy view within the limited study time frame (~20 min), some found it complex and overwhelming.""
+
+
+The paper found that Sensecape enabled users to explore more topics and structure their knowledge hierarchically, supporting deeper understanding of complex information. However, the complexity of the interface, especially the hierarchy view, was challenging for some users.
+","  - ""we used three measures for exploration: (1) number of prompts issued; (2) number of nodes created in the knowledge structure; (3) number of concepts -the number of unique, relevant, domain-specific concepts on the canvas.""",,"
+The paper does not explicitly mention the specific evaluation metrics used to assess the performance of Sensecape. However, it describes the measures used to evaluate how Sensecape supports exploration and sensemaking compared to the Baseline system:
+
+""To assess the usefulness of the features and interactions that we introduce, we set our Baseline interface to be an integrated environment with a conversational interface and canvas. [...] Sensecape users had access to these basic diagramming functionalities in addition to the hierarchy view and features (e.g., semantic zoom) described in Section 3.""
+
+""We used three measures for exploration: (1) number of prompts issued; (2) number of nodes created in the knowledge structure; (3) number of concepts -the number of unique, relevant, domain-specific concepts on the canvas.""
+
+""The first is the number of hierarchical levels in the knowledge structures. In the Sensecape condition, this included levels of hierarchy on both the canvas and hierarchy views, which allowed us to understand not only the number of concepts explored, but also how participants conceptualized the relationships between concepts. The second measure was the number of revisits to previous topics.""
+
+","  - ""Sensecape's generative chat feature used OpenAI's 'gpt-3.5-turbo' model, while all other LLM-based features used 'gpt-4'.""
+  - ""The 'gpt-3.5turbo' model was specifically used for chat responses as it generated content faster than 'gpt-4'. All other LLM-based features prioritized accurate interpretation of our prompts (e.g., to generate the most relevant subtopics of a topic). Thus we used the 'gpt-4' model.""",,"
+The paper discusses the use of large language models (LLMs) in Sensecape, their interactive system for information exploration and sensemaking. Specifically, the paper mentions that Sensecape's generative chat feature used OpenAI's 'gpt-3.5-turbo' model, while all other LLM-based features used 'gpt-4'.
+""Sensecape's generative chat feature used OpenAI's 'gpt-3.5-turbo' model, while all other LLM-based features used 'gpt-4'.""
+The paper states that the 'gpt-3.5-turbo' model was used for chat responses as it generated content faster than 'gpt-4', while 'gpt-4' was used for other LLM-based features that prioritized accurate interpretation of prompts.
+""The 'gpt-3.5turbo' model was specifically used for chat responses as it generated content faster than 'gpt-4'. All other LLM-based features prioritized accurate interpretation of our prompts (e.g., to generate the most relevant subtopics of a topic). Thus we used the 'gpt-4' model.""
+The paper does not mention any other specific AI agent architectures or language models beyond GPT-3.5-turbo and GPT-4.
+"
