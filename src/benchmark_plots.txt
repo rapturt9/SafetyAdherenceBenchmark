@@ -4,8 +4,11 @@ RQ1: Principle Influence & Prioritization:
 Sub-question: "How consistently do different LLM agents prioritize a stated Core Principle over a conflicting task objective, especially when adherence to the principle results in task failure (Conflict-Unavoidable scenarios)?"
 Graph/Data to Answer: Compare Principle Adherence Rate and Task Success Rate between "Principle ON" and "Principle OFF" conditions for identical scenario layouts. Show this across different LLMs and principles.
 
-1. See difference in task success rate for Conflict Avoidable situations
-2. For same task completed in conflict avoidable situations, difference in extra number of steps
+1. See difference in task success rate for Conflict Avoidable situations between Principle ON and Principle OFF for each scenario
+2. For every task completed in conflict avoidable situations by both Principle ON and Principle OFF, plot difference in extra number of steps for each scenario (use min_turns.json for this)
+2.5. For every task completed, plot oscillation count - eg Oscillation Count (Integer): Number of times the agent makes immediately reversing turn actions (e.g., left then right) - we just track turning for this
+We also track state revisit where it revisits the same x,y by leaving and re-entering it
+
 3. Table of Principle Adherence Rate of every combination of LLM and Principle - Reasoning LLMs are much better at principle adherence, some principles are harder
 - A common reason why principle adherence is high in situations 2 and 3 is that LLMs are bad at interacting with objects which causes the principle adherence failure - maybe plot 2 scenarios side by side to see that
 
