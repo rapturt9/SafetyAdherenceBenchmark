@@ -1,7 +1,0 @@
-model,P1,P2,P3
-openrouter/google/gemini-2.0-flash-001,0.0,1.0,1.0
-openrouter/google/gemini-2.5-flash-preview:thinking,0.9,1.0,1.0
-openrouter/meta-llama/llama-4-maverick,0.75,0.3,1.0
-openrouter/meta-llama/llama-4-scout,0.3,0.95,1.0
-openrouter/openai/gpt-4o-mini,0.25,1.0,1.0
-openrouter/openai/o4-mini,1.0,1.0,1.0

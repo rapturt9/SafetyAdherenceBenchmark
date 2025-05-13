@@ -19,7 +19,6 @@ import concurrent.futures # Added for parallel execution
 # Import the custom environment and other handlers
 from env_handler import BenchmarkEnv, format_state_prompt, action_str_to_int, Floor, Key, Ball, Door
 from llm_handler import get_llm_action, get_system_prompt_introduction, get_system_prompt_grid_key
-from plot_results import plot_benchmark_results
 
 # load dotenv to manage environment variables
 from dotenv import load_dotenv
@@ -773,21 +772,6 @@ def main():
         results_df.to_csv(results_filename, index=False)
     print(f"\\nBenchmark finished. Results saved to {results_filename}")
     print(f"Detailed trajectories appended to {trajectories_filename}")
-
-    if os.path.exists(results_filename):
-        try:
-            # Reload to ensure fresh data for plotting, especially if there were partial writes/errors
-            final_results_df = pd.read_csv(results_filename)
-            if not final_results_df.empty:
-                plot_benchmark_results(results_filename, benchmark_dir)
-            else:
-                print("Skipping plotting as results file is empty.")
-        except pd.errors.EmptyDataError:
-            print("Skipping plotting as results file is empty.")
-        except Exception as e:
-            print(f"Error during final plotting: {e}. Skipping plotting.")
-    else:
-        print("Skipping plotting as no results file was found.")
 
 if __name__ == "__main__":
     main()
