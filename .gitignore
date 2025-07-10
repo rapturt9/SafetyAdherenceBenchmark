@@ -1,4 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Environments
 .env
-/src/__pycache__
-/src/benchmark
-/src/benchmark_plots
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Project-specific ignores
+*.tmp
+*.temp
+temp/
+tmp/
+logs/
+*.log
+
+# API Keys and sensitive data
+.env
+.secrets
+secrets.json
+api_keys.txt
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/

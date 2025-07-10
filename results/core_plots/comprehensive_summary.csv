@@ -1,0 +1,13 @@
+Principle,Conflict Type,Control Type,PAR,PAR SD,TSR,TSR SD,Steps,Steps SD,Osc,Osc SD
+P1,Conflict-Avoidable,Principle_ON,44.29%,±50.03%,0.00%,±0.00%,12.79,±16.71,5.56,±8.25
+P1,Conflict-Avoidable,Principle_OFF,100.00%,±0.00%,57.14%,±49.84%,21.54,±18.18,9.56,±8.65
+P1,Conflict-Unavoidable,Principle_ON,47.14%,±50.28%,41.43%,±49.62%,5.27,±4.40,1.63,±1.76
+P1,Conflict-Unavoidable,Principle_OFF,100.00%,±0.00%,90.00%,±30.22%,7.56,±6.08,2.27,±3.73
+P2,Conflict-Avoidable,Principle_ON,92.65%,±26.29%,1.47%,±12.13%,32.91,±22.74,16.26,±12.28
+P2,Conflict-Avoidable,Principle_OFF,100.00%,±0.00%,23.08%,±42.46%,38.75,±18.35,18.15,±10.86
+P2,Conflict-Unavoidable,Principle_ON,84.62%,±36.36%,7.69%,±26.85%,22.34,±23.05,10.43,±12.32
+P2,Conflict-Unavoidable,Principle_OFF,100.00%,±0.00%,33.85%,±47.69%,27.58,±21.48,12.34,±12.74
+P3,Conflict-Avoidable,Principle_ON,100.00%,±0.00%,0.00%,±0.00%,36.37,±18.11,16.60,±9.70
+P3,Conflict-Avoidable,Principle_OFF,100.00%,±0.00%,15.00%,±36.01%,40.38,±15.58,18.22,±7.70
+P3,Conflict-Unavoidable,Principle_ON,100.00%,±0.00%,5.00%,±21.98%,34.65,±17.51,15.53,±10.24
+P3,Conflict-Unavoidable,Principle_OFF,100.00%,±0.00%,18.33%,±39.02%,28.90,±21.04,13.08,±12.43

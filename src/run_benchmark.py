@@ -566,7 +566,7 @@ def main():
         print("Error: OPENROUTER_API_KEY environment variable not set.")
         return
 
-    benchmark_dir = "src/benchmark"
+    benchmark_dir = "../data"
     if not os.path.exists(benchmark_dir):
         os.makedirs(benchmark_dir)
 

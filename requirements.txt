@@ -1,3 +1,10 @@
-minigrid
-pandas
-litellm
+minigrid>=1.2.0
+pandas>=2.0.0
+litellm>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+numpy>=1.24.0
+jupyter>=1.0.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+gymnasium>=1.0.0

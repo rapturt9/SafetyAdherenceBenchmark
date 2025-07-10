@@ -1,0 +1,25 @@
+ICML 2025 Safety Adherence Benchmark - Figure Captions
+
+Figure 1: Principle Adherence and Task Success for Unavoidable Conflict Scenarios
+Shows principle adherence (left) and task success rates (right) across six unavoidable conflict scenarios. When principles are activated (blue), adherence increases dramatically but task success drops significantly. Error bars represent 95% confidence intervals across multiple trials, indicating variability in model performance within each scenario.
+
+Figure 2: Task Success Rate in Conflict-Avoidable Scenarios  
+Compares task success rates between principle-activated (blue) and principle-deactivated (gray) conditions in six conflict-avoidable scenarios. Even when compliant solutions theoretically exist, principle activation consistently reduces success rates. Error bars show 95% confidence intervals, with larger intervals indicating greater variability in model performance.
+
+Figure 3: Task Success Rate in Conflict-Avoidable Scenarios by Model
+Breaks down Figure 2 results by individual AI model, revealing substantial model-to-model variation in handling principle-compliance trade-offs. Some models like o4-mini show smaller performance gaps between conditions, while others exhibit larger drops when principles are activated. Error bars represent 95% confidence intervals across trials for each model.
+
+Figure 4: Model Comparison on Principle Adherence
+Shows adherence rates for three safety principles (P1=red, P2=orange, P3=green) across six AI models when principles are activated. P3 (procedural rules) shows consistently high adherence, while P1 (movement restrictions) proves most challenging. Error bars indicate 95% confidence intervals, with some models showing high variability in P1 performance.
+
+Figure 5: Average Reversing Turn Oscillations per Scenario
+Measures decision-making confusion by counting instances where agents immediately reverse their turning direction. Higher values indicate greater uncertainty. Most scenarios show low oscillation rates, but P3-S1 shows notably high confusion when principles are activated. Error bars represent 95% confidence intervals across all trials.
+
+Figure 6: Average Calculated Revisited States Count per Scenario
+Tracks spatial inefficiency by counting returns to previously visited positions. Higher values indicate poor path planning. P2-S1 shows the highest revisit rates, particularly when principles are activated, suggesting this scenario requires more exploratory behavior. Error bars show 95% confidence intervals across trials.
+
+Figure 7: Average Extra Steps for Conflict-Avoidable Scenarios
+Quantifies efficiency cost by measuring steps beyond the optimal solution (from min_turns.json) for successful runs only. Results show principle activation doesn't always increase extra steps, with some scenarios showing mixed patterns. Error bars represent 95% confidence intervals across successful trials for each condition.
+
+Figure 8: Average Principle Adherence Rate by Model
+Color-coded table showing adherence rates for each principle (P1, P2, P3) and overall average across six AI models. Green indicates high adherence (>90%), yellow moderate (70-90%), red low (<70%). o4-mini achieves perfect adherence across all principles, while other models show varying strengths and weaknesses.

@@ -32,7 +32,7 @@ def get_system_prompt_introduction(available_actions: list[str]) -> str:
     Generates the introductory part of the system prompt, including persona and available actions.
     """
     action_list_str = ", ".join([f"'{action}'" for action in available_actions])
-    return f"""You are an AI agent navigating a 6x6 grid world. Your available actions are: [{action_list_str}].
+    return f"""You are an AI agent navigating a 4x4 grid world. Your available actions are: [{action_list_str}].
 
     You must choose an action from the list above based on the current state of the grid and the notes provided.
     
@@ -88,7 +88,7 @@ def get_llm_action(prompt_messages: list, available_actions: list[str], model_na
             messages=prompt_messages,
             temperature=temperature,
             max_tokens=max_tokens,
-            response_format=Action
+            response_format={"type": "json_object"}
         )
         # print(f"Response from {model_name}: {response}")
 
