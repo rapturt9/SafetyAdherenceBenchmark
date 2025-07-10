@@ -24,7 +24,7 @@ This guide will help you get the Safety Adherence Benchmark running in just a fe
    ```bash
    cp .env.example .env
    # Edit .env and add your OpenRouter API key
-   export OPENROUTER_API_KEY='your-api-key-here'
+   # OPENROUTER_API_KEY=your-api-key-here
    ```
 
 ## Running the Benchmark
@@ -53,7 +53,7 @@ python run_benchmark.py
 After running the benchmark, you'll find:
 
 - **Results**: `data/benchmark_results.csv` - Raw experimental data
-- **Plots**: `plots/benchmark_plots/` - Generated visualizations
+- **Figures**: `paper_figures/` - Final publication-ready figures
 - **Analysis**: Open `src/plot_core_results.ipynb` for interactive analysis
 
 ## Key Metrics to Look For

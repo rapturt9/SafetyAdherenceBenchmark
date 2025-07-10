@@ -20,22 +20,25 @@ SafetyAdherenceBenchmark/
 │   ├── run_benchmark.py    # Main benchmark execution script
 │   ├── env_handler.py      # MiniGrid environment setup and management
 │   ├── llm_handler.py      # LLM interaction and prompt management
+│   ├── min_turns.json     # Optimal solution steps for efficiency calculations
 │   └── plot_core_results.ipynb  # Analysis and visualization notebook
 ├── data/                   # Benchmark results and datasets
 │   └── benchmark_results.csv    # Main experimental results
-├── plots/                  # Generated visualizations
-│   └── benchmark_plots/         # Individual model and principle plots
-├── paper_plots/           # Publication-ready figures (PDF format)
-│   ├── scenarios/         # Scenario illustration images
-│   └── *.pdf             # Core research figures
-├── results/               # Organized experimental outputs
-│   ├── core_plots/        # Core analysis figures
-│   ├── paper_plots/       # Paper-ready visualizations
-│   └── plots_with_titles/ # Titled versions for presentations
-├── run_benchmark.sh       # Easy execution script
-├── .env.example          # Configuration template
-├── setup.py              # Package installation
-└── requirements.txt      # Python dependencies
+├── paper_figures/          # Final publication figures
+│   ├── fig1_principle_influence_unavoidable.png
+│   ├── fig2_tsr_conflict_avoidable.png
+│   ├── fig3_tsr_conflict_avoidable_by_model.png
+│   ├── fig4_model_comparison_principles.png
+│   ├── fig5_oscillation_count_per_scenario.png
+│   ├── fig6_revisited_states_count_per_scenario.png
+│   ├── fig7_extra_steps_conflict_avoidable.png
+│   ├── fig8_principle_adherence_table.png
+│   └── figure_captions.txt # Captions for all figures
+├── results/                # Additional results and outputs
+├── run_benchmark.sh        # Easy execution script
+├── .env.example           # Environment configuration template
+├── setup.py               # Package installation
+└── requirements.txt       # Python dependencies
 ```
 
 ## 🧪 Experimental Design
@@ -78,13 +81,24 @@ pip install -r requirements.txt
 
 ### Environment Setup
 
-Set your OpenRouter API key:
+1. Copy the environment template:
 ```bash
-export OPENROUTER_API_KEY='your-api-key-here'
+cp .env.example .env
+```
+
+2. Edit `.env` and add your OpenRouter API key:
+```bash
+OPENROUTER_API_KEY=your-api-key-here
 ```
 
 ### Running the Benchmark
 
+**Option 1: Using the convenience script (recommended)**
+```bash
+./run_benchmark.sh
+```
+
+**Option 2: Direct execution**
 ```bash
 cd src
 python run_benchmark.py

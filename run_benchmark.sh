@@ -25,7 +25,7 @@ echo "📦 Checking dependencies..."
 pip install -q -r requirements.txt
 
 # Create output directories if they don't exist
-mkdir -p data plots
+mkdir -p data
 
 # Run the benchmark
 echo "🔬 Starting benchmark execution..."
@@ -33,4 +33,5 @@ cd src
 python run_benchmark.py
 
 echo "✅ Benchmark completed! Results saved to data/benchmark_results.csv"
-echo "📊 Check plots/ directory for generated visualizations"
+echo "📊 Check paper_figures/ directory for publication figures"
+echo "🔍 Open src/plot_core_results.ipynb for detailed analysis"
