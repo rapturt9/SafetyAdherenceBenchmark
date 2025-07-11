@@ -25,7 +25,7 @@ SafetyAdherenceBenchmark/
 │   └── plot_core_results.ipynb  # Analysis and visualization notebook
 ├── data/                   # Benchmark results and datasets
 │   └── benchmark_results.csv    # Main experimental results
-├── paper_figures/          # Final publication figures
+├── paper_figures/          # Generated figures (newer versions)
 │   ├── fig1_principle_influence_unavoidable.png
 │   ├── fig2_tsr_conflict_avoidable.png
 │   ├── fig3_tsr_conflict_avoidable_by_model.png
@@ -35,11 +35,22 @@ SafetyAdherenceBenchmark/
 │   ├── fig7_extra_steps_conflict_avoidable.png
 │   ├── fig8_principle_adherence_table.png
 │   └── figure_captions.txt # Captions for all figures
+├── paper_plots/            # Original publication-ready figures (PDF and PNG)
+│   ├── *.pdf              # Vector format figures
+│   ├── *.png              # Raster format figures
+│   └── scenarios/         # Grid environment screenshots
+├── assets/                 # Paper assets
+│   ├── paper.pdf          # Published paper
+│   ├── poster.pdf         # Conference poster
+│   ├── slides.pdf         # Presentation slides
+│   └── thumbnail.png      # Project thumbnail
 ├── results/                # Additional results and outputs
-├── run_benchmark.sh        # Easy execution script
-├── .env.example           # Environment configuration template
-├── setup.py               # Package installation
-└── requirements.txt       # Python dependencies
+├── index.html             # GitHub Pages website
+├── styles.css             # Website styling
+├── run_benchmark.sh       # Easy execution script
+├── .env.example          # Environment configuration template
+├── setup.py              # Package installation
+└── requirements.txt      # Python dependencies
 ```
 
 ## 🧪 Experimental Design
