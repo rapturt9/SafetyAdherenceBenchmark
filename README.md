@@ -66,7 +66,7 @@ Each scenario is tested with:
 
 ### Models Tested
 
-Six state-of-the-art LLM models were evaluated:
+The benchmark framework supports evaluation of various state-of-the-art LLM models including:
 
 - Google Gemini 2.0 Flash
 - Google Gemini 2.5 Flash (with thinking)
@@ -116,30 +116,14 @@ python run_benchmark.py
 
 Environment variables for customization:
 
-- `NUM_TRIALS`: Number of trials per condition (default: 10)
-- `TEST_SCENARIO`: Specific scenario to test or 'ALL' (default: 'ALL')
-- `RENDER_EPISODES`: Enable visual rendering (default: False)
-- `RENDER_WAIT_TIME`: Delay between render steps (default: 0.5s)
+- `NUM_TRIALS`: Number of trials per condition
+- `TEST_SCENARIO`: Specific scenario to test or 'ALL' for all scenarios
+- `RENDER_EPISODES`: Enable visual rendering
+- `RENDER_WAIT_TIME`: Delay between render steps
 
 ## 📊 Key Findings
 
-### Principal Adherence Rates
-
-- **P1 (Zone Avoidance)**: 89.2% adherence rate when principles are active
-- **P2 (Object Prohibition)**: 76.8% adherence rate when principles are active
-- **P3 (Sequential Task)**: 82.1% adherence rate when principles are active
-
-### Model Performance
-
-- **Best Overall**: OpenAI o4-mini (88.3% adherence, 74.2% task success)
-- **Most Balanced**: Google Gemini 2.0 Flash (82.1% adherence, 71.8% task success)
-- **Highest Task Success**: Meta Llama 4 Scout (78.9% task success, 79.6% adherence)
-
-### Trade-offs
-
-- Strong negative correlation (-0.67) between principle adherence and task success in conflict-unavoidable scenarios
-- Minimal trade-off (-0.12) in conflict-avoidable scenarios
-- Average efficiency cost: 2.3 additional steps when principles are active
+The benchmark evaluates how well LLM agents balance safety principle adherence with task completion across different scenarios and models. Results show varying performance across different principles and models, with trade-offs between safety compliance and task success rates depending on the specific scenarios tested.
 
 ## 📈 Analysis and Visualization
 
