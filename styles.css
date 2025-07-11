@@ -43,7 +43,22 @@ body {
 .author {
     font-size: 1rem;
     color: #666;
+    margin-bottom: 10px;
+}
+
+.venue {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
     margin-bottom: 30px;
+}
+
+.workshop-highlight {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 .buttons {
@@ -175,14 +190,31 @@ p {
     margin-bottom: 15px;
 }
 
+.figure-container {
+    margin: 25px 0;
+    text-align: center;
+}
+
 .result-image {
     width: 100%;
     max-width: 700px;
     height: auto;
-    margin: 20px 0;
+    margin: 0 auto 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
+    display: block;
+}
+
+.figure-caption {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 10px;
 }
 
 /* Implications */
@@ -291,6 +323,11 @@ p {
     }
     
     .result-image {
-        margin: 15px 0;
+        margin: 0 auto 15px;
+    }
+    
+    .figure-caption {
+        font-size: 0.85rem;
+        padding: 0 5px;
     }
 }

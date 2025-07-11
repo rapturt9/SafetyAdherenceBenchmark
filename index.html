@@ -12,6 +12,7 @@
             <h1>Evaluating LLM Agent Adherence to Hierarchical Safety Principles</h1>
             <p class="subtitle">A Lightweight Benchmark for Probing Foundational Controllability Components</p>
             <p class="author">Ram Potham, Independent Researcher</p>
+            <p class="venue">ICML 2025 <span class="workshop-highlight">Technical AI Governance Workshop</span> - Oral</p>
             
             <div class="buttons">
                 <a href="https://github.com/rapturt9/SafetyAdherenceBenchmark" class="btn btn-primary">GitHub</a>
@@ -56,19 +57,28 @@
                 <div class="finding">
                     <h3>1. Cost of Compliance</h3>
                     <p>Adding safety principles significantly degrades task performance, even when compliant solutions exist. Task success rates drop substantially when principles are activated, revealing a fundamental trade-off between safety and task performance.</p>
-                    <img src="paper_figures/fig2_tsr_conflict_avoidable.png" alt="Task Success Rate comparison" class="result-image">
+                    <div class="figure-container">
+                        <img src="paper_figures/fig2_tsr_conflict_avoidable.png" alt="Task Success Rate comparison" class="result-image">
+                        <p class="figure-caption">Task Success Rate in Conflict-Avoidable Scenarios. Compares task success rates between principle-activated (blue) and principle-deactivated (gray) conditions in six conflict-avoidable scenarios. Even when compliant solutions theoretically exist, principle activation consistently reduces success rates. Error bars show 95% confidence intervals.</p>
+                    </div>
                 </div>
 
                 <div class="finding">
                     <h3>2. Model-Specific Adherence Patterns</h3>
                     <p>Models with explicit reasoning capabilities significantly outperformed standard models in principle adherence, suggesting that test-time reasoning enhances hierarchical control.</p>
-                    <img src="paper_figures/fig8_principle_adherence_table.png" alt="Principle adherence by model" class="result-image">
+                    <div class="figure-container">
+                        <img src="paper_figures/fig8_principle_adherence_table.png" alt="Principle adherence by model" class="result-image">
+                        <p class="figure-caption">Average Principle Adherence Rate by Model. Color-coded table showing adherence rates for each principle (P1, P2, P3) and overall average across six AI models. Green indicates high adherence (>90%), yellow moderate (70-90%), red low (<70%). o4-mini achieves perfect adherence across all principles.</p>
+                    </div>
                 </div>
 
                 <div class="finding">
                     <h3>3. Illusion of Compliance</h3>
                     <p>High adherence rates often masked inability rather than principled choice. Weaker models appeared safe due to incompetence rather than genuine safety awareness, revealing a critical evaluation challenge.</p>
-                    <img src="paper_figures/fig3_tsr_conflict_avoidable_by_model.png" alt="Per-model task success rates" class="result-image">
+                    <div class="figure-container">
+                        <img src="paper_figures/fig3_tsr_conflict_avoidable_by_model.png" alt="Per-model task success rates" class="result-image">
+                        <p class="figure-caption">Task Success Rate in Conflict-Avoidable Scenarios by Model. Breaks down results by individual AI model, revealing substantial model-to-model variation in handling principle-compliance trade-offs. Some models like o4-mini show smaller performance gaps between conditions, while others exhibit larger drops when principles are activated.</p>
+                    </div>
                 </div>
             </section>
 
@@ -97,7 +107,7 @@
         </main>
 
         <footer class="footer">
-            <p>&copy; 2024 Ram Potham. Research conducted as an independent researcher.</p>
+            <p>&copy; 2025 Ram Potham. Research conducted as an independent researcher.</p>
             <p>Keywords: LLM Agents, AI Safety, AI Governance, Benchmarks, Hierarchical Principles, Controllability</p>
         </footer>
     </div>
