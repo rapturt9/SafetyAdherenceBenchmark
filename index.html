@@ -1,139 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safety Adherence Benchmark - LLM Agent Safety Evaluation</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1>Evaluating LLM Agent Adherence to Hierarchical Safety Principles</h1>
-            <p class="subtitle">A Lightweight Benchmark for Probing Foundational Controllability Components</p>
-            <p class="author">Ram Potham, Independent Researcher</p>
-            <p class="venue">ICML 2025 <span class="workshop-highlight">Technical AI Governance Workshop</span> - Oral</p>
-            
-            <div class="buttons">
-                <a href="https://github.com/rapturt9/SafetyAdherenceBenchmark" class="btn btn-primary">GitHub</a>
-                <a href="assets/paper.pdf" class="btn btn-secondary">Paper</a>
-                <a href="assets/poster.pdf" class="btn btn-secondary">Poster</a>
-                <a href="assets/slides.pdf" class="btn btn-secondary">Slides</a>
+      <header class="header">
+        <h1>
+          Evaluating LLM Agent Adherence to Hierarchical Safety Principles
+        </h1>
+        <p class="subtitle">
+          A Lightweight Benchmark for Probing Foundational Controllability
+          Components
+        </p>
+        <p class="author">Ram Potham, Independent Researcher</p>
+        <p class="venue">
+          ICML 2025
+          <span class="workshop-highlight"
+            >Technical AI Governance Workshop</span
+          >
+          - Oral
+        </p>
+
+        <div class="buttons">
+          <a
+            href="https://github.com/rapturt9/SafetyAdherenceBenchmark"
+            class="btn btn-primary"
+            >GitHub</a
+          >
+          <a href="https://arxiv.org/abs/2506.02357" class="btn btn-secondary"
+            >Paper</a
+          >
+          <a href="assets/poster.pdf" class="btn btn-secondary">Poster</a>
+          <a href="assets/slides.pdf" class="btn btn-secondary">Slides</a>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="abstract">
+          <h2>Abstract</h2>
+          <p>
+            Credible safety plans for advanced AI development require methods to
+            verify agent behavior and detect potential control deficiencies
+            early. A fundamental aspect is ensuring agents adhere to
+            safety-critical principles, especially when these conflict with
+            operational goals. This paper introduces a lightweight,
+            interpretable benchmark to evaluate an LLM agent's ability to uphold
+            a high-level safety principle when faced with conflicting task
+            instructions. Our evaluation reveals two primary findings: (1) a
+            quantifiable "cost of compliance" where safety constraints degrade
+            task performance even when compliant solutions exist, and (2) an
+            "illusion of compliance" where high adherence often masks task
+            incompetence rather than principled choice. These findings provide
+            initial evidence that while LLMs can be influenced by hierarchical
+            directives, current approaches lack the consistency required for
+            reliable safety governance.
+          </p>
+        </section>
+
+        <section class="methodology">
+          <h2>Methodology</h2>
+          <div class="methodology-content">
+            <div class="figure-container">
+              <img
+                src="assets/thumbnail.png"
+                alt="Methodology overview"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Conceptual diagram of the benchmark. The LLM agent receives a
+                Core Principle via the system prompt and a task with current
+                state via the user prompt. It interacts with a MiniGrid
+                environment where the task may conflict with the Core Principle.
+              </p>
             </div>
-        </header>
+            <div class="method-grid">
+              <div class="method-card">
+                <h3>Core Principles</h3>
+                <ul>
+                  <li>
+                    <strong>P1 (Zone Avoidance)</strong><br />Never move onto
+                    RED floor tiles
+                  </li>
+                  <li>
+                    <strong>P2 (Object Prohibition)</strong><br />Never pick up
+                    BLUE Key
+                  </li>
+                  <li>
+                    <strong>P3 (Procedural Integrity)</strong><br />Always pick
+                    up YELLOW Ball BEFORE toggling any Door
+                  </li>
+                </ul>
+              </div>
+              <div class="method-card">
+                <h3>Experimental Design</h3>
+                <ul>
+                  <li>4×4 MiniGrid environments</li>
+                  <li>ON/OFF principle conditions</li>
+                  <li>Conflict-avoidable vs conflict-unavoidable scenarios</li>
+                  <li>Systematic evaluation across multiple LLM models</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <main class="content">
-            <section class="abstract">
-                <h2>Abstract</h2>
-                <p>Credible safety plans for advanced AI development require methods to verify agent behavior and detect potential control deficiencies early. A fundamental aspect is ensuring agents adhere to safety-critical principles, especially when these conflict with operational goals. This paper introduces a lightweight, interpretable benchmark to evaluate an LLM agent's ability to uphold a high-level safety principle when faced with conflicting task instructions. Our evaluation reveals two primary findings: (1) a quantifiable "cost of compliance" where safety constraints degrade task performance even when compliant solutions exist, and (2) an "illusion of compliance" where high adherence often masks task incompetence rather than principled choice. These findings provide initial evidence that while LLMs can be influenced by hierarchical directives, current approaches lack the consistency required for reliable safety governance.</p>
-            </section>
+        <section class="results">
+          <h2>Key Findings</h2>
 
-            <section class="methodology">
-                <h2>Methodology</h2>
-                <div class="methodology-content">
-                    <div class="figure-container">
-                        <img src="assets/thumbnail.png" alt="Methodology overview" class="result-image">
-                        <p class="figure-caption">Conceptual diagram of the benchmark. The LLM agent receives a Core Principle via the system prompt and a task with current state via the user prompt. It interacts with a MiniGrid environment where the task may conflict with the Core Principle.</p>
-                    </div>
-                    <div class="method-grid">
-                        <div class="method-card">
-                            <h3>Core Principles</h3>
-                            <ul>
-                                <li><strong>P1 (Zone Avoidance)</strong><br>Never move onto RED floor tiles</li>
-                                <li><strong>P2 (Object Prohibition)</strong><br>Never pick up BLUE Key</li>
-                                <li><strong>P3 (Procedural Integrity)</strong><br>Always pick up YELLOW Ball BEFORE toggling any Door</li>
-                            </ul>
-                        </div>
-                        <div class="method-card">
-                            <h3>Experimental Design</h3>
-                            <ul>
-                                <li>4×4 MiniGrid environments</li>
-                                <li>ON/OFF principle conditions</li>
-                                <li>Conflict-avoidable vs conflict-unavoidable scenarios</li>
-                                <li>Systematic evaluation across multiple LLM models</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <div class="finding">
+            <h3>1. Cost of Compliance</h3>
+            <p>
+              Adding safety principles significantly degrades task performance,
+              even when compliant solutions exist. Task success rates drop
+              substantially when principles are activated, revealing a
+              fundamental trade-off between safety and task performance.
+            </p>
+            <div class="figure-container">
+              <img
+                src="paper_plots/fig2_tsr_conflict_avoidable-1.png"
+                alt="Task Success Rate comparison"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Task Success Rate in Conflict-Avoidable Scenarios. Compares task
+                success rates between principle-activated (blue) and
+                principle-deactivated (gray) conditions in six
+                conflict-avoidable scenarios. Even when compliant solutions
+                theoretically exist, principle activation consistently reduces
+                success rates. Error bars show 95% confidence intervals.
+              </p>
+            </div>
+          </div>
 
-            <section class="results">
-                <h2>Key Findings</h2>
-                
-                <div class="finding">
-                    <h3>1. Cost of Compliance</h3>
-                    <p>Adding safety principles significantly degrades task performance, even when compliant solutions exist. Task success rates drop substantially when principles are activated, revealing a fundamental trade-off between safety and task performance.</p>
-                    <div class="figure-container">
-                        <img src="paper_plots/fig2_tsr_conflict_avoidable-1.png" alt="Task Success Rate comparison" class="result-image">
-                        <p class="figure-caption">Task Success Rate in Conflict-Avoidable Scenarios. Compares task success rates between principle-activated (blue) and principle-deactivated (gray) conditions in six conflict-avoidable scenarios. Even when compliant solutions theoretically exist, principle activation consistently reduces success rates. Error bars show 95% confidence intervals.</p>
-                    </div>
-                </div>
+          <div class="finding">
+            <h3>2. Model-Specific Adherence Patterns</h3>
+            <p>
+              Models with explicit reasoning capabilities significantly
+              outperformed standard models in principle adherence, suggesting
+              that test-time reasoning enhances hierarchical control.
+            </p>
+            <div class="figure-container">
+              <img
+                src="paper_plots/fig8_principle_adherence_table-1.png"
+                alt="Principle adherence by model"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Average Principle Adherence Rate by Model. Color-coded table
+                showing adherence rates for each principle (P1, P2, P3) and
+                overall average across six AI models. Green indicates high
+                adherence (>90%), yellow moderate (70-90%), red low (<70%).
+                o4-mini achieves perfect adherence across all principles.
+              </p>
+            </div>
+          </div>
 
-                <div class="finding">
-                    <h3>2. Model-Specific Adherence Patterns</h3>
-                    <p>Models with explicit reasoning capabilities significantly outperformed standard models in principle adherence, suggesting that test-time reasoning enhances hierarchical control.</p>
-                    <div class="figure-container">
-                        <img src="paper_plots/fig8_principle_adherence_table-1.png" alt="Principle adherence by model" class="result-image">
-                        <p class="figure-caption">Average Principle Adherence Rate by Model. Color-coded table showing adherence rates for each principle (P1, P2, P3) and overall average across six AI models. Green indicates high adherence (>90%), yellow moderate (70-90%), red low (<70%). o4-mini achieves perfect adherence across all principles.</p>
-                    </div>
-                </div>
+          <div class="finding">
+            <h3>3. Illusion of Compliance</h3>
+            <p>
+              High adherence rates often masked inability rather than principled
+              choice. Weaker models appeared safe due to incompetence rather
+              than genuine safety awareness, revealing a critical evaluation
+              challenge.
+            </p>
+            <div class="figure-container">
+              <img
+                src="paper_plots/fig3_tsr_conflict_avoidable_by_model-1.png"
+                alt="Per-model task success rates"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Task Success Rate in Conflict-Avoidable Scenarios by Model.
+                Breaks down results by individual AI model, revealing
+                substantial model-to-model variation in handling
+                principle-compliance trade-offs. Some models like o4-mini show
+                smaller performance gaps between conditions, while others
+                exhibit larger drops when principles are activated.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                <div class="finding">
-                    <h3>3. Illusion of Compliance</h3>
-                    <p>High adherence rates often masked inability rather than principled choice. Weaker models appeared safe due to incompetence rather than genuine safety awareness, revealing a critical evaluation challenge.</p>
-                    <div class="figure-container">
-                        <img src="paper_plots/fig3_tsr_conflict_avoidable_by_model-1.png" alt="Per-model task success rates" class="result-image">
-                        <p class="figure-caption">Task Success Rate in Conflict-Avoidable Scenarios by Model. Breaks down results by individual AI model, revealing substantial model-to-model variation in handling principle-compliance trade-offs. Some models like o4-mini show smaller performance gaps between conditions, while others exhibit larger drops when principles are activated.</p>
-                    </div>
-                </div>
-            </section>
+        <section class="implications">
+          <h2>Implications for AI Governance</h2>
+          <div class="implications-grid">
+            <div class="implication-card">
+              <h3>Reliability-Flexibility Trade-off</h3>
+              <p>
+                Prompt-based principles offer flexibility but inconsistent
+                adherence, highlighting fundamental challenges for runtime
+                safety governance.
+              </p>
+            </div>
+            <div class="implication-card">
+              <h3>Capability-Safety Interaction</h3>
+              <p>
+                Safety evaluations must account for capability levels. Weak
+                models may appear safe due to incompetence, becoming dangerous
+                as capabilities improve.
+              </p>
+            </div>
+            <div class="implication-card">
+              <h3>Specification Challenges</h3>
+              <p>
+                Strong framing effects indicate that safety specification is
+                non-trivial, with positive vs. negative framing significantly
+                impacting compliance.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <section class="implications">
-                <h2>Implications for AI Governance</h2>
-                <div class="implications-grid">
-                    <div class="implication-card">
-                        <h3>Reliability-Flexibility Trade-off</h3>
-                        <p>Prompt-based principles offer flexibility but inconsistent adherence, highlighting fundamental challenges for runtime safety governance.</p>
-                    </div>
-                    <div class="implication-card">
-                        <h3>Capability-Safety Interaction</h3>
-                        <p>Safety evaluations must account for capability levels. Weak models may appear safe due to incompetence, becoming dangerous as capabilities improve.</p>
-                    </div>
-                    <div class="implication-card">
-                        <h3>Specification Challenges</h3>
-                        <p>Strong framing effects indicate that safety specification is non-trivial, with positive vs. negative framing significantly impacting compliance.</p>
-                    </div>
-                </div>
-            </section>
+        <section class="supplementary">
+          <h2>Supplementary Results</h2>
+          <div class="supplementary-grid">
+            <div class="supplementary-item">
+              <img
+                src="paper_plots/fig6_revisited_states_count_per_scenario-1.png"
+                alt="Revisited states analysis"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Tracks spatial inefficiency by counting returns to previously
+                visited positions. Higher values indicate poor path planning.
+                P2-S1 shows the highest revisit rates, particularly when
+                principles are activated, suggesting this scenario requires more
+                exploratory behavior.
+              </p>
+            </div>
+            <div class="supplementary-item">
+              <img
+                src="paper_plots/fig5_oscillation_count_per_scenario-1.png"
+                alt="Oscillation analysis"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Measures decision-making confusion by counting instances where
+                agents immediately reverse their turning direction. Higher
+                values indicate greater uncertainty.
+              </p>
+            </div>
+            <div class="supplementary-item">
+              <img
+                src="paper_plots/fig7_extra_steps_conflict_avoidable-1.png"
+                alt="Extra steps analysis"
+                class="result-image"
+              />
+              <p class="figure-caption">
+                Quantifies efficiency cost by measuring steps beyond the optimal
+                solution for successful runs only. Results show principle
+                activation doesn't always increase extra steps.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <section class="supplementary">
-                <h2>Supplementary Results</h2>
-                <div class="supplementary-grid">
-                    <div class="supplementary-item">
-                        <img src="paper_plots/fig6_revisited_states_count_per_scenario-1.png" alt="Revisited states analysis" class="result-image">
-                        <p class="figure-caption">Tracks spatial inefficiency by counting returns to previously visited positions. Higher values indicate poor path planning. P2-S1 shows the highest revisit rates, particularly when principles are activated, suggesting this scenario requires more exploratory behavior.</p>
-                    </div>
-                    <div class="supplementary-item">
-                        <img src="paper_plots/fig5_oscillation_count_per_scenario-1.png" alt="Oscillation analysis" class="result-image">
-                        <p class="figure-caption">Measures decision-making confusion by counting instances where agents immediately reverse their turning direction. Higher values indicate greater uncertainty.</p>
-                    </div>
-                    <div class="supplementary-item">
-                        <img src="paper_plots/fig7_extra_steps_conflict_avoidable-1.png" alt="Extra steps analysis" class="result-image">
-                        <p class="figure-caption">Quantifies efficiency cost by measuring steps beyond the optimal solution for successful runs only. Results show principle activation doesn't always increase extra steps.</p>
-                    </div>
-                </div>
-            </section>
+        <section class="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            This benchmark reveals fundamental challenges in LLM agent safety
+            governance. While agents can be influenced by runtime safety
+            constraints, adherence is inconsistent and comes at a significant
+            performance cost. The findings highlight the gap between ideal
+            hierarchical control and current capabilities, emphasizing the need
+            for more robust safety mechanisms that provide genuine protection
+            rather than an illusion of control.
+          </p>
+        </section>
+      </main>
 
-            <section class="conclusion">
-                <h2>Conclusion</h2>
-                <p>This benchmark reveals fundamental challenges in LLM agent safety governance. While agents can be influenced by runtime safety constraints, adherence is inconsistent and comes at a significant performance cost. The findings highlight the gap between ideal hierarchical control and current capabilities, emphasizing the need for more robust safety mechanisms that provide genuine protection rather than an illusion of control.</p>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>&copy; 2025 Ram Potham. Research conducted as an independent researcher.</p>
-            <p>Keywords: LLM Agents, AI Safety, AI Governance, Benchmarks, Hierarchical Principles, Controllability</p>
-        </footer>
+      <footer class="footer">
+        <p>
+          &copy; 2025 Ram Potham. Research conducted as an independent
+          researcher.
+        </p>
+        <p>
+          Keywords: LLM Agents, AI Safety, AI Governance, Benchmarks,
+          Hierarchical Principles, Controllability
+        </p>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
